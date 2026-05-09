@@ -1,0 +1,9 @@
+data/
+scripts/
+skill/
+logs/
+*.csv
+*.py
+*.bat
+.github/
+requirements.txt

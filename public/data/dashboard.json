@@ -1,0 +1,3764 @@
+{
+  "generated_at": "2026-05-08 22:10:15",
+  "market_summary": {
+    "KOSPI": {
+      "close": 6598.87,
+      "change": -1.38,
+      "date": "2026-04-30"
+    },
+    "KOSDAQ": {
+      "close": 1192.35,
+      "change": -2.29,
+      "date": "2026-04-30"
+    },
+    "total_trading_value": 19094746523386,
+    "latest_date": "2026-04-30"
+  },
+  "rankings": [
+    {
+      "rank": 1,
+      "industry": "로봇/자율주행",
+      "is_score": 76.5,
+      "etf_flow_score": 90.8,
+      "news_attention_score": 68.6,
+      "sentiment_score": 52.4,
+      "grade": "양호한 신호",
+      "representative_etf": {
+        "ticker": "0148J0",
+        "name": "TIGER 코리아휴머노이드로봇산업",
+        "trading_value": 117841987085
+      },
+      "color": "#3B82F6",
+      "news_stats": {
+        "total": 256,
+        "positive": 60,
+        "neutral": 194,
+        "negative": 2,
+        "pos_ratio": 23.4,
+        "neg_ratio": 0.8,
+        "neu_ratio": 75.8
+      },
+      "trading_value_change": 117.2,
+      "return_5d": 3.14
+    },
+    {
+      "rank": 2,
+      "industry": "에너지/석유",
+      "is_score": 71.8,
+      "etf_flow_score": 79.9,
+      "news_attention_score": 78.6,
+      "sentiment_score": 41.1,
+      "grade": "양호한 신호",
+      "representative_etf": {
+        "ticker": "271050",
+        "name": "KODEX WTI원유선물인버스(H)",
+        "trading_value": 108966822285
+      },
+      "color": "#D97706",
+      "news_stats": {
+        "total": 297,
+        "positive": 53,
+        "neutral": 230,
+        "negative": 14,
+        "pos_ratio": 17.8,
+        "neg_ratio": 4.7,
+        "neu_ratio": 77.4
+      },
+      "trading_value_change": 46.8,
+      "return_5d": 4.49
+    },
+    {
+      "rank": 3,
+      "industry": "친환경/신재생",
+      "is_score": 70.6,
+      "etf_flow_score": 66.1,
+      "news_attention_score": 84.5,
+      "sentiment_score": 60.8,
+      "grade": "양호한 신호",
+      "representative_etf": {
+        "ticker": "457990",
+        "name": "PLUS 태양광&ESS",
+        "trading_value": 88893811018
+      },
+      "color": "#22C55E",
+      "news_stats": {
+        "total": 312,
+        "positive": 97,
+        "neutral": 210,
+        "negative": 5,
+        "pos_ratio": 31.1,
+        "neg_ratio": 1.6,
+        "neu_ratio": 67.3
+      },
+      "trading_value_change": 53.0,
+      "return_5d": 3.78
+    },
+    {
+      "rank": 4,
+      "industry": "반도체",
+      "is_score": 67.0,
+      "etf_flow_score": 57.5,
+      "news_attention_score": 80.6,
+      "sentiment_score": 70.6,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "396500",
+        "name": "TIGER 반도체TOP10",
+        "trading_value": 841911823650
+      },
+      "color": "#F59E0B",
+      "news_stats": {
+        "total": 311,
+        "positive": 124,
+        "neutral": 180,
+        "negative": 7,
+        "pos_ratio": 39.9,
+        "neg_ratio": 2.3,
+        "neu_ratio": 57.9
+      },
+      "trading_value_change": 21.1,
+      "return_5d": 4.35
+    },
+    {
+      "rank": 5,
+      "industry": "2차전지",
+      "is_score": 65.1,
+      "etf_flow_score": 43.5,
+      "news_attention_score": 89.5,
+      "sentiment_score": 82.6,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "305720",
+        "name": "KODEX 2차전지산업",
+        "trading_value": 232155790338
+      },
+      "color": "#10B981",
+      "news_stats": {
+        "total": 341,
+        "positive": 169,
+        "neutral": 165,
+        "negative": 7,
+        "pos_ratio": 49.6,
+        "neg_ratio": 2.1,
+        "neu_ratio": 48.4
+      },
+      "trading_value_change": -19.2,
+      "return_5d": 3.93
+    },
+    {
+      "rank": 6,
+      "industry": "AI/소프트웨어",
+      "is_score": 64.2,
+      "etf_flow_score": 74.2,
+      "news_attention_score": 55.8,
+      "sentiment_score": 51.9,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "487240",
+        "name": "KODEX AI전력핵심설비",
+        "trading_value": 638410390401
+      },
+      "color": "#8B5CF6",
+      "news_stats": {
+        "total": 203,
+        "positive": 49,
+        "neutral": 150,
+        "negative": 4,
+        "pos_ratio": 24.1,
+        "neg_ratio": 2.0,
+        "neu_ratio": 73.9
+      },
+      "trading_value_change": 104.3,
+      "return_5d": 1.26
+    },
+    {
+      "rank": 7,
+      "industry": "게임/엔터",
+      "is_score": 58.3,
+      "etf_flow_score": 41.7,
+      "news_attention_score": 100.0,
+      "sentiment_score": 37.3,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "364990",
+        "name": "TIGER 게임TOP10",
+        "trading_value": 2652057809
+      },
+      "color": "#F97316",
+      "news_stats": {
+        "total": 368,
+        "positive": 44,
+        "neutral": 317,
+        "negative": 7,
+        "pos_ratio": 12.0,
+        "neg_ratio": 1.9,
+        "neu_ratio": 86.1
+      },
+      "trading_value_change": 15.8,
+      "return_5d": 0.71
+    },
+    {
+      "rank": 8,
+      "industry": "자동차/모빌리티",
+      "is_score": 57.3,
+      "etf_flow_score": 55.8,
+      "news_attention_score": 66.4,
+      "sentiment_score": 47.2,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "091180",
+        "name": "KODEX 자동차",
+        "trading_value": 35593066273
+      },
+      "color": "#EAB308",
+      "news_stats": {
+        "total": 241,
+        "positive": 50,
+        "neutral": 185,
+        "negative": 6,
+        "pos_ratio": 20.7,
+        "neg_ratio": 2.5,
+        "neu_ratio": 76.8
+      },
+      "trading_value_change": 31.0,
+      "return_5d": 1.92
+    },
+    {
+      "rank": 9,
+      "industry": "통신/5G",
+      "is_score": 57.1,
+      "etf_flow_score": 41.5,
+      "news_attention_score": 76.4,
+      "sentiment_score": 67.1,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "367740",
+        "name": "HANARO Fn5G산업",
+        "trading_value": 591619195
+      },
+      "color": "#0EA5E9",
+      "news_stats": {
+        "total": 288,
+        "positive": 108,
+        "neutral": 172,
+        "negative": 8,
+        "pos_ratio": 37.5,
+        "neg_ratio": 2.8,
+        "neu_ratio": 59.7
+      },
+      "trading_value_change": -30.8,
+      "return_5d": 4.22
+    },
+    {
+      "rank": 10,
+      "industry": "리츠/부동산",
+      "is_score": 54.6,
+      "etf_flow_score": 50.0,
+      "news_attention_score": 76.5,
+      "sentiment_score": 33.0,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "329200",
+        "name": "TIGER 리츠부동산인프라",
+        "trading_value": 68535514715
+      },
+      "color": "#F43F5E",
+      "news_stats": {
+        "total": 288,
+        "positive": 43,
+        "neutral": 220,
+        "negative": 25,
+        "pos_ratio": 14.9,
+        "neg_ratio": 8.7,
+        "neu_ratio": 76.4
+      },
+      "trading_value_change": 72.9,
+      "return_5d": -2.52
+    },
+    {
+      "rank": 11,
+      "industry": "뷰티/화장품",
+      "is_score": 52.9,
+      "etf_flow_score": 33.6,
+      "news_attention_score": 79.0,
+      "sentiment_score": 62.2,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "228790",
+        "name": "TIGER 화장품",
+        "trading_value": 18548030607
+      },
+      "color": "#E879F9",
+      "news_stats": {
+        "total": 287,
+        "positive": 93,
+        "neutral": 189,
+        "negative": 5,
+        "pos_ratio": 32.4,
+        "neg_ratio": 1.7,
+        "neu_ratio": 65.9
+      },
+      "trading_value_change": 15.4,
+      "return_5d": -1.32
+    },
+    {
+      "rank": 12,
+      "industry": "원자력",
+      "is_score": 52.7,
+      "etf_flow_score": 29.5,
+      "news_attention_score": 81.2,
+      "sentiment_score": 68.1,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "0091P0",
+        "name": "TIGER 코리아원자력",
+        "trading_value": 145487745991
+      },
+      "color": "#06B6D4",
+      "news_stats": {
+        "total": 284,
+        "positive": 103,
+        "neutral": 179,
+        "negative": 2,
+        "pos_ratio": 36.3,
+        "neg_ratio": 0.7,
+        "neu_ratio": 63.0
+      },
+      "trading_value_change": 9.1,
+      "return_5d": -1.74
+    },
+    {
+      "rank": 13,
+      "industry": "음식료/식품",
+      "is_score": 52.5,
+      "etf_flow_score": 35.4,
+      "news_attention_score": 82.1,
+      "sentiment_score": 51.0,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "-",
+        "name": "-",
+        "trading_value": 0
+      },
+      "color": "#FB923C",
+      "news_stats": {
+        "total": 310,
+        "positive": 77,
+        "neutral": 222,
+        "negative": 11,
+        "pos_ratio": 24.8,
+        "neg_ratio": 3.5,
+        "neu_ratio": 71.6
+      },
+      "trading_value_change": 0.0,
+      "return_5d": 0.0
+    },
+    {
+      "rank": 14,
+      "industry": "철강/조선",
+      "is_score": 50.8,
+      "etf_flow_score": 38.2,
+      "news_attention_score": 71.7,
+      "sentiment_score": 51.1,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "466920",
+        "name": "SOL 조선TOP3플러스",
+        "trading_value": 123177149871
+      },
+      "color": "#78716C",
+      "news_stats": {
+        "total": 262,
+        "positive": 65,
+        "neutral": 188,
+        "negative": 9,
+        "pos_ratio": 24.8,
+        "neg_ratio": 3.4,
+        "neu_ratio": 71.8
+      },
+      "trading_value_change": -5.7,
+      "return_5d": 2.92
+    },
+    {
+      "rank": 15,
+      "industry": "바이오/헬스",
+      "is_score": 49.3,
+      "etf_flow_score": 29.8,
+      "news_attention_score": 88.4,
+      "sentiment_score": 39.1,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "462900",
+        "name": "KoAct 바이오헬스케어액티브",
+        "trading_value": 27738014583
+      },
+      "color": "#EC4899",
+      "news_stats": {
+        "total": 316,
+        "positive": 50,
+        "neutral": 252,
+        "negative": 14,
+        "pos_ratio": 15.8,
+        "neg_ratio": 4.4,
+        "neu_ratio": 79.7
+      },
+      "trading_value_change": 23.1,
+      "return_5d": -2.84
+    },
+    {
+      "rank": 16,
+      "industry": "건설/인프라",
+      "is_score": 48.9,
+      "etf_flow_score": 35.4,
+      "news_attention_score": 66.3,
+      "sentiment_score": 56.6,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "367760",
+        "name": "RISE 네트워크인프라",
+        "trading_value": 133725998672
+      },
+      "color": "#84CC16",
+      "news_stats": {
+        "total": 230,
+        "positive": 62,
+        "neutral": 166,
+        "negative": 2,
+        "pos_ratio": 27.0,
+        "neg_ratio": 0.9,
+        "neu_ratio": 72.2
+      },
+      "trading_value_change": 5.4,
+      "return_5d": 0.49
+    },
+    {
+      "rank": 17,
+      "industry": "금융",
+      "is_score": 47.2,
+      "etf_flow_score": 38.8,
+      "news_attention_score": 62.0,
+      "sentiment_score": 45.7,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "102970",
+        "name": "KODEX 증권",
+        "trading_value": 85089758605
+      },
+      "color": "#A855F7",
+      "news_stats": {
+        "total": 218,
+        "positive": 45,
+        "neutral": 165,
+        "negative": 8,
+        "pos_ratio": 20.6,
+        "neg_ratio": 3.7,
+        "neu_ratio": 75.7
+      },
+      "trading_value_change": 27.2,
+      "return_5d": -1.42
+    },
+    {
+      "rank": 18,
+      "industry": "화학/소재",
+      "is_score": 44.6,
+      "etf_flow_score": 35.4,
+      "news_attention_score": 63.2,
+      "sentiment_score": 39.8,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "-",
+        "name": "-",
+        "trading_value": 0
+      },
+      "color": "#14B8A6",
+      "news_stats": {
+        "total": 224,
+        "positive": 37,
+        "neutral": 177,
+        "negative": 10,
+        "pos_ratio": 16.5,
+        "neg_ratio": 4.5,
+        "neu_ratio": 79.0
+      },
+      "trading_value_change": 0.0,
+      "return_5d": 0.0
+    },
+    {
+      "rank": 19,
+      "industry": "운송/물류",
+      "is_score": 38.4,
+      "etf_flow_score": 11.8,
+      "news_attention_score": 74.9,
+      "sentiment_score": 50.2,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "140710",
+        "name": "KODEX 운송",
+        "trading_value": 408675516
+      },
+      "color": "#64748B",
+      "news_stats": {
+        "total": 276,
+        "positive": 68,
+        "neutral": 197,
+        "negative": 11,
+        "pos_ratio": 24.6,
+        "neg_ratio": 4.0,
+        "neu_ratio": 71.4
+      },
+      "trading_value_change": -38.5,
+      "return_5d": -1.3
+    },
+    {
+      "rank": 20,
+      "industry": "방산/우주항공",
+      "is_score": 35.0,
+      "etf_flow_score": 9.2,
+      "news_attention_score": 67.5,
+      "sentiment_score": 50.7,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "0080G0",
+        "name": "KODEX 방산TOP10",
+        "trading_value": 101202932495
+      },
+      "color": "#6366F1",
+      "news_stats": {
+        "total": 237,
+        "positive": 56,
+        "neutral": 175,
+        "negative": 6,
+        "pos_ratio": 23.6,
+        "neg_ratio": 2.5,
+        "neu_ratio": 73.8
+      },
+      "trading_value_change": -16.2,
+      "return_5d": -5.06
+    },
+    {
+      "rank": 21,
+      "industry": "농업",
+      "is_score": 32.5,
+      "etf_flow_score": 55.0,
+      "news_attention_score": 0.0,
+      "sentiment_score": 25.0,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "271060",
+        "name": "KODEX 3대농산물선물(H)",
+        "trading_value": 2388829406
+      },
+      "color": "#4ADE80",
+      "news_stats": {
+        "total": 0,
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "pos_ratio": 0,
+        "neg_ratio": 0,
+        "neu_ratio": 0
+      },
+      "trading_value_change": 18.9,
+      "return_5d": 3.04
+    }
+  ],
+  "heatmap": [
+    {
+      "industry": "반도체",
+      "return_5d": 4.35,
+      "trading_value_billion": 170604.0,
+      "color": "#F59E0B"
+    },
+    {
+      "industry": "2차전지",
+      "return_5d": 3.93,
+      "trading_value_billion": 37532.0,
+      "color": "#10B981"
+    },
+    {
+      "industry": "바이오/헬스",
+      "return_5d": -2.84,
+      "trading_value_billion": 6929.0,
+      "color": "#EC4899"
+    },
+    {
+      "industry": "AI/소프트웨어",
+      "return_5d": 1.26,
+      "trading_value_billion": 58531.0,
+      "color": "#8B5CF6"
+    },
+    {
+      "industry": "로봇/자율주행",
+      "return_5d": 3.14,
+      "trading_value_billion": 10785.0,
+      "color": "#3B82F6"
+    },
+    {
+      "industry": "게임/엔터",
+      "return_5d": 0.71,
+      "trading_value_billion": 508.0,
+      "color": "#F97316"
+    },
+    {
+      "industry": "자동차/모빌리티",
+      "return_5d": 1.92,
+      "trading_value_billion": 3943.0,
+      "color": "#EAB308"
+    },
+    {
+      "industry": "친환경/신재생",
+      "return_5d": 3.78,
+      "trading_value_billion": 8885.0,
+      "color": "#22C55E"
+    },
+    {
+      "industry": "원자력",
+      "return_5d": -1.74,
+      "trading_value_billion": 20403.0,
+      "color": "#06B6D4"
+    },
+    {
+      "industry": "방산/우주항공",
+      "return_5d": -5.06,
+      "trading_value_billion": 23924.0,
+      "color": "#6366F1"
+    },
+    {
+      "industry": "철강/조선",
+      "return_5d": 2.92,
+      "trading_value_billion": 24860.0,
+      "color": "#78716C"
+    },
+    {
+      "industry": "에너지/석유",
+      "return_5d": 4.49,
+      "trading_value_billion": 3902.0,
+      "color": "#D97706"
+    },
+    {
+      "industry": "화학/소재",
+      "return_5d": 0.0,
+      "trading_value_billion": 0.0,
+      "color": "#14B8A6"
+    },
+    {
+      "industry": "통신/5G",
+      "return_5d": 4.22,
+      "trading_value_billion": 18.0,
+      "color": "#0EA5E9"
+    },
+    {
+      "industry": "금융",
+      "return_5d": -1.42,
+      "trading_value_billion": 11316.0,
+      "color": "#A855F7"
+    },
+    {
+      "industry": "리츠/부동산",
+      "return_5d": -2.52,
+      "trading_value_billion": 3993.0,
+      "color": "#F43F5E"
+    },
+    {
+      "industry": "건설/인프라",
+      "return_5d": 0.49,
+      "trading_value_billion": 9596.0,
+      "color": "#84CC16"
+    },
+    {
+      "industry": "음식료/식품",
+      "return_5d": 0.0,
+      "trading_value_billion": 0.0,
+      "color": "#FB923C"
+    },
+    {
+      "industry": "뷰티/화장품",
+      "return_5d": -1.32,
+      "trading_value_billion": 1685.0,
+      "color": "#E879F9"
+    },
+    {
+      "industry": "운송/물류",
+      "return_5d": -1.3,
+      "trading_value_billion": 21.0,
+      "color": "#64748B"
+    },
+    {
+      "industry": "농업",
+      "return_5d": 3.04,
+      "trading_value_billion": 94.0,
+      "color": "#4ADE80"
+    }
+  ],
+  "headlines": {
+    "반도체": [
+      {
+        "title": "순매수 상위 10개 종목 수익률 비교하니…외국인, 개인의 3배",
+        "sentiment": "긍정",
+        "date": "2026-05-04",
+        "link": "https://n.news.naver.com/mnews/article/025/0003520772?sid=101"
+      },
+      {
+        "title": "삼성전자 23만원 찍었다…'40만전자' 현실화 가능성은?",
+        "sentiment": "긍정",
+        "date": "2026-05-04",
+        "link": "https://n.news.naver.com/mnews/article/629/0000496368?sid=101"
+      },
+      {
+        "title": "“피지컬 AI가 주식 시장 지배”…‘뇌→몸→척수’ 株 주목 [투자360]",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/016/0002638589?sid=101"
+      },
+      {
+        "title": "‘시총 1조’ 넘는 국내 상장사 사상 처음 400곳 돌파했다",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/032/0003443593?sid=101"
+      },
+      {
+        "title": "[박근종 칼럼] 이란전쟁 충격 딛고 빠르게 반등하는 증시, '투기적 거래...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.mhns.co.kr/news/articleView.html?idxno=746457"
+      }
+    ],
+    "2차전지": [
+      {
+        "title": "대기업도 꽂힌 ‘제로금리 CB’…최근 6개월간 1.1조 조달 성공[시그널...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/011/0004617063?sid=101"
+      },
+      {
+        "title": "배터리 기업 회복 속 퇴출 기업도…2차전지 옥석 가리기",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/088/0001008184?sid=101"
+      },
+      {
+        "title": "전기차 수요 회복 타고…에코프로비엠 실적 턴어라운드 가속",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450159"
+      },
+      {
+        "title": "[증시전망] 5월 증시, 실적·고용·유가가 방향 가른다",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=662266"
+      },
+      {
+        "title": "주식은 '고공' vs 체감 경기는 '꽁꽁'",
+        "sentiment": "중립",
+        "date": "2026-05-02",
+        "link": "https://www.straightnews.co.kr/news/articleView.html?idxno=301531"
+      }
+    ],
+    "바이오/헬스": [
+      {
+        "title": "에이비엘바이오, 하락 흐름…코스닥 바이오 '선별 장세' 전환",
+        "sentiment": "부정",
+        "date": "2026-05-04",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=571938"
+      },
+      {
+        "title": "삼천당제약, 5%대 하락 속 변동성 확대…중동 변수까지 겹치며 투자심리...",
+        "sentiment": "중립",
+        "date": "2026-05-04",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=571939"
+      },
+      {
+        "title": "\"삼성물산, 하이테크·원전 모멘텀 확대… 영업가치 부각 기대\" - NH투자...",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=353473"
+      },
+      {
+        "title": "“한주에 400만원?” 눈을 의심했다…월급 털어 겨우 한 주 살 판 [투자...",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/016/0002638577?sid=101"
+      },
+      {
+        "title": "‘발행사 우위’로 재편된 CB 발행 시장…모멘텀 높은 기업에 자금 쏠림",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/011/0004617047?sid=101"
+      }
+    ],
+    "AI/소프트웨어": [
+      {
+        "title": "[다산칼럼] 투자의 시대, 좋은 콘텐츠가 갖는 힘",
+        "sentiment": "긍정",
+        "date": "2026-05-04",
+        "link": "https://n.news.naver.com/mnews/article/015/0005282565?sid=110"
+      },
+      {
+        "title": "두산에너빌리티 주가 4월 마지막장은 약세로, 5월 첫 장 흐름은?…美 원...",
+        "sentiment": "중립",
+        "date": "2026-05-04",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=571940"
+      },
+      {
+        "title": "‘현금 7.6조ʼ 삼성SDS, 체질전환 암호명은 ‘KKRʼ [Z-스코어 기업가치...",
+        "sentiment": "중립",
+        "date": "2026-05-04",
+        "link": "http://www.fntimes.com/html/view.php?ud=202605030112484639dd55077bc2_18"
+      },
+      {
+        "title": "휴림로봇, 월요일 변수는 '수급 변화'…목표가 상향 배경은 무엇인가",
+        "sentiment": "긍정",
+        "date": "2026-05-04",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=571941"
+      },
+      {
+        "title": "우리기술, 3%대 하락 속 거래량 확대…새주 주가 흐름 촉각",
+        "sentiment": "부정",
+        "date": "2026-05-04",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=571922"
+      }
+    ],
+    "로봇/자율주행": [
+      {
+        "title": "휴대폰 대신 車소프트웨어…블랙베리 '15년 만의 귀환'",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/015/0005282496?sid=104"
+      },
+      {
+        "title": "몰락했던 ‘오바마폰’ 블랙베리…2.7억대 자동차 심장으로 부활했다",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/009/0005674611?sid=101"
+      },
+      {
+        "title": "\"성공하면 주겠네\"…역대급 '보너스' 거머쥐려면",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/215/0001250909?sid=104"
+      },
+      {
+        "title": "대덕전자, 고점 논란 비웃는 실적 질주…AI·서버 수요가 판을 바꾼다",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450049"
+      },
+      {
+        "title": "국내 증시 시총 첫 6000조원 돌파… 사진으로 돌아보는 한 주의 기록 [한...",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "https://n.news.naver.com/mnews/article/022/0004125311?sid=102"
+      }
+    ],
+    "게임/엔터": [
+      {
+        "title": "수집품 시장 확대에…게임스톱, 이베이 품나",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/015/0005282525?sid=104"
+      },
+      {
+        "title": "엔씨 주가 전망 [금주 주목할 게임 IT 주식]",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.khgames.co.kr/news/articleView.html?idxno=304011"
+      },
+      {
+        "title": "게임스톱, 이베이 인수 추진…'수집품 경제' 확대에 베팅",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/015/0005282448?sid=104"
+      },
+      {
+        "title": "게임스탑, 인수 추진설에…이베이, 시간외서 15% 급등",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/092/0002421127?sid=105"
+      },
+      {
+        "title": "\"기술이 곧 재미\"…크래프톤, '배그' 넘어 '피지컬 AI·플랫폼 IP'로 체질...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.youthdaily.co.kr/news/article.html?no=218558"
+      }
+    ],
+    "자동차/모빌리티": [
+      {
+        "title": "[신문로] \"비이성적 과열 — 벼락부자 신기루\"",
+        "sentiment": "중립",
+        "date": "2026-05-04",
+        "link": "https://www.insnews.co.kr/news/articleView.html?idxno=90501"
+      },
+      {
+        "title": "에이피알이 이 정도였어? 美 타임 ‘2026 세계에서 가장 영향력 있는 10...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/011/0004616895?sid=101"
+      },
+      {
+        "title": "비용 부담에도 계열사 성장에...iM금융지주, 올 1분기 실적 '선방'",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://www.youthdaily.co.kr/news/article.html?no=218485"
+      },
+      {
+        "title": "[공모주달력]상단 공모가 확정한 '육아용품' 폴레드 청약",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/648/0000046806?sid=101"
+      },
+      {
+        "title": "반도체가 이끄는 한국 경제 성장세, 내수 부진과 산업 양극화 우려",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.tokenpost.kr/news/economy/355753"
+      }
+    ],
+    "친환경/신재생": [
+      {
+        "title": "두산에너빌리티, 가스터빈으로 증명했다…실적보다 더 큰 성장 신호",
+        "sentiment": "긍정",
+        "date": "2026-05-01",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450087"
+      },
+      {
+        "title": "“당장 급한 불 끈다”...AI 전력난 해결사 떠오른 천연가스",
+        "sentiment": "긍정",
+        "date": "2026-05-01",
+        "link": "https://n.news.naver.com/mnews/article/011/0004616676?sid=101"
+      },
+      {
+        "title": "에코페트롤, 지배구조·노사협상 속 태양광 전환 가속…실적이 분기점",
+        "sentiment": "중립",
+        "date": "2026-05-01",
+        "link": "https://www.tokenpost.kr/news/international/355310"
+      },
+      {
+        "title": "전력 인프라 슈퍼사이클… 효성중공업 수혜 본격화",
+        "sentiment": "긍정",
+        "date": "2026-05-01",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=449385"
+      },
+      {
+        "title": "한화솔루션, 실적 흑자 전환했지만, 유증에 또다시 발목··· 금감원 퇴...",
+        "sentiment": "긍정",
+        "date": "2026-04-30",
+        "link": "https://www.greened.kr/news/articleView.html?idxno=340142"
+      }
+    ],
+    "원자력": [
+      {
+        "title": "韓 한화, 글로벌 무기 제국 구축...\"필라델피아 조선소로 美 해군 공략\"",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.g-enews.com/view.php?ud=2026050214203711090c8c1c064d_1"
+      },
+      {
+        "title": "올해 벌써 1424곳 폐업…잘 나가는 건설주의 두 얼굴",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "https://n.news.naver.com/mnews/article/025/0003520576?sid=101"
+      },
+      {
+        "title": "건설주 나는데…폐업신고는 12년새 최고",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "https://n.news.naver.com/mnews/article/353/0000055324?sid=102"
+      },
+      {
+        "title": "오르비텍 재평가 신호탄…원전 해체·항공 동시 성장 기대",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450086"
+      },
+      {
+        "title": "대우건설, 원전 중심 조직개편…글로벌 인프라 기업 도약 시동",
+        "sentiment": "중립",
+        "date": "2026-05-01",
+        "link": "https://www.m-economynews.com/news/article.html?no=66907"
+      }
+    ],
+    "방산/우주항공": [
+      {
+        "title": "목대균 KCGI운용 대표 “우량 성장주 ‘압축 투자’로 승부”",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/016/0002638531?sid=101"
+      },
+      {
+        "title": "올해 들어 10대그룹 시총 1500조 '쑥'…SK그룹 증가율 1위",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "http://www.segyebiz.com/newsView/20260503507104?OutUrl=naver"
+      },
+      {
+        "title": "[이번주 관심주] LIG D&A, 실적발표 D-4...올해 114% 올랐는데 '130만원 간...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "http://www.opinionnews.co.kr/news/articleView.html?idxno=137783"
+      },
+      {
+        "title": "최태원, ‘반도체 승부수’ 결실...증시 집어삼킨 SK그룹",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/050/0000105716?sid=101"
+      },
+      {
+        "title": "올해 들어 10대 그룹 시총 1500조 올라…SK그룹 증가율 1위",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/079/0004143034?sid=101"
+      }
+    ],
+    "철강/조선": [
+      {
+        "title": "\"포스코인터내셔널, 신사업 이익기여도 증가… 목표가 상향\" - 하나증권",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=353463"
+      },
+      {
+        "title": "“K철강 주주입니다, 이제 봄인가요”…사흘간 66% 올랐다는데 [이주의...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/009/0005674577?sid=101"
+      },
+      {
+        "title": "삼성전자·현대차·NAVER·POSCO홀딩스 '줄줄이 밀렸다'…SK하이닉스 강...",
+        "sentiment": "부정",
+        "date": "2026-05-02",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=571841"
+      },
+      {
+        "title": "적자 탈출 넘어 서프라이즈… 동국제강, 실적 반전 신호 떴다",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=449359"
+      },
+      {
+        "title": "컨센서스 넘긴 효성티앤씨, 2분기 더 좋아진다",
+        "sentiment": "긍정",
+        "date": "2026-05-01",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=449363"
+      }
+    ],
+    "에너지/석유": [
+      {
+        "title": "5조원 깜짝 실적 그래서 주가는?...유가 급등에 정제마진 급증",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/024/0000105313?sid=101"
+      },
+      {
+        "title": "[주末머니] \"정유·석유화학주, 따라 사면 큰일날까요?\"",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "https://n.news.naver.com/mnews/article/277/0005757692?sid=101"
+      },
+      {
+        "title": "[힘내라 K산업]㊤ 에쓰오일, '샤힌' 날개 달고 비상…1분기 1조원대 영업...",
+        "sentiment": "중립",
+        "date": "2026-05-01",
+        "link": "https://www.asiatime.co.kr/article/20260430500170"
+      },
+      {
+        "title": "유가 급등에 주목받는 정유주…중동 리스크에 매수세 유입",
+        "sentiment": "중립",
+        "date": "2026-04-30",
+        "link": "https://daily.hankooki.com/news/articleView.html?idxno=1363370"
+      },
+      {
+        "title": "'기록 경신' 코스피, 나흘 만에 하락으로 선회... 기름값 상승 여파",
+        "sentiment": "긍정",
+        "date": "2026-04-30",
+        "link": "https://www.getnews.co.kr/news/articleView.html?idxno=869142"
+      }
+    ],
+    "화학/소재": [
+      {
+        "title": "글로벌 ‘쩐의 전쟁터’ 된 K뷰티…작년 M&A 3.6조 사상 최대",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/020/0003716901?sid=101"
+      },
+      {
+        "title": "생명의 존재 기저에 분명 죽음이 있습니다만 [황정은·허태임 교환일기...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/308/0000038212?sid=103"
+      },
+      {
+        "title": "'포스트 버핏' 버크셔, 사상 최대 현금 보유…2년 만에 자사주 매입",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/014/0005516393?sid=101"
+      },
+      {
+        "title": "지분법 이익 늘었다… 효성, 투자 리스크 완화 국면 진입",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=449392"
+      },
+      {
+        "title": "[뉴욕마켓워치] 핵 협상 테이블에 올린다는 이란…달러↑주식·채권 혼...",
+        "sentiment": "중립",
+        "date": "2026-05-02",
+        "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4412862"
+      }
+    ],
+    "통신/5G": [
+      {
+        "title": "버크셔 현금 586조 '역대급' 비축… 아벨 CEO의 무기는 '기다림'",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/421/0008924012?sid=104"
+      },
+      {
+        "title": "[뉴욕증시 주간전망] 인플레 공포 vs 실적 낙관론 ‘팽팽’…랠리 연장...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.g-enews.com/view.php?ud=202605030541406297e250e8e188_1"
+      },
+      {
+        "title": "\"지금이 초입 구간\"… RF머트리얼즈 글로벌 밸류체인 핵심 부상",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450089"
+      },
+      {
+        "title": "이통3사, 1분기 외형 확대...영업이익은 감소",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=836549"
+      },
+      {
+        "title": "\"6월 전에 무조건 매수\"…미국發 호재에 역대급 매출 기대된다는 종목[...",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "https://n.news.naver.com/mnews/article/277/0005757700?sid=101"
+      }
+    ],
+    "금융": [
+      {
+        "title": "[국민연금 포트폴리오] 국민연금, SBS 지분 10%선 아래로... \"한 번만 판...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.ppss.kr/news/articleView.html?idxno=294765"
+      },
+      {
+        "title": "삼성 노조에 경고...박용진 “끼리끼리 먹자판 잔치, 국민들 불편함 분...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/009/0005674805?sid=101"
+      },
+      {
+        "title": "60% 뛴 이유 있었다…흑자 전환에 주가 탄력 붙은 호텔신라[stock&톡]",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://www.newsway.co.kr/news/view?ud=2026043013034066393"
+      },
+      {
+        "title": "강민국 국회의원, 20대 '빚투' 1년 만에 2.24배 폭증",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "http://www.gndomin.com/news/articleView.html?idxno=474354"
+      },
+      {
+        "title": "“금융플랫폼 확장성 입증한 카뱅…전통 은행과 기업가치 차별화” [스...",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/011/0004617004?sid=101"
+      }
+    ],
+    "리츠/부동산": [
+      {
+        "title": "[주末머니]\"퇴직연금 계좌에 OO 혼합형 ETF 담으세요\"",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/277/0005757815?sid=101"
+      },
+      {
+        "title": "제이알글로벌리츠 기업회생에 리츠주 '우수수'…\"급락은 매수 기회\"",
+        "sentiment": "중립",
+        "date": "2026-05-02",
+        "link": "https://news.einfomax.co.kr/news/articleView.html?idxno=4412875"
+      },
+      {
+        "title": "제이알 쇼크에 상장리츠 '전쟁통'…줍줍 타이밍?",
+        "sentiment": "중립",
+        "date": "2026-05-02",
+        "link": "https://n.news.naver.com/mnews/article/008/0005352249?sid=101"
+      },
+      {
+        "title": "신한카드 사옥 매각, 결국 외부로…승부는 '자금력'",
+        "sentiment": "중립",
+        "date": "2026-05-01",
+        "link": "https://dealsite.co.kr/articles/161099"
+      },
+      {
+        "title": "서울 아파트값 0.14% 상승…급매 소진에 서초·송파 재상승",
+        "sentiment": "부정",
+        "date": "2026-05-01",
+        "link": "https://n.news.naver.com/mnews/article/011/0004616632?sid=101"
+      }
+    ],
+    "건설/인프라": [
+      {
+        "title": "태영건설우, 투자경고종목 해제→재지정 예고로 투자 유의",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.topstarnews.net/news/articleView.html?idxno=16050653"
+      },
+      {
+        "title": "코스피 급등에…선행-동행지수 격차 16년만 최대",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.etoday.co.kr/news/view/2581194"
+      },
+      {
+        "title": "선행-동행지수 격차 16년 만에 최대 수준…\"경기판단 착시 우려\"",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/055/0001353103?sid=101"
+      },
+      {
+        "title": "'1년만에 700% 폭등' 효성중공업 주가…고평가 vs 저평가?",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.straightnews.co.kr/news/articleView.html?idxno=301505"
+      },
+      {
+        "title": "IREN, 1.4GW 규모 스위트워터 데이터센터 가동으로 AI 인프라 확장 본격...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://www.tokenpost.kr/news/cryptocurrency/355765"
+      }
+    ],
+    "음식료/식품": [
+      {
+        "title": "\"이게 K-간식이다\"…14만원대 껑충 수익도 '달달'",
+        "sentiment": "중립",
+        "date": "2026-04-29",
+        "link": "https://n.news.naver.com/mnews/article/215/0001250642?sid=101"
+      },
+      {
+        "title": "코스피, 사흘 연속 사상 최고치 경신…오픈AI 악재도 뚫은 '씨게이트 훈...",
+        "sentiment": "중립",
+        "date": "2026-04-29",
+        "link": "http://www.seoulwire.com/news/articleView.html?idxno=719527"
+      },
+      {
+        "title": "K-스낵, 글로벌 메인스트림 진입…매출·주가 동반 질주",
+        "sentiment": "긍정",
+        "date": "2026-04-29",
+        "link": "https://www.m-i.kr/news/articleView.html?idxno=1368837"
+      },
+      {
+        "title": "이렇게 잘 팔릴 줄은 몰랐다…“한국산 너무 맛있어” 난리더니 주가도...",
+        "sentiment": "중립",
+        "date": "2026-04-29",
+        "link": "https://n.news.naver.com/mnews/article/011/0004615865?sid=101"
+      },
+      {
+        "title": "코스피, 미국 증시 약세 영향 속 혼조세…개인·기관 매수에 반등 시도",
+        "sentiment": "긍정",
+        "date": "2026-04-29",
+        "link": "https://www.fntoday.co.kr/news/articleView.html?idxno=383384"
+      }
+    ],
+    "뷰티/화장품": [
+      {
+        "title": "'-85% 추락' LG생활건강…2분기도 쉽지 않은 이유",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/215/0001250942?sid=101"
+      },
+      {
+        "title": "LG생활건강, 1분기 영업이익 시장 기대치 111% 상회",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://www.getnews.co.kr/news/articleView.html?idxno=869254"
+      },
+      {
+        "title": "올해만 80% 주가 뛰더니 또 일냈다...에이피알, 美 타임 ‘세계 영향력...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/009/0005674587?sid=101"
+      },
+      {
+        "title": "“최대실적” K-화장품 날았다…한국콜마·코스맥스, 올해 실적 눈높이...",
+        "sentiment": "중립",
+        "date": "2026-05-03",
+        "link": "https://n.news.naver.com/mnews/article/016/0002638418?sid=101"
+      },
+      {
+        "title": "일본 변기 제조업체 토토, AI 반도체 사업으로 주가 급등",
+        "sentiment": "긍정",
+        "date": "2026-05-02",
+        "link": "https://www.aitimes.com/news/articleView.html?idxno=210023"
+      }
+    ],
+    "운송/물류": [
+      {
+        "title": "LX인터내셔널, 이익 체력 회복 신호…원자재·운임 반등에 실적 전환 국...",
+        "sentiment": "긍정",
+        "date": "2026-05-03",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450062"
+      },
+      {
+        "title": "SCFI 1911.40..3주만에 반등",
+        "sentiment": "중립",
+        "date": "2026-04-30",
+        "link": "http://www.4th.kr/news/articleView.html?idxno=2111263"
+      },
+      {
+        "title": "삼성중공업, 1Q 영업익 2731억원…전년比 121.9% ↑",
+        "sentiment": "중립",
+        "date": "2026-04-30",
+        "link": "https://www.1conomynews.co.kr/news/articleView.html?idxno=48394"
+      },
+      {
+        "title": "KSS해운, GYXIS CORPORATION과 장기대선계약 체결",
+        "sentiment": "중립",
+        "date": "2026-04-30",
+        "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661916"
+      },
+      {
+        "title": "KSS해운, B INTERNATIONAL SHIPPING & LOGISTICS DMCC와 장기대선계약 체결",
+        "sentiment": "중립",
+        "date": "2026-04-30",
+        "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661900"
+      }
+    ],
+    "농업": []
+  },
+  "industry_stocks": {
+    "반도체": [
+      {
+        "ticker": "000660",
+        "name": "SK하이닉스",
+        "weight": 377.7,
+        "return_5d": 5.2,
+        "recent_volumes": [
+          3127857,
+          4563073,
+          3002713,
+          3001208,
+          3227541
+        ]
+      },
+      {
+        "ticker": "005930",
+        "name": "삼성전자",
+        "weight": 314.13,
+        "return_5d": 0.5,
+        "recent_volumes": [
+          19626666,
+          22870374,
+          18444490,
+          20363756,
+          20519819
+        ]
+      },
+      {
+        "ticker": "042700",
+        "name": "한미반도체",
+        "weight": 245.21,
+        "return_5d": 24.5,
+        "recent_volumes": [
+          570284,
+          5287941,
+          1775578,
+          886254,
+          2575384
+        ]
+      },
+      {
+        "ticker": "058470",
+        "name": "리노공업",
+        "weight": 116.34,
+        "return_5d": -4.1,
+        "recent_volumes": [
+          827192,
+          3215459,
+          1282534,
+          869209,
+          2627349
+        ]
+      },
+      {
+        "ticker": "009150",
+        "name": "삼성전기",
+        "weight": 99.23,
+        "return_5d": 5.6,
+        "recent_volumes": [
+          548023,
+          528597,
+          672656,
+          538558,
+          905254
+        ]
+      },
+      {
+        "ticker": "007660",
+        "name": "이수페타시스",
+        "weight": 87.17,
+        "return_5d": -2.0,
+        "recent_volumes": [
+          1294903,
+          1326945,
+          991522,
+          1011570,
+          1464079
+        ]
+      },
+      {
+        "ticker": "095340",
+        "name": "ISC",
+        "weight": 83.01,
+        "return_5d": 3.2,
+        "recent_volumes": [
+          181784,
+          291535,
+          276107,
+          221488,
+          197894
+        ]
+      },
+      {
+        "ticker": "240810",
+        "name": "원익IPS",
+        "weight": 67.36,
+        "return_5d": 0.9,
+        "recent_volumes": [
+          424792,
+          719765,
+          469614,
+          401573,
+          1015
+        ]
+      },
+      {
+        "ticker": "039030",
+        "name": "이오테크닉스",
+        "weight": 62.62,
+        "return_5d": -7.5,
+        "recent_volumes": [
+          98110,
+          72815,
+          80853,
+          75627,
+          106701
+        ]
+      },
+      {
+        "ticker": "403870",
+        "name": "HPSP",
+        "weight": 40.82,
+        "return_5d": -1.5,
+        "recent_volumes": [
+          6316011,
+          4303590,
+          2575107,
+          1492464,
+          1661297
+        ]
+      }
+    ],
+    "2차전지": [
+      {
+        "ticker": "006400",
+        "name": "삼성SDI",
+        "weight": 183.57,
+        "return_5d": 8.4,
+        "recent_volumes": [
+          786062,
+          701082,
+          1454459,
+          1268312,
+          851227
+        ]
+      },
+      {
+        "ticker": "005490",
+        "name": "POSCO홀딩스",
+        "weight": 158.77,
+        "return_5d": 11.3,
+        "recent_volumes": [
+          292559,
+          309760,
+          1962453,
+          599954,
+          568870
+        ]
+      },
+      {
+        "ticker": "247540",
+        "name": "에코프로비엠",
+        "weight": 117.41,
+        "return_5d": -1.0,
+        "recent_volumes": [
+          388962,
+          345978,
+          500672,
+          589037,
+          496622
+        ]
+      },
+      {
+        "ticker": "086520",
+        "name": "에코프로",
+        "weight": 108.56,
+        "return_5d": -2.4,
+        "recent_volumes": [
+          1045704,
+          934570,
+          1907246,
+          1129287,
+          135
+        ]
+      },
+      {
+        "ticker": "373220",
+        "name": "LG에너지솔루션",
+        "weight": 99.08,
+        "return_5d": -4.3,
+        "recent_volumes": [
+          402718,
+          433687,
+          431570,
+          306780,
+          483228
+        ]
+      },
+      {
+        "ticker": "051910",
+        "name": "LG화학",
+        "weight": 98.16,
+        "return_5d": 1.4,
+        "recent_volumes": [
+          309047,
+          305442,
+          339216,
+          414937,
+          283039
+        ]
+      },
+      {
+        "ticker": "003670",
+        "name": "포스코퓨처엠",
+        "weight": 96.04,
+        "return_5d": 0.0,
+        "recent_volumes": [
+          314656,
+          285322,
+          632095,
+          344400,
+          425977
+        ]
+      },
+      {
+        "ticker": "066970",
+        "name": "엘앤에프",
+        "weight": 65.11,
+        "return_5d": -1.7,
+        "recent_volumes": [
+          891885,
+          820199,
+          516672,
+          361478,
+          730075
+        ]
+      },
+      {
+        "ticker": "096770",
+        "name": "SK이노베이션",
+        "weight": 52.81,
+        "return_5d": 10.0,
+        "recent_volumes": [
+          445814,
+          651104,
+          736544,
+          3117601,
+          1134227
+        ]
+      },
+      {
+        "ticker": "078600",
+        "name": "대주전자재료",
+        "weight": 26.45,
+        "return_5d": -13.3,
+        "recent_volumes": [
+          1832728,
+          689042,
+          327431,
+          247265,
+          251487
+        ]
+      }
+    ],
+    "바이오/헬스": [
+      {
+        "ticker": "068270",
+        "name": "셀트리온",
+        "weight": 143.64,
+        "return_5d": -4.1,
+        "recent_volumes": [
+          448117,
+          518893,
+          452357,
+          380054,
+          468819
+        ]
+      },
+      {
+        "ticker": "196170",
+        "name": "알테오젠",
+        "weight": 102.11,
+        "return_5d": -0.1,
+        "recent_volumes": [
+          333849,
+          375682,
+          305627,
+          302463,
+          263102
+        ]
+      },
+      {
+        "ticker": "207940",
+        "name": "삼성바이오로직스",
+        "weight": 101.67,
+        "return_5d": -3.8,
+        "recent_volumes": [
+          59422,
+          88430,
+          40649,
+          70039,
+          44392
+        ]
+      },
+      {
+        "ticker": "141080",
+        "name": "리가켐바이오",
+        "weight": 80.71,
+        "return_5d": -8.3,
+        "recent_volumes": [
+          242608,
+          355866,
+          387350,
+          363242,
+          292336
+        ]
+      },
+      {
+        "ticker": "298380",
+        "name": "에이비엘바이오",
+        "weight": 72.72,
+        "return_5d": -14.2,
+        "recent_volumes": [
+          511957,
+          860772,
+          2893304,
+          644902,
+          663414
+        ]
+      },
+      {
+        "ticker": "226950",
+        "name": "올릭스",
+        "weight": 55.53,
+        "return_5d": -5.4,
+        "recent_volumes": [
+          421904,
+          370510,
+          254412,
+          197597,
+          288160
+        ]
+      },
+      {
+        "ticker": "237690",
+        "name": "에스티팜",
+        "weight": 45.15,
+        "return_5d": 3.0,
+        "recent_volumes": [
+          93763,
+          424180,
+          289197,
+          144969,
+          230448
+        ]
+      },
+      {
+        "ticker": "128940",
+        "name": "한미약품",
+        "weight": 39.77,
+        "return_5d": -7.5,
+        "recent_volumes": [
+          72984,
+          57961,
+          70922,
+          75323,
+          142664
+        ]
+      },
+      {
+        "ticker": "028300",
+        "name": "HLB",
+        "weight": 38.75,
+        "return_5d": 1.0,
+        "recent_volumes": [
+          295667,
+          536030,
+          525102,
+          310872,
+          418522
+        ]
+      },
+      {
+        "ticker": "000100",
+        "name": "유한양행",
+        "weight": 38.03,
+        "return_5d": -3.4,
+        "recent_volumes": [
+          170005,
+          177933,
+          200397,
+          159434,
+          237957
+        ]
+      }
+    ],
+    "AI/소프트웨어": [
+      {
+        "ticker": "005930",
+        "name": "삼성전자",
+        "weight": 169.12,
+        "return_5d": 0.5,
+        "recent_volumes": [
+          19626666,
+          22870374,
+          18444490,
+          20363756,
+          20519819
+        ]
+      },
+      {
+        "ticker": "035420",
+        "name": "NAVER",
+        "weight": 166.68,
+        "return_5d": -1.4,
+        "recent_volumes": [
+          476096,
+          458738,
+          758420,
+          673160,
+          307
+        ]
+      },
+      {
+        "ticker": "000660",
+        "name": "SK하이닉스",
+        "weight": 150.42,
+        "return_5d": 5.2,
+        "recent_volumes": [
+          3127857,
+          4563073,
+          3002713,
+          3001208,
+          3227541
+        ]
+      },
+      {
+        "ticker": "009150",
+        "name": "삼성전기",
+        "weight": 117.46,
+        "return_5d": 5.6,
+        "recent_volumes": [
+          548023,
+          528597,
+          672656,
+          538558,
+          905254
+        ]
+      },
+      {
+        "ticker": "035720",
+        "name": "카카오",
+        "weight": 116.29,
+        "return_5d": -1.6,
+        "recent_volumes": [
+          1064052,
+          1436742,
+          1274968,
+          1123582,
+          1480837
+        ]
+      },
+      {
+        "ticker": "010120",
+        "name": "LS ELECTRIC",
+        "weight": 79.06,
+        "return_5d": 22.7,
+        "recent_volumes": [
+          1695903,
+          1591106,
+          3005597,
+          1615342,
+          1162813
+        ]
+      },
+      {
+        "ticker": "298040",
+        "name": "효성중공업",
+        "weight": 53.99,
+        "return_5d": 10.1,
+        "recent_volumes": [
+          95360,
+          78226,
+          79491,
+          48472,
+          54058
+        ]
+      },
+      {
+        "ticker": "259960",
+        "name": "크래프톤",
+        "weight": 53.48,
+        "return_5d": -3.5,
+        "recent_volumes": [
+          186903,
+          145742,
+          141864,
+          139096,
+          365379
+        ]
+      },
+      {
+        "ticker": "006400",
+        "name": "삼성SDI",
+        "weight": 53.23,
+        "return_5d": 8.4,
+        "recent_volumes": [
+          786062,
+          701082,
+          1454459,
+          1268312,
+          851227
+        ]
+      },
+      {
+        "ticker": "011070",
+        "name": "LG이노텍",
+        "weight": 52.63,
+        "return_5d": 5.7,
+        "recent_volumes": [
+          486132,
+          420637,
+          410687,
+          246944,
+          285504
+        ]
+      }
+    ],
+    "로봇/자율주행": [
+      {
+        "ticker": "108490",
+        "name": "로보티즈",
+        "weight": 43.72,
+        "return_5d": 8.2,
+        "recent_volumes": [
+          485222,
+          1338630,
+          428261,
+          410650,
+          63
+        ]
+      },
+      {
+        "ticker": "277810",
+        "name": "레인보우로보틱스",
+        "weight": 33.56,
+        "return_5d": 8.5,
+        "recent_volumes": [
+          139715,
+          490051,
+          156361,
+          105253,
+          6
+        ]
+      },
+      {
+        "ticker": "005380",
+        "name": "현대차",
+        "weight": 29.17,
+        "return_5d": 3.5,
+        "recent_volumes": [
+          1228355,
+          930365,
+          2585417,
+          971755,
+          1150241
+        ]
+      },
+      {
+        "ticker": "058610",
+        "name": "에스피지",
+        "weight": 28.2,
+        "return_5d": 7.3,
+        "recent_volumes": [
+          400256,
+          1017780,
+          625560,
+          358359,
+          135
+        ]
+      },
+      {
+        "ticker": "454910",
+        "name": "두산로보틱스",
+        "weight": 25.14,
+        "return_5d": 17.1,
+        "recent_volumes": [
+          258405,
+          664732,
+          324623,
+          656366,
+          1839947
+        ]
+      },
+      {
+        "ticker": "307950",
+        "name": "현대오토에버",
+        "weight": 18.97,
+        "return_5d": 4.9,
+        "recent_volumes": [
+          103989,
+          96705,
+          421491,
+          111914,
+          119826
+        ]
+      },
+      {
+        "ticker": "012330",
+        "name": "현대모비스",
+        "weight": 13.52,
+        "return_5d": 0.6,
+        "recent_volumes": [
+          436579,
+          326092,
+          316712,
+          229251,
+          317288
+        ]
+      },
+      {
+        "ticker": "005930",
+        "name": "삼성전자",
+        "weight": 13.15,
+        "return_5d": 0.5,
+        "recent_volumes": [
+          19626666,
+          22870374,
+          18444490,
+          20363756,
+          20519819
+        ]
+      },
+      {
+        "ticker": "348340",
+        "name": "뉴로메카",
+        "weight": 12.32,
+        "return_5d": -7.3,
+        "recent_volumes": [
+          455598,
+          1240192,
+          627198,
+          322144,
+          318
+        ]
+      },
+      {
+        "ticker": "160190",
+        "name": "하이젠알앤엠",
+        "weight": 8.25,
+        "return_5d": 3.6,
+        "recent_volumes": [
+          131390,
+          292349,
+          137632,
+          95130,
+          129427
+        ]
+      }
+    ],
+    "게임/엔터": [
+      {
+        "ticker": "036570",
+        "name": "NC",
+        "weight": 111.67,
+        "return_5d": 0.0,
+        "recent_volumes": [
+          90413,
+          127724,
+          118157,
+          290978,
+          88748
+        ]
+      },
+      {
+        "ticker": "259960",
+        "name": "크래프톤",
+        "weight": 110.68,
+        "return_5d": -3.5,
+        "recent_volumes": [
+          186903,
+          145742,
+          141864,
+          139096,
+          365379
+        ]
+      },
+      {
+        "ticker": "251270",
+        "name": "넷마블",
+        "weight": 60.55,
+        "return_5d": -1.5,
+        "recent_volumes": [
+          171054,
+          191119,
+          148043,
+          396308,
+          246576
+        ]
+      },
+      {
+        "ticker": "263750",
+        "name": "펄어비스",
+        "weight": 58.3,
+        "return_5d": 3.3,
+        "recent_volumes": [
+          794083,
+          1052139,
+          694906,
+          413843,
+          776820
+        ]
+      },
+      {
+        "ticker": "352820",
+        "name": "하이브",
+        "weight": 53.34,
+        "return_5d": 4.4,
+        "recent_volumes": [
+          178136,
+          239927,
+          226314,
+          174966,
+          669048
+        ]
+      },
+      {
+        "ticker": "035900",
+        "name": "JYP Ent.",
+        "weight": 41.57,
+        "return_5d": -0.9,
+        "recent_volumes": [
+          153124,
+          154150,
+          206888,
+          133781,
+          208472
+        ]
+      },
+      {
+        "ticker": "462870",
+        "name": "시프트업",
+        "weight": 35.13,
+        "return_5d": -6.3,
+        "recent_volumes": [
+          132803,
+          53677,
+          39352,
+          52068,
+          124975
+        ]
+      },
+      {
+        "ticker": "041510",
+        "name": "에스엠",
+        "weight": 34.25,
+        "return_5d": 3.6,
+        "recent_volumes": [
+          63672,
+          82345,
+          179052,
+          85316,
+          146749
+        ]
+      },
+      {
+        "ticker": "192080",
+        "name": "더블유게임즈",
+        "weight": 30.15,
+        "return_5d": 6.3,
+        "recent_volumes": [
+          187880,
+          122299,
+          370130,
+          189865,
+          180994
+        ]
+      },
+      {
+        "ticker": "112040",
+        "name": "위메이드",
+        "weight": 24.33,
+        "return_5d": 7.8,
+        "recent_volumes": [
+          185004,
+          99793,
+          302655,
+          560815,
+          418233
+        ]
+      }
+    ],
+    "자동차/모빌리티": [
+      {
+        "ticker": "005380",
+        "name": "현대차",
+        "weight": 58.9,
+        "return_5d": 3.5,
+        "recent_volumes": [
+          1228355,
+          930365,
+          2585417,
+          971755,
+          1150241
+        ]
+      },
+      {
+        "ticker": "012330",
+        "name": "현대모비스",
+        "weight": 46.98,
+        "return_5d": 0.6,
+        "recent_volumes": [
+          436579,
+          326092,
+          316712,
+          229251,
+          317288
+        ]
+      },
+      {
+        "ticker": "009150",
+        "name": "삼성전기",
+        "weight": 43.63,
+        "return_5d": 5.6,
+        "recent_volumes": [
+          548023,
+          528597,
+          672656,
+          538558,
+          905254
+        ]
+      },
+      {
+        "ticker": "000270",
+        "name": "기아",
+        "weight": 38.75,
+        "return_5d": -1.0,
+        "recent_volumes": [
+          1088654,
+          1418466,
+          1572801,
+          726697,
+          1185702
+        ]
+      },
+      {
+        "ticker": "307950",
+        "name": "현대오토에버",
+        "weight": 15.59,
+        "return_5d": 4.9,
+        "recent_volumes": [
+          103989,
+          96705,
+          421491,
+          111914,
+          119826
+        ]
+      },
+      {
+        "ticker": "011070",
+        "name": "LG이노텍",
+        "weight": 15.1,
+        "return_5d": 5.7,
+        "recent_volumes": [
+          486132,
+          420637,
+          410687,
+          246944,
+          285504
+        ]
+      },
+      {
+        "ticker": "066570",
+        "name": "LG전자",
+        "weight": 14.94,
+        "return_5d": 10.5,
+        "recent_volumes": [
+          815555,
+          628169,
+          3412120,
+          1519252,
+          4599708
+        ]
+      },
+      {
+        "ticker": "005930",
+        "name": "삼성전자",
+        "weight": 14.39,
+        "return_5d": 0.5,
+        "recent_volumes": [
+          19626666,
+          22870374,
+          18444490,
+          20363756,
+          20519819
+        ]
+      },
+      {
+        "ticker": "161390",
+        "name": "한국타이어앤테크놀로지",
+        "weight": 9.97,
+        "return_5d": -5.6,
+        "recent_volumes": [
+          324608,
+          286329,
+          239273,
+          285632,
+          522791
+        ]
+      },
+      {
+        "ticker": "204320",
+        "name": "HL만도",
+        "weight": 9.79,
+        "return_5d": 7.7,
+        "recent_volumes": [
+          168604,
+          891369,
+          603408,
+          361060,
+          563165
+        ]
+      }
+    ],
+    "친환경/신재생": [
+      {
+        "ticker": "000660",
+        "name": "SK하이닉스",
+        "weight": 206.24,
+        "return_5d": 5.2,
+        "recent_volumes": [
+          3127857,
+          4563073,
+          3002713,
+          3001208,
+          3227541
+        ]
+      },
+      {
+        "ticker": "005930",
+        "name": "삼성전자",
+        "weight": 195.23,
+        "return_5d": 0.5,
+        "recent_volumes": [
+          19626666,
+          22870374,
+          18444490,
+          20363756,
+          20519819
+        ]
+      },
+      {
+        "ticker": "010120",
+        "name": "LS ELECTRIC",
+        "weight": 83.07,
+        "return_5d": 22.7,
+        "recent_volumes": [
+          1695903,
+          1591106,
+          3005597,
+          1615342,
+          1162813
+        ]
+      },
+      {
+        "ticker": "006400",
+        "name": "삼성SDI",
+        "weight": 71.61,
+        "return_5d": 8.4,
+        "recent_volumes": [
+          786062,
+          701082,
+          1454459,
+          1268312,
+          851227
+        ]
+      },
+      {
+        "ticker": "010060",
+        "name": "OCI홀딩스",
+        "weight": 56.09,
+        "return_5d": -4.2,
+        "recent_volumes": [
+          1327328,
+          405894,
+          415700,
+          262974,
+          382382
+        ]
+      },
+      {
+        "ticker": "009830",
+        "name": "한화솔루션",
+        "weight": 51.54,
+        "return_5d": 2.7,
+        "recent_volumes": [
+          4857070,
+          3998275,
+          15020313,
+          6543268,
+          11898592
+        ]
+      },
+      {
+        "ticker": "034020",
+        "name": "두산에너빌리티",
+        "weight": 47.35,
+        "return_5d": 0.0,
+        "recent_volumes": [
+          5682618,
+          3984476,
+          3191190,
+          3292329,
+          3380571
+        ]
+      },
+      {
+        "ticker": "009150",
+        "name": "삼성전기",
+        "weight": 46.39,
+        "return_5d": 5.6,
+        "recent_volumes": [
+          548023,
+          528597,
+          672656,
+          538558,
+          905254
+        ]
+      },
+      {
+        "ticker": "005380",
+        "name": "현대차",
+        "weight": 42.38,
+        "return_5d": 3.5,
+        "recent_volumes": [
+          1228355,
+          930365,
+          2585417,
+          971755,
+          1150241
+        ]
+      },
+      {
+        "ticker": "402340",
+        "name": "SK스퀘어",
+        "weight": 36.56,
+        "return_5d": 16.0,
+        "recent_volumes": [
+          376451,
+          536940,
+          598053,
+          858586,
+          569005
+        ]
+      }
+    ],
+    "원자력": [
+      {
+        "ticker": "034020",
+        "name": "두산에너빌리티",
+        "weight": 110.0,
+        "return_5d": 0.0,
+        "recent_volumes": [
+          5682618,
+          3984476,
+          3191190,
+          3292329,
+          3380571
+        ]
+      },
+      {
+        "ticker": "000720",
+        "name": "현대건설",
+        "weight": 70.73,
+        "return_5d": -6.5,
+        "recent_volumes": [
+          837252,
+          727618,
+          2075193,
+          831334,
+          1235854
+        ]
+      },
+      {
+        "ticker": "047040",
+        "name": "대우건설",
+        "weight": 67.99,
+        "return_5d": 6.7,
+        "recent_volumes": [
+          16171273,
+          22612731,
+          81046981,
+          14294409,
+          11628803
+        ]
+      },
+      {
+        "ticker": "267260",
+        "name": "HD현대일렉트릭",
+        "weight": 37.81,
+        "return_5d": 0.3,
+        "recent_volumes": [
+          280050,
+          254572,
+          344085,
+          171099,
+          152813
+        ]
+      },
+      {
+        "ticker": "083650",
+        "name": "비에이치아이",
+        "weight": 34.95,
+        "return_5d": -0.8,
+        "recent_volumes": [
+          856261,
+          304646,
+          264024,
+          395873,
+          29
+        ]
+      },
+      {
+        "ticker": "015760",
+        "name": "한국전력",
+        "weight": 30.64,
+        "return_5d": -5.7,
+        "recent_volumes": [
+          1663225,
+          1797186,
+          2289891,
+          2055436,
+          2510970
+        ]
+      },
+      {
+        "ticker": "052690",
+        "name": "한전기술",
+        "weight": 28.32,
+        "return_5d": -3.2,
+        "recent_volumes": [
+          313201,
+          197295,
+          166443,
+          161805,
+          53
+        ]
+      },
+      {
+        "ticker": "010120",
+        "name": "LS ELECTRIC",
+        "weight": 26.75,
+        "return_5d": 22.7,
+        "recent_volumes": [
+          1695903,
+          1591106,
+          3005597,
+          1615342,
+          1162813
+        ]
+      },
+      {
+        "ticker": "032820",
+        "name": "우리기술",
+        "weight": 22.49,
+        "return_5d": -5.7,
+        "recent_volumes": [
+          8247778,
+          7784669,
+          7276545,
+          5273579,
+          26409
+        ]
+      },
+      {
+        "ticker": "298040",
+        "name": "효성중공업",
+        "weight": 13.97,
+        "return_5d": 10.1,
+        "recent_volumes": [
+          95360,
+          78226,
+          79491,
+          48472,
+          54058
+        ]
+      }
+    ],
+    "방산/우주항공": [
+      {
+        "ticker": "012450",
+        "name": "한화에어로스페이스",
+        "weight": 88.08,
+        "return_5d": -3.1,
+        "recent_volumes": [
+          272846,
+          114894,
+          259276,
+          110434,
+          236243
+        ]
+      },
+      {
+        "ticker": "079550",
+        "name": "LIG디펜스앤에어로스페이스",
+        "weight": 76.81,
+        "return_5d": -4.9,
+        "recent_volumes": [
+          325655,
+          279104,
+          227157,
+          312593,
+          244235
+        ]
+      },
+      {
+        "ticker": "064350",
+        "name": "현대로템",
+        "weight": 70.81,
+        "return_5d": 15.2,
+        "recent_volumes": [
+          1957754,
+          944178,
+          786885,
+          1607652,
+          1479575
+        ]
+      },
+      {
+        "ticker": "047810",
+        "name": "한국항공우주",
+        "weight": 69.92,
+        "return_5d": -1.4,
+        "recent_volumes": [
+          2626235,
+          715645,
+          609123,
+          725101,
+          947951
+        ]
+      },
+      {
+        "ticker": "272210",
+        "name": "한화시스템",
+        "weight": 48.16,
+        "return_5d": -10.0,
+        "recent_volumes": [
+          680760,
+          998518,
+          1257133,
+          876887,
+          765071
+        ]
+      },
+      {
+        "ticker": "042660",
+        "name": "한화오션",
+        "weight": 41.34,
+        "return_5d": -2.3,
+        "recent_volumes": [
+          1520273,
+          2554842,
+          1494935,
+          1487810,
+          1166948
+        ]
+      },
+      {
+        "ticker": "077970",
+        "name": "STX엔진",
+        "weight": 20.6,
+        "return_5d": 7.5,
+        "recent_volumes": [
+          1449488,
+          1799478,
+          838798,
+          1972492,
+          808874
+        ]
+      },
+      {
+        "ticker": "010820",
+        "name": "퍼스텍",
+        "weight": 19.62,
+        "return_5d": 0,
+        "recent_volumes": []
+      },
+      {
+        "ticker": "099320",
+        "name": "쎄트렉아이",
+        "weight": 18.66,
+        "return_5d": -3.8,
+        "recent_volumes": [
+          73305,
+          198102,
+          217172,
+          158548,
+          223579
+        ]
+      },
+      {
+        "ticker": "189300",
+        "name": "인텔리안테크",
+        "weight": 16.7,
+        "return_5d": 1.8,
+        "recent_volumes": [
+          142722,
+          205290,
+          115515,
+          67246,
+          146429
+        ]
+      }
+    ],
+    "철강/조선": [
+      {
+        "ticker": "329180",
+        "name": "HD현대중공업",
+        "weight": 90.49,
+        "return_5d": 2.1,
+        "recent_volumes": [
+          597616,
+          529913,
+          422174,
+          648727,
+          27
+        ]
+      },
+      {
+        "ticker": "042660",
+        "name": "한화오션",
+        "weight": 78.96,
+        "return_5d": -2.3,
+        "recent_volumes": [
+          1520273,
+          2554842,
+          1494935,
+          1487810,
+          1166948
+        ]
+      },
+      {
+        "ticker": "010140",
+        "name": "삼성중공업",
+        "weight": 77.26,
+        "return_5d": -6.0,
+        "recent_volumes": [
+          11182486,
+          8131764,
+          5172968,
+          4029344,
+          4422860
+        ]
+      },
+      {
+        "ticker": "009540",
+        "name": "HD한국조선해양",
+        "weight": 68.86,
+        "return_5d": -3.0,
+        "recent_volumes": [
+          267625,
+          219985,
+          195482,
+          179965,
+          161199
+        ]
+      },
+      {
+        "ticker": "082740",
+        "name": "한화엔진",
+        "weight": 48.69,
+        "return_5d": 15.8,
+        "recent_volumes": [
+          3055598,
+          3604536,
+          1966441,
+          2557718,
+          1087059
+        ]
+      },
+      {
+        "ticker": "005490",
+        "name": "POSCO홀딩스",
+        "weight": 44.71,
+        "return_5d": 11.3,
+        "recent_volumes": [
+          292559,
+          309760,
+          1962453,
+          599954,
+          568870
+        ]
+      },
+      {
+        "ticker": "010130",
+        "name": "고려아연",
+        "weight": 41.3,
+        "return_5d": -3.8,
+        "recent_volumes": [
+          24407,
+          21682,
+          35736,
+          43157,
+          123969
+        ]
+      },
+      {
+        "ticker": "004020",
+        "name": "현대제철",
+        "weight": 38.61,
+        "return_5d": 0.1,
+        "recent_volumes": [
+          2689781,
+          1592988,
+          2193438,
+          2503561,
+          1595104
+        ]
+      },
+      {
+        "ticker": "443060",
+        "name": "HD현대마린솔루션",
+        "weight": 32.71,
+        "return_5d": 4.7,
+        "recent_volumes": [
+          627159,
+          623593,
+          314818,
+          563921,
+          241143
+        ]
+      },
+      {
+        "ticker": "071970",
+        "name": "HD현대마린엔진",
+        "weight": 25.43,
+        "return_5d": -7.7,
+        "recent_volumes": [
+          1839025,
+          855091,
+          589366,
+          540937,
+          335725
+        ]
+      }
+    ],
+    "에너지/석유": [
+      {
+        "ticker": "051910",
+        "name": "LG화학",
+        "weight": 32.54,
+        "return_5d": 1.4,
+        "recent_volumes": [
+          309047,
+          305442,
+          339216,
+          414937,
+          283039
+        ]
+      },
+      {
+        "ticker": "267250",
+        "name": "HD현대",
+        "weight": 29.24,
+        "return_5d": 7.8,
+        "recent_volumes": [
+          138822,
+          133041,
+          160450,
+          344524,
+          302406
+        ]
+      },
+      {
+        "ticker": "096770",
+        "name": "SK이노베이션",
+        "weight": 22.72,
+        "return_5d": 10.0,
+        "recent_volumes": [
+          445814,
+          651104,
+          736544,
+          3117601,
+          1134227
+        ]
+      },
+      {
+        "ticker": "034730",
+        "name": "SK",
+        "weight": 15.03,
+        "return_5d": 6.6,
+        "recent_volumes": [
+          224469,
+          173528,
+          150282,
+          189182,
+          230762
+        ]
+      },
+      {
+        "ticker": "010950",
+        "name": "S-Oil",
+        "weight": 11.72,
+        "return_5d": 12.6,
+        "recent_volumes": [
+          362111,
+          450656,
+          426553,
+          1781339,
+          753766
+        ]
+      },
+      {
+        "ticker": "009830",
+        "name": "한화솔루션",
+        "weight": 11.47,
+        "return_5d": 2.7,
+        "recent_volumes": [
+          4857070,
+          3998275,
+          15020313,
+          6543268,
+          11898592
+        ]
+      },
+      {
+        "ticker": "010060",
+        "name": "OCI홀딩스",
+        "weight": 10.17,
+        "return_5d": -4.2,
+        "recent_volumes": [
+          1327328,
+          405894,
+          415700,
+          262974,
+          382382
+        ]
+      },
+      {
+        "ticker": "011790",
+        "name": "SKC",
+        "weight": 6.43,
+        "return_5d": 1.6,
+        "recent_volumes": [
+          398482,
+          1966444,
+          549970,
+          364515,
+          338644
+        ]
+      },
+      {
+        "ticker": "014680",
+        "name": "한솔케미칼",
+        "weight": 5.29,
+        "return_5d": -2.7,
+        "recent_volumes": [
+          70188,
+          93034,
+          45748,
+          38360,
+          47539
+        ]
+      },
+      {
+        "ticker": "457190",
+        "name": "이수스페셜티케미컬",
+        "weight": 5.12,
+        "return_5d": -0.1,
+        "recent_volumes": [
+          455778,
+          303476,
+          476087,
+          343762,
+          325714
+        ]
+      }
+    ],
+    "화학/소재": [],
+    "통신/5G": [
+      {
+        "ticker": "009150",
+        "name": "삼성전기",
+        "weight": 13.2,
+        "return_5d": 5.6,
+        "recent_volumes": [
+          548023,
+          528597,
+          672656,
+          538558,
+          905254
+        ]
+      },
+      {
+        "ticker": "042700",
+        "name": "한미반도체",
+        "weight": 9.73,
+        "return_5d": 24.5,
+        "recent_volumes": [
+          570284,
+          5287941,
+          1775578,
+          886254,
+          2575384
+        ]
+      },
+      {
+        "ticker": "000660",
+        "name": "SK하이닉스",
+        "weight": 9.68,
+        "return_5d": 5.2,
+        "recent_volumes": [
+          3127857,
+          4563073,
+          3002713,
+          3001208,
+          3227541
+        ]
+      },
+      {
+        "ticker": "006400",
+        "name": "삼성SDI",
+        "weight": 9.58,
+        "return_5d": 8.4,
+        "recent_volumes": [
+          786062,
+          701082,
+          1454459,
+          1268312,
+          851227
+        ]
+      },
+      {
+        "ticker": "017670",
+        "name": "SK텔레콤",
+        "weight": 9.27,
+        "return_5d": -4.9,
+        "recent_volumes": [
+          805874,
+          832809,
+          618645,
+          546336,
+          1143836
+        ]
+      },
+      {
+        "ticker": "005930",
+        "name": "삼성전자",
+        "weight": 8.79,
+        "return_5d": 0.5,
+        "recent_volumes": [
+          19626666,
+          22870374,
+          18444490,
+          20363756,
+          20519819
+        ]
+      },
+      {
+        "ticker": "011070",
+        "name": "LG이노텍",
+        "weight": 7.2,
+        "return_5d": 5.7,
+        "recent_volumes": [
+          486132,
+          420637,
+          410687,
+          246944,
+          285504
+        ]
+      },
+      {
+        "ticker": "030200",
+        "name": "KT",
+        "weight": 6.03,
+        "return_5d": -1.3,
+        "recent_volumes": [
+          375729,
+          357319,
+          360227,
+          216608,
+          268244
+        ]
+      },
+      {
+        "ticker": "007660",
+        "name": "이수페타시스",
+        "weight": 4.8,
+        "return_5d": -2.0,
+        "recent_volumes": [
+          1294903,
+          1326945,
+          991522,
+          1011570,
+          1464079
+        ]
+      },
+      {
+        "ticker": "032640",
+        "name": "LG유플러스",
+        "weight": 3.73,
+        "return_5d": -4.6,
+        "recent_volumes": [
+          552044,
+          675256,
+          686720,
+          816565,
+          984607
+        ]
+      }
+    ],
+    "금융": [
+      {
+        "ticker": "105560",
+        "name": "KB금융",
+        "weight": 165.96,
+        "return_5d": 2.0,
+        "recent_volumes": [
+          1072760,
+          884797,
+          1175120,
+          1014447,
+          1396269
+        ]
+      },
+      {
+        "ticker": "086790",
+        "name": "하나금융지주",
+        "weight": 150.08,
+        "return_5d": 3.7,
+        "recent_volumes": [
+          796290,
+          1080908,
+          1036542,
+          1046646,
+          949529
+        ]
+      },
+      {
+        "ticker": "055550",
+        "name": "신한지주",
+        "weight": 146.87,
+        "return_5d": -0.1,
+        "recent_volumes": [
+          1046117,
+          1224148,
+          1078329,
+          1568495,
+          1518212
+        ]
+      },
+      {
+        "ticker": "006800",
+        "name": "미래에셋증권",
+        "weight": 124.42,
+        "return_5d": -3.1,
+        "recent_volumes": [
+          1587432,
+          3580422,
+          2888899,
+          1504853,
+          2433634
+        ]
+      },
+      {
+        "ticker": "316140",
+        "name": "우리금융지주",
+        "weight": 120.25,
+        "return_5d": -4.9,
+        "recent_volumes": [
+          1378755,
+          5571266,
+          2140186,
+          1809465,
+          2335356
+        ]
+      },
+      {
+        "ticker": "071050",
+        "name": "한국금융지주",
+        "weight": 99.02,
+        "return_5d": -7.3,
+        "recent_volumes": [
+          203236,
+          279881,
+          226015,
+          272514,
+          310069
+        ]
+      },
+      {
+        "ticker": "005940",
+        "name": "NH투자증권",
+        "weight": 72.26,
+        "return_5d": -4.1,
+        "recent_volumes": [
+          823905,
+          772342,
+          707755,
+          613100,
+          621876
+        ]
+      },
+      {
+        "ticker": "039490",
+        "name": "키움증권",
+        "weight": 67.9,
+        "return_5d": -11.5,
+        "recent_volumes": [
+          96220,
+          129872,
+          135760,
+          166101,
+          339619
+        ]
+      },
+      {
+        "ticker": "016360",
+        "name": "삼성증권",
+        "weight": 64.92,
+        "return_5d": -3.7,
+        "recent_volumes": [
+          229581,
+          360261,
+          283913,
+          393129,
+          330869
+        ]
+      },
+      {
+        "ticker": "032830",
+        "name": "삼성생명",
+        "weight": 48.26,
+        "return_5d": 2.0,
+        "recent_volumes": [
+          275279,
+          328458,
+          293762,
+          191784,
+          247037
+        ]
+      }
+    ],
+    "리츠/부동산": [],
+    "건설/인프라": [
+      {
+        "ticker": "000720",
+        "name": "현대건설",
+        "weight": 43.93,
+        "return_5d": -6.5,
+        "recent_volumes": [
+          837252,
+          727618,
+          2075193,
+          831334,
+          1235854
+        ]
+      },
+      {
+        "ticker": "028050",
+        "name": "삼성E&A",
+        "weight": 35.88,
+        "return_5d": 1.1,
+        "recent_volumes": [
+          3611224,
+          3433235,
+          5811327,
+          3042430,
+          1765560
+        ]
+      },
+      {
+        "ticker": "047040",
+        "name": "대우건설",
+        "weight": 34.72,
+        "return_5d": 6.7,
+        "recent_volumes": [
+          16171273,
+          22612731,
+          81046981,
+          14294409,
+          11628803
+        ]
+      },
+      {
+        "ticker": "009150",
+        "name": "삼성전기",
+        "weight": 28.72,
+        "return_5d": 5.6,
+        "recent_volumes": [
+          548023,
+          528597,
+          672656,
+          538558,
+          905254
+        ]
+      },
+      {
+        "ticker": "000660",
+        "name": "SK하이닉스",
+        "weight": 21.16,
+        "return_5d": 5.2,
+        "recent_volumes": [
+          3127857,
+          4563073,
+          3002713,
+          3001208,
+          3227541
+        ]
+      },
+      {
+        "ticker": "005930",
+        "name": "삼성전자",
+        "weight": 19.11,
+        "return_5d": 0.5,
+        "recent_volumes": [
+          19626666,
+          22870374,
+          18444490,
+          20363756,
+          20519819
+        ]
+      },
+      {
+        "ticker": "052690",
+        "name": "한전기술",
+        "weight": 17.8,
+        "return_5d": -3.2,
+        "recent_volumes": [
+          313201,
+          197295,
+          166443,
+          161805,
+          53
+        ]
+      },
+      {
+        "ticker": "375500",
+        "name": "DL이앤씨",
+        "weight": 14.65,
+        "return_5d": 0.0,
+        "recent_volumes": [
+          1364411,
+          803922,
+          2189030,
+          767016,
+          1136537
+        ]
+      },
+      {
+        "ticker": "028260",
+        "name": "삼성물산",
+        "weight": 12.32,
+        "return_5d": -4.2,
+        "recent_volumes": [
+          322709,
+          231196,
+          361853,
+          330509,
+          451057
+        ]
+      },
+      {
+        "ticker": "006360",
+        "name": "GS건설",
+        "weight": 12.28,
+        "return_5d": -6.6,
+        "recent_volumes": [
+          1919013,
+          1461753,
+          6321430,
+          1737595,
+          4058929
+        ]
+      }
+    ],
+    "음식료/식품": [],
+    "뷰티/화장품": [
+      {
+        "ticker": "278470",
+        "name": "에이피알",
+        "weight": 61.13,
+        "return_5d": -5.7,
+        "recent_volumes": [
+          212848,
+          142056,
+          186917,
+          200648,
+          365671
+        ]
+      },
+      {
+        "ticker": "192820",
+        "name": "코스맥스",
+        "weight": 36.68,
+        "return_5d": -7.3,
+        "recent_volumes": [
+          115728,
+          59960,
+          49659,
+          55993,
+          86004
+        ]
+      },
+      {
+        "ticker": "257720",
+        "name": "실리콘투",
+        "weight": 33.86,
+        "return_5d": -9.8,
+        "recent_volumes": [
+          854247,
+          1529535,
+          543831,
+          416831,
+          499934
+        ]
+      },
+      {
+        "ticker": "090430",
+        "name": "아모레퍼시픽",
+        "weight": 30.82,
+        "return_5d": -6.0,
+        "recent_volumes": [
+          669397,
+          516517,
+          497376,
+          737238,
+          435705
+        ]
+      },
+      {
+        "ticker": "483650",
+        "name": "달바글로벌",
+        "weight": 26.89,
+        "return_5d": -6.2,
+        "recent_volumes": [
+          271894,
+          150251,
+          96392,
+          116856,
+          171189
+        ]
+      },
+      {
+        "ticker": "051900",
+        "name": "LG생활건강",
+        "weight": 24.27,
+        "return_5d": 0.4,
+        "recent_volumes": [
+          54684,
+          41026,
+          42085,
+          55473,
+          81025
+        ]
+      },
+      {
+        "ticker": "161890",
+        "name": "한국콜마",
+        "weight": 22.97,
+        "return_5d": -3.2,
+        "recent_volumes": [
+          281632,
+          183745,
+          230242,
+          286091,
+          325146
+        ]
+      },
+      {
+        "ticker": "214450",
+        "name": "파마리서치",
+        "weight": 17.4,
+        "return_5d": -2.9,
+        "recent_volumes": [
+          146721,
+          99965,
+          86131,
+          64458,
+          85872
+        ]
+      },
+      {
+        "ticker": "241710",
+        "name": "코스메카코리아",
+        "weight": 14.04,
+        "return_5d": -5.8,
+        "recent_volumes": [
+          79029,
+          64815,
+          92867,
+          73005,
+          94921
+        ]
+      },
+      {
+        "ticker": "251970",
+        "name": "펌텍코리아",
+        "weight": 5.09,
+        "return_5d": 0,
+        "recent_volumes": []
+      }
+    ],
+    "운송/물류": [
+      {
+        "ticker": "086280",
+        "name": "현대글로비스",
+        "weight": 27.9,
+        "return_5d": 2.0,
+        "recent_volumes": [
+          244317,
+          388989,
+          356308,
+          300023,
+          238287
+        ]
+      },
+      {
+        "ticker": "003490",
+        "name": "대한항공",
+        "weight": 18.45,
+        "return_5d": -1.2,
+        "recent_volumes": [
+          947132,
+          993666,
+          1081582,
+          1506080,
+          1719119
+        ]
+      },
+      {
+        "ticker": "011200",
+        "name": "HMM",
+        "weight": 14.46,
+        "return_5d": -2.8,
+        "recent_volumes": [
+          1373810,
+          853387,
+          903590,
+          670706,
+          1013500
+        ]
+      },
+      {
+        "ticker": "028670",
+        "name": "팬오션",
+        "weight": 10.6,
+        "return_5d": -1.6,
+        "recent_volumes": [
+          2433962,
+          2438983,
+          2168451,
+          1914311,
+          2856027
+        ]
+      },
+      {
+        "ticker": "000120",
+        "name": "CJ대한통운",
+        "weight": 9.43,
+        "return_5d": -1.3,
+        "recent_volumes": [
+          66837,
+          68430,
+          79525,
+          59655,
+          50132
+        ]
+      },
+      {
+        "ticker": "020560",
+        "name": "아시아나항공",
+        "weight": 4.57,
+        "return_5d": -1.3,
+        "recent_volumes": [
+          40597,
+          105595,
+          49933,
+          54178,
+          49206
+        ]
+      },
+      {
+        "ticker": "089860",
+        "name": "롯데렌탈",
+        "weight": 3.74,
+        "return_5d": -1.5,
+        "recent_volumes": [
+          49262,
+          27602,
+          33806,
+          37981,
+          55200
+        ]
+      },
+      {
+        "ticker": "005880",
+        "name": "대한해운",
+        "weight": 3.71,
+        "return_5d": -6.1,
+        "recent_volumes": [
+          36225155,
+          10846099,
+          12008437,
+          6598887,
+          44947
+        ]
+      },
+      {
+        "ticker": "002320",
+        "name": "한진",
+        "weight": 1.54,
+        "return_5d": 0,
+        "recent_volumes": []
+      },
+      {
+        "ticker": "003280",
+        "name": "흥아해운",
+        "weight": 1.54,
+        "return_5d": -8.5,
+        "recent_volumes": [
+          19747078,
+          10340539,
+          11927064,
+          10211611,
+          29635438
+        ]
+      }
+    ],
+    "농업": [
+      {
+        "ticker": "033780",
+        "name": "KT&G",
+        "weight": 19.98,
+        "return_5d": 1.2,
+        "recent_volumes": [
+          297692,
+          186304,
+          200115,
+          151392,
+          201945
+        ]
+      },
+      {
+        "ticker": "051910",
+        "name": "LG화학",
+        "weight": 17.24,
+        "return_5d": 1.4,
+        "recent_volumes": [
+          309047,
+          305442,
+          339216,
+          414937,
+          283039
+        ]
+      },
+      {
+        "ticker": "006260",
+        "name": "LS",
+        "weight": 14.62,
+        "return_5d": 13.7,
+        "recent_volumes": [
+          223625,
+          229840,
+          337848,
+          216468,
+          354410
+        ]
+      },
+      {
+        "ticker": "097950",
+        "name": "CJ제일제당",
+        "weight": 11.38,
+        "return_5d": 4.4,
+        "recent_volumes": [
+          44324,
+          46228,
+          51049,
+          126722,
+          98535
+        ]
+      },
+      {
+        "ticker": "136480",
+        "name": "하림",
+        "weight": 10.14,
+        "return_5d": 0,
+        "recent_volumes": []
+      },
+      {
+        "ticker": "004000",
+        "name": "롯데정밀화학",
+        "weight": 8.1,
+        "return_5d": 12.8,
+        "recent_volumes": [
+          391553,
+          144107,
+          196174,
+          406564,
+          155838
+        ]
+      },
+      {
+        "ticker": "007310",
+        "name": "오뚜기",
+        "weight": 6.83,
+        "return_5d": -0.8,
+        "recent_volumes": [
+          3200,
+          4028,
+          4702,
+          4002,
+          5089
+        ]
+      },
+      {
+        "ticker": "014830",
+        "name": "유니드",
+        "weight": 2.95,
+        "return_5d": 0,
+        "recent_volumes": []
+      },
+      {
+        "ticker": "005690",
+        "name": "파미셀",
+        "weight": 1.96,
+        "return_5d": -0.9,
+        "recent_volumes": [
+          756747,
+          1019398,
+          2470575,
+          1735534,
+          2252057
+        ]
+      },
+      {
+        "ticker": "003960",
+        "name": "사조대림",
+        "weight": 1.67,
+        "return_5d": 0,
+        "recent_volumes": []
+      }
+    ]
+  },
+  "hidden_opportunities": [
+    {
+      "ticker": "005930",
+      "name": "삼성전자",
+      "weight": 314.13,
+      "return_5d": 0.5,
+      "recent_volumes": [
+        19626666,
+        22870374,
+        18444490,
+        20363756,
+        20519819
+      ],
+      "industry": "반도체",
+      "is_score": 67.0,
+      "signal": "Potential Hidden Opportunity"
+    },
+    {
+      "ticker": "005930",
+      "name": "삼성전자",
+      "weight": 195.23,
+      "return_5d": 0.5,
+      "recent_volumes": [
+        19626666,
+        22870374,
+        18444490,
+        20363756,
+        20519819
+      ],
+      "industry": "친환경/신재생",
+      "is_score": 70.6,
+      "signal": "Potential Hidden Opportunity"
+    },
+    {
+      "ticker": "247540",
+      "name": "에코프로비엠",
+      "weight": 117.41,
+      "return_5d": -1.0,
+      "recent_volumes": [
+        388962,
+        345978,
+        500672,
+        589037,
+        496622
+      ],
+      "industry": "2차전지",
+      "is_score": 65.1,
+      "signal": "Potential Hidden Opportunity"
+    },
+    {
+      "ticker": "051910",
+      "name": "LG화학",
+      "weight": 98.16,
+      "return_5d": 1.4,
+      "recent_volumes": [
+        309047,
+        305442,
+        339216,
+        414937,
+        283039
+      ],
+      "industry": "2차전지",
+      "is_score": 65.1,
+      "signal": "Potential Hidden Opportunity"
+    },
+    {
+      "ticker": "003670",
+      "name": "포스코퓨처엠",
+      "weight": 96.04,
+      "return_5d": 0.0,
+      "recent_volumes": [
+        314656,
+        285322,
+        632095,
+        344400,
+        425977
+      ],
+      "industry": "2차전지",
+      "is_score": 65.1,
+      "signal": "Potential Hidden Opportunity"
+    }
+  ],
+  "disclaimer": "이 대시보드는 데이터 기반 시장 인사이트를 제공하며, 금융 투자 자문에 해당하지 않습니다. 사용자는 최종 투자 판단을 본인의 책임과 판단에 따라 내려야 합니다."
+}

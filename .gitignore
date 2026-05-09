@@ -1,0 +1,8 @@
+.api_keys.json
+__pycache__/
+*.pyc
+.vercel/
+node_modules/
+logs/
+data/etf_pdf.csv
+data/etf_pdf_valid392.csv

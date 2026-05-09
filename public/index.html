@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SFNI Dashboard — Smart Flow & News Insight</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="header-left">
+      <h1 class="header-title">Smart Flow & News Insight</h1>
+      <p class="header-subtitle">ETF 수급 + 뉴스 감성 기반 산업 인사이트 대시보드</p>
+    </div>
+    <div class="header-right">
+      <div class="market-info" id="market-info"></div>
+      <button class="update-btn" id="update-btn" onclick="openUpdateModal()">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 12a9 9 0 1 1-6.22-8.56"/>
+          <polyline points="21 3 21 9 15 9"/>
+        </svg>
+        데이터 업데이트
+      </button>
+      <div class="live-indicator">
+        <span class="live-dot"></span>
+        <span class="live-text">Live</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Update Modal ── -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeUpdateModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3>데이터 업데이트</h3>
+        <button class="modal-close" onclick="closeUpdateModal()">&times;</button>
+      </div>
+
+      <!-- 설정 탭 -->
+      <div class="modal-body" id="modal-settings">
+        <p class="modal-desc">별도 API 키 없이 바로 최신 데이터를 수집합니다. 자동 스케줄: 08:00 뉴스 / 16:30 전체 업데이트</p>
+
+        <div class="modal-section">
+          <div class="modal-section-title">데이터 소스</div>
+          <p style="color:var(--text-dim);font-size:13px;margin:0 0 4px 0;">ETF/주식: pykrx 공개 데이터 (API 키 불필요)</p>
+          <p style="color:var(--text-dim);font-size:13px;margin:0;">뉴스: 네이버 API (내장 키 적용)</p>
+        </div>
+
+        <div class="modal-section">
+          <div class="modal-section-title">수집 옵션</div>
+          <div class="option-group">
+            <label class="option-label">
+              <select id="opt-days">
+                <option value="1">최신 1영업일</option>
+                <option value="3">최근 3영업일</option>
+                <option value="5">최근 5영업일</option>
+                <option value="10">최근 10영업일</option>
+              </select>
+            </label>
+            <label class="option-label">
+              <input type="checkbox" id="opt-skip-pdf">
+              PDF 수집 건너뛰기 (빠른 업데이트)
+            </label>
+          </div>
+        </div>
+
+        <button class="modal-submit" id="btn-start-update" onclick="startUpdate()">업데이트 시작</button>
+      </div>
+
+      <!-- 진행 상태 -->
+      <div class="modal-body" id="modal-progress" style="display:none;">
+        <div class="progress-status">
+          <div class="progress-spinner"></div>
+          <span id="progress-message">시작 중...</span>
+        </div>
+        <div class="progress-log" id="progress-log"></div>
+      </div>
+
+      <!-- 완료 -->
+      <div class="modal-body" id="modal-done" style="display:none;">
+        <div class="done-icon" id="done-icon">&#10003;</div>
+        <p class="done-message" id="done-message">업데이트가 완료되었습니다!</p>
+        <button class="modal-submit" onclick="finishUpdate()">대시보드 새로고침</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Top Panels (A + B) ── -->
+  <div class="panels-top">
+    <!-- Panel A: 산업 수익률 히트맵 -->
+    <section class="panel panel-a">
+      <div class="panel-header">
+        <h2 class="panel-title">산업 수익률 히트맵</h2>
+        <span class="panel-tag">5일</span>
+      </div>
+      <div class="heatmap-grid" id="heatmap-grid"></div>
+    </section>
+
+    <!-- Panel B: IS Score 산업 랭킹 -->
+    <section class="panel panel-b">
+      <div class="panel-header">
+        <h2 class="panel-title">IS Score 산업 랭킹 TOP 5</h2>
+      </div>
+      <div class="ranking-list" id="ranking-list"></div>
+      <p class="score-formula">IS Score = ETF 수급 점수(50%) + 뉴스 관심도(30%) + 감성 점수(20%)</p>
+    </section>
+  </div>
+
+  <!-- ── Industry Tabs ── -->
+  <div class="industry-tabs" id="industry-tabs"></div>
+
+  <!-- ── Bottom Panels (C + D) ── -->
+  <div class="panels-bottom">
+    <!-- Panel C: 뉴스 감성 분석 -->
+    <section class="panel panel-c">
+      <div class="panel-header">
+        <h2 class="panel-title">뉴스 감성 분석</h2>
+        <span class="panel-industry-label" id="panel-c-label"></span>
+      </div>
+      <div class="sentiment-gauge-container">
+        <svg id="sentiment-gauge" viewBox="0 0 300 180" class="sentiment-gauge"></svg>
+      </div>
+      <div class="sentiment-cards" id="sentiment-cards"></div>
+      <div class="headlines-list" id="headlines-list"></div>
+    </section>
+
+    <!-- Panel D: 핵심 구성 종목 탐색 -->
+    <section class="panel panel-d">
+      <div class="panel-header">
+        <h2 class="panel-title">핵심 구성 종목 탐색</h2>
+        <span class="panel-industry-label" id="panel-d-label"></span>
+      </div>
+      <div class="stock-search">
+        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="stock-search-input" placeholder="종목명 또는 종목코드 검색...">
+      </div>
+      <div class="stock-list" id="stock-list"></div>
+    </section>
+  </div>
+
+  <!-- ── Hidden Opportunities ── -->
+  <section class="panel panel-full" id="hidden-section" style="display:none;">
+    <div class="panel-header">
+      <h2 class="panel-title">Potential Hidden Opportunities</h2>
+      <span class="panel-tag">AI 탐지</span>
+    </div>
+    <div class="hidden-list" id="hidden-list"></div>
+    <p class="disclaimer-small">이 탐지 결과는 데이터 신호 기반의 참고 정보입니다. 투자 결정 전 추가적인 기업 분석과 본인의 판단이 필요합니다.</p>
+  </section>
+
+  <!-- ── Disclaimer ── -->
+  <footer class="disclaimer" id="disclaimer"></footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
