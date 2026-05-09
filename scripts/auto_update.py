@@ -64,8 +64,8 @@ def run_closing():
     # 2. ETF 가격
     collect_data.collect_etf_prices(dates)
 
-    # 3. ETF PDF (시간이 오래 걸리므로 skip — 기존 데이터 활용)
-    print("\n[3/6] ETF PDF: 자동 업데이트에서는 건너뜀 (수동 실행 권장)")
+    # 3. ETF PDF (구성종목 — 1일치 약 5~10분 소요)
+    collect_data.collect_etf_pdf(dates, etf_master)
 
     # 4. 시장 지수
     collect_data.collect_index(dates)

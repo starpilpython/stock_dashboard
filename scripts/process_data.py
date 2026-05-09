@@ -68,11 +68,20 @@ def load_data():
         parse_dates=["date"],
     )
 
-    etf_pdf = pd.read_csv(
-        os.path.join(DATA_DIR, "etf_pdf_valid392.csv"),
-        encoding="utf-8-sig",
-        dtype={"etf_ticker": str, "stock_ticker": str},
-    )
+    # ETF PDF (구성종목) — 파일이 없으면 빈 DataFrame
+    etf_pdf_path = os.path.join(DATA_DIR, "etf_pdf_valid392.csv")
+    if os.path.exists(etf_pdf_path):
+        etf_pdf = pd.read_csv(
+            etf_pdf_path,
+            encoding="utf-8-sig",
+            dtype={"etf_ticker": str, "stock_ticker": str},
+        )
+    else:
+        print("  [!] etf_pdf_valid392.csv 없음 — 구성종목 분석 건너뜀")
+        etf_pdf = pd.DataFrame(columns=[
+            "etf_ticker", "base_date", "stock_ticker", "stock_name",
+            "contracts", "amount", "market_cap", "weight"
+        ])
 
     news = pd.read_csv(
         os.path.join(DATA_DIR, "news.csv"),
