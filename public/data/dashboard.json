@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10 00:28:54",
+  "generated_at": "2026-05-10 01:23:54",
   "market_summary": {
     "KOSPI": {
       "close": 6598.87,
@@ -20,8 +20,8 @@
       "industry": "로봇/자율주행",
       "is_score": 76.6,
       "etf_flow_score": 90.8,
-      "news_attention_score": 72.7,
-      "sentiment_score": 47.0,
+      "news_attention_score": 72.9,
+      "sentiment_score": 46.8,
       "grade": "양호한 신호",
       "representative_etf": {
         "ticker": "0148J0",
@@ -30,11 +30,11 @@
       },
       "color": "#3B82F6",
       "news_stats": {
-        "total": 320,
+        "total": 321,
         "positive": 72,
-        "neutral": 245,
+        "neutral": 246,
         "negative": 3,
-        "pos_ratio": 22.5,
+        "pos_ratio": 22.4,
         "neg_ratio": 0.9,
         "neu_ratio": 76.6
       },
@@ -148,10 +148,10 @@
     {
       "rank": 6,
       "industry": "AI/소프트웨어",
-      "is_score": 63.3,
+      "is_score": 63.5,
       "etf_flow_score": 74.2,
-      "news_attention_score": 54.8,
-      "sentiment_score": 48.9,
+      "news_attention_score": 55.0,
+      "sentiment_score": 49.4,
       "grade": "보통",
       "representative_etf": {
         "ticker": "487240",
@@ -160,13 +160,13 @@
       },
       "color": "#8B5CF6",
       "news_stats": {
-        "total": 247,
-        "positive": 60,
+        "total": 248,
+        "positive": 61,
         "neutral": 183,
         "negative": 4,
-        "pos_ratio": 24.3,
+        "pos_ratio": 24.6,
         "neg_ratio": 1.6,
-        "neu_ratio": 74.1
+        "neu_ratio": 73.8
       },
       "trading_value_change": 104.3,
       "return_5d": 1.26
@@ -330,10 +330,10 @@
     {
       "rank": 13,
       "industry": "음식료/식품",
-      "is_score": 50.9,
+      "is_score": 50.8,
       "etf_flow_score": 35.4,
-      "news_attention_score": 78.0,
-      "sentiment_score": 48.9,
+      "news_attention_score": 77.6,
+      "sentiment_score": 49.1,
       "grade": "보통",
       "representative_etf": {
         "ticker": "-",
@@ -342,13 +342,13 @@
       },
       "color": "#FB923C",
       "news_stats": {
-        "total": 347,
+        "total": 346,
         "positive": 89,
-        "neutral": 247,
+        "neutral": 246,
         "negative": 11,
-        "pos_ratio": 25.6,
+        "pos_ratio": 25.7,
         "neg_ratio": 3.2,
-        "neu_ratio": 71.2
+        "neu_ratio": 71.1
       },
       "trading_value_change": 0.0,
       "return_5d": 0.0
