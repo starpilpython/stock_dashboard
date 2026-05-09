@@ -142,22 +142,35 @@ def get_existing_dates(csv_path, date_col="date"):
 # 1. ETF 마스터 수집
 # ═══════════════════════════════════════════
 def collect_etf_master(ref_date):
-    """ETF 마스터 목록 수집"""
+    """ETF 마스터 목록 수집 (KRX 응답 없으면 기존 파일 사용)"""
     from pykrx import stock
     print(f"\n[1/6] ETF 마스터 수집 (기준일: {ref_date})...")
 
-    tickers = stock.get_etf_ticker_list(ref_date)
-    rows = []
-    for t in tickers:
-        name = stock.get_etf_ticker_name(t)
-        industry = classify_industry(name)
-        rows.append({"ticker": t, "name": name, "industry": industry})
-
-    df = pd.DataFrame(rows)
     path = os.path.join(DATA_DIR, "etf_master.csv")
-    df.to_csv(path, index=False, encoding="utf-8-sig")
-    print(f"  저장 완료: {len(df)}개 ETF → {path}")
-    return df
+
+    try:
+        tickers = stock.get_etf_ticker_list(ref_date)
+        if not tickers:
+            raise ValueError("빈 티커 목록")
+
+        rows = []
+        for t in tickers:
+            name = stock.get_etf_ticker_name(t)
+            industry = classify_industry(name)
+            rows.append({"ticker": t, "name": name, "industry": industry})
+
+        df = pd.DataFrame(rows)
+        df.to_csv(path, index=False, encoding="utf-8-sig")
+        print(f"  저장 완료: {len(df)}개 ETF → {path}")
+        return df
+
+    except Exception as e:
+        print(f"  [!] KRX 응답 없음: {e}")
+        if os.path.exists(path):
+            print(f"  → 기존 etf_master.csv 사용")
+            return pd.read_csv(path, encoding="utf-8-sig", dtype={"ticker": str})
+        else:
+            raise RuntimeError("etf_master.csv가 없고 KRX도 응답하지 않습니다.")
 
 
 # ═══════════════════════════════════════════

@@ -48,7 +48,7 @@ def run_morning():
 
 
 def run_closing():
-    """16:30 장 마감 후 업데이트 — 전체 수집"""
+    """16:30 장 마감 후 업데이트 — 전체 수집 (KRX 응답 없으면 기존 데이터 유지)"""
     import collect_data
 
     print("[모드] 장 마감 후 전체 업데이트")
@@ -57,26 +57,48 @@ def run_closing():
     # 수집 날짜 (최신 1영업일)
     dates = collect_data.get_business_days(1)
     if not dates:
-        print("[!] 영업일을 찾을 수 없습니다. 수집을 건너뜁니다.")
+        print("[!] 영업일을 찾을 수 없습니다. 뉴스만 수집합니다.")
+        collect_data.collect_news()
         return
     print(f"수집 대상 날짜: {dates}")
 
+    # 각 단계별 실패해도 다음 단계 계속 진행
+    etf_master = None
+
     # 1. ETF 마스터
-    etf_master = collect_data.collect_etf_master(dates[-1])
+    try:
+        etf_master = collect_data.collect_etf_master(dates[-1])
+    except Exception as e:
+        print(f"\n[1/6] ETF 마스터 실패: {e}")
 
     # 2. ETF 가격
-    collect_data.collect_etf_prices(dates)
+    try:
+        collect_data.collect_etf_prices(dates)
+    except Exception as e:
+        print(f"\n[2/6] ETF 가격 실패: {e}")
 
-    # 3. ETF PDF (구성종목 — 1일치 약 5~10분 소요)
-    collect_data.collect_etf_pdf(dates, etf_master)
+    # 3. ETF PDF (구성종목)
+    if etf_master is not None:
+        try:
+            collect_data.collect_etf_pdf(dates, etf_master)
+        except Exception as e:
+            print(f"\n[3/6] ETF PDF 실패: {e}")
+    else:
+        print("\n[3/6] ETF PDF: 마스터 없어서 건너뜀")
 
     # 4. 시장 지수
-    collect_data.collect_index(dates)
+    try:
+        collect_data.collect_index(dates)
+    except Exception as e:
+        print(f"\n[4/6] 시장 지수 실패: {e}")
 
     # 5. 종목 가격
-    collect_data.collect_stock_prices(dates)
+    try:
+        collect_data.collect_stock_prices(dates)
+    except Exception as e:
+        print(f"\n[5/6] 종목 가격 실패: {e}")
 
-    # 6. 뉴스
+    # 6. 뉴스 (네이버 API — 항상 동작)
     collect_data.collect_news()
 
 

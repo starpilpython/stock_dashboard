@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09 14:59:04",
+  "generated_at": "2026-05-10 00:28:54",
   "market_summary": {
     "KOSPI": {
       "close": 6598.87,
@@ -20,8 +20,8 @@
       "industry": "로봇/자율주행",
       "is_score": 76.6,
       "etf_flow_score": 90.8,
-      "news_attention_score": 72.4,
-      "sentiment_score": 47.4,
+      "news_attention_score": 72.7,
+      "sentiment_score": 47.0,
       "grade": "양호한 신호",
       "representative_etf": {
         "ticker": "0148J0",
@@ -30,13 +30,13 @@
       },
       "color": "#3B82F6",
       "news_stats": {
-        "total": 317,
+        "total": 320,
         "positive": 72,
-        "neutral": 242,
+        "neutral": 245,
         "negative": 3,
-        "pos_ratio": 22.7,
+        "pos_ratio": 22.5,
         "neg_ratio": 0.9,
-        "neu_ratio": 76.3
+        "neu_ratio": 76.6
       },
       "trading_value_change": 117.2,
       "return_5d": 3.14
@@ -44,10 +44,10 @@
     {
       "rank": 2,
       "industry": "친환경/신재생",
-      "is_score": 70.5,
+      "is_score": 70.4,
       "etf_flow_score": 66.1,
-      "news_attention_score": 87.5,
-      "sentiment_score": 55.9,
+      "news_attention_score": 87.4,
+      "sentiment_score": 55.5,
       "grade": "양호한 신호",
       "representative_etf": {
         "ticker": "457990",
@@ -56,13 +56,13 @@
       },
       "color": "#22C55E",
       "news_stats": {
-        "total": 373,
+        "total": 375,
         "positive": 107,
-        "neutral": 260,
+        "neutral": 262,
         "negative": 6,
-        "pos_ratio": 28.7,
+        "pos_ratio": 28.5,
         "neg_ratio": 1.6,
-        "neu_ratio": 69.7
+        "neu_ratio": 69.9
       },
       "trading_value_change": 53.0,
       "return_5d": 3.78
@@ -70,9 +70,9 @@
     {
       "rank": 3,
       "industry": "에너지/석유",
-      "is_score": 69.2,
+      "is_score": 69.1,
       "etf_flow_score": 79.9,
-      "news_attention_score": 74.9,
+      "news_attention_score": 74.4,
       "sentiment_score": 34.1,
       "grade": "보통",
       "representative_etf": {
@@ -96,10 +96,10 @@
     {
       "rank": 4,
       "industry": "반도체",
-      "is_score": 68.1,
+      "is_score": 68.6,
       "etf_flow_score": 57.5,
-      "news_attention_score": 85.1,
-      "sentiment_score": 69.2,
+      "news_attention_score": 86.1,
+      "sentiment_score": 70.0,
       "grade": "보통",
       "representative_etf": {
         "ticker": "396500",
@@ -108,13 +108,13 @@
       },
       "color": "#F59E0B",
       "news_stats": {
-        "total": 384,
-        "positive": 144,
-        "neutral": 232,
+        "total": 392,
+        "positive": 149,
+        "neutral": 235,
         "negative": 8,
-        "pos_ratio": 37.5,
-        "neg_ratio": 2.1,
-        "neu_ratio": 60.4
+        "pos_ratio": 38.0,
+        "neg_ratio": 2.0,
+        "neu_ratio": 59.9
       },
       "trading_value_change": 21.1,
       "return_5d": 4.35
@@ -122,9 +122,9 @@
     {
       "rank": 5,
       "industry": "2차전지",
-      "is_score": 66.3,
+      "is_score": 66.1,
       "etf_flow_score": 43.5,
-      "news_attention_score": 93.2,
+      "news_attention_score": 92.7,
       "sentiment_score": 82.9,
       "grade": "보통",
       "representative_etf": {
@@ -134,13 +134,13 @@
       },
       "color": "#10B981",
       "news_stats": {
-        "total": 415,
-        "positive": 192,
+        "total": 416,
+        "positive": 193,
         "neutral": 214,
         "negative": 9,
-        "pos_ratio": 46.3,
+        "pos_ratio": 46.4,
         "neg_ratio": 2.2,
-        "neu_ratio": 51.6
+        "neu_ratio": 51.4
       },
       "trading_value_change": -19.2,
       "return_5d": 3.93
@@ -148,10 +148,10 @@
     {
       "rank": 6,
       "industry": "AI/소프트웨어",
-      "is_score": 63.5,
+      "is_score": 63.3,
       "etf_flow_score": 74.2,
-      "news_attention_score": 55.6,
-      "sentiment_score": 48.7,
+      "news_attention_score": 54.8,
+      "sentiment_score": 48.9,
       "grade": "보통",
       "representative_etf": {
         "ticker": "487240",
@@ -160,13 +160,13 @@
       },
       "color": "#8B5CF6",
       "news_stats": {
-        "total": 249,
+        "total": 247,
         "positive": 60,
-        "neutral": 185,
+        "neutral": 183,
         "negative": 4,
-        "pos_ratio": 24.1,
+        "pos_ratio": 24.3,
         "neg_ratio": 1.6,
-        "neu_ratio": 74.3
+        "neu_ratio": 74.1
       },
       "trading_value_change": 104.3,
       "return_5d": 1.26
@@ -177,7 +177,7 @@
       "is_score": 57.0,
       "etf_flow_score": 41.7,
       "news_attention_score": 100.0,
-      "sentiment_score": 30.7,
+      "sentiment_score": 30.8,
       "grade": "보통",
       "representative_etf": {
         "ticker": "364990",
@@ -186,13 +186,13 @@
       },
       "color": "#F97316",
       "news_stats": {
-        "total": 420,
-        "positive": 55,
-        "neutral": 356,
+        "total": 423,
+        "positive": 56,
+        "neutral": 358,
         "negative": 9,
-        "pos_ratio": 13.1,
+        "pos_ratio": 13.2,
         "neg_ratio": 2.1,
-        "neu_ratio": 84.8
+        "neu_ratio": 84.6
       },
       "trading_value_change": 15.8,
       "return_5d": 0.71
@@ -200,10 +200,10 @@
     {
       "rank": 8,
       "industry": "통신/5G",
-      "is_score": 56.1,
+      "is_score": 56.2,
       "etf_flow_score": 41.5,
-      "news_attention_score": 74.9,
-      "sentiment_score": 64.2,
+      "news_attention_score": 74.8,
+      "sentiment_score": 64.7,
       "grade": "보통",
       "representative_etf": {
         "ticker": "367740",
@@ -212,13 +212,13 @@
       },
       "color": "#0EA5E9",
       "news_stats": {
-        "total": 332,
-        "positive": 115,
+        "total": 334,
+        "positive": 117,
         "neutral": 209,
         "negative": 8,
-        "pos_ratio": 34.6,
+        "pos_ratio": 35.0,
         "neg_ratio": 2.4,
-        "neu_ratio": 63.0
+        "neu_ratio": 62.6
       },
       "trading_value_change": -30.8,
       "return_5d": 4.22
@@ -226,10 +226,10 @@
     {
       "rank": 9,
       "industry": "자동차/모빌리티",
-      "is_score": 54.8,
+      "is_score": 55.0,
       "etf_flow_score": 55.8,
-      "news_attention_score": 61.3,
-      "sentiment_score": 42.5,
+      "news_attention_score": 61.7,
+      "sentiment_score": 42.7,
       "grade": "보통",
       "representative_etf": {
         "ticker": "091180",
@@ -238,12 +238,12 @@
       },
       "color": "#EAB308",
       "news_stats": {
-        "total": 271,
-        "positive": 57,
-        "neutral": 207,
+        "total": 275,
+        "positive": 58,
+        "neutral": 210,
         "negative": 7,
-        "pos_ratio": 21.0,
-        "neg_ratio": 2.6,
+        "pos_ratio": 21.1,
+        "neg_ratio": 2.5,
         "neu_ratio": 76.4
       },
       "trading_value_change": 31.0,
@@ -252,9 +252,9 @@
     {
       "rank": 10,
       "industry": "리츠/부동산",
-      "is_score": 53.7,
+      "is_score": 53.6,
       "etf_flow_score": 50.0,
-      "news_attention_score": 79.0,
+      "news_attention_score": 78.7,
       "sentiment_score": 25.1,
       "grade": "보통",
       "representative_etf": {
@@ -264,9 +264,9 @@
       },
       "color": "#F43F5E",
       "news_stats": {
-        "total": 346,
+        "total": 347,
         "positive": 51,
-        "neutral": 266,
+        "neutral": 267,
         "negative": 29,
         "pos_ratio": 14.7,
         "neg_ratio": 8.4,
@@ -278,10 +278,10 @@
     {
       "rank": 11,
       "industry": "뷰티/화장품",
-      "is_score": 52.6,
+      "is_score": 52.4,
       "etf_flow_score": 33.6,
-      "news_attention_score": 76.8,
-      "sentiment_score": 63.6,
+      "news_attention_score": 76.4,
+      "sentiment_score": 63.5,
       "grade": "보통",
       "representative_etf": {
         "ticker": "228790",
@@ -304,10 +304,10 @@
     {
       "rank": 12,
       "industry": "원자력",
-      "is_score": 52.5,
+      "is_score": 52.2,
       "etf_flow_score": 29.5,
-      "news_attention_score": 79.6,
-      "sentiment_score": 69.1,
+      "news_attention_score": 79.2,
+      "sentiment_score": 68.5,
       "grade": "보통",
       "representative_etf": {
         "ticker": "0091P0",
@@ -317,12 +317,12 @@
       "color": "#06B6D4",
       "news_stats": {
         "total": 329,
-        "positive": 119,
-        "neutral": 208,
+        "positive": 118,
+        "neutral": 209,
         "negative": 2,
-        "pos_ratio": 36.2,
+        "pos_ratio": 35.9,
         "neg_ratio": 0.6,
-        "neu_ratio": 63.2
+        "neu_ratio": 63.5
       },
       "trading_value_change": 9.1,
       "return_5d": -1.74
@@ -330,10 +330,10 @@
     {
       "rank": 13,
       "industry": "음식료/식품",
-      "is_score": 50.8,
+      "is_score": 50.9,
       "etf_flow_score": 35.4,
-      "news_attention_score": 77.8,
-      "sentiment_score": 48.8,
+      "news_attention_score": 78.0,
+      "sentiment_score": 48.9,
       "grade": "보통",
       "representative_etf": {
         "ticker": "-",
@@ -342,13 +342,13 @@
       },
       "color": "#FB923C",
       "news_stats": {
-        "total": 345,
-        "positive": 88,
-        "neutral": 246,
+        "total": 347,
+        "positive": 89,
+        "neutral": 247,
         "negative": 11,
-        "pos_ratio": 25.5,
+        "pos_ratio": 25.6,
         "neg_ratio": 3.2,
-        "neu_ratio": 71.3
+        "neu_ratio": 71.2
       },
       "trading_value_change": 0.0,
       "return_5d": 0.0
@@ -356,10 +356,10 @@
     {
       "rank": 14,
       "industry": "철강/조선",
-      "is_score": 50.2,
+      "is_score": 50.1,
       "etf_flow_score": 38.2,
-      "news_attention_score": 70.0,
-      "sentiment_score": 50.6,
+      "news_attention_score": 69.6,
+      "sentiment_score": 50.5,
       "grade": "보통",
       "representative_etf": {
         "ticker": "466920",
@@ -382,9 +382,9 @@
     {
       "rank": 15,
       "industry": "바이오/헬스",
-      "is_score": 49.4,
+      "is_score": 49.3,
       "etf_flow_score": 29.8,
-      "news_attention_score": 93.2,
+      "news_attention_score": 92.7,
       "sentiment_score": 32.7,
       "grade": "약한 신호",
       "representative_etf": {
@@ -410,8 +410,8 @@
       "industry": "건설/인프라",
       "is_score": 47.0,
       "etf_flow_score": 35.4,
-      "news_attention_score": 62.6,
-      "sentiment_score": 52.8,
+      "news_attention_score": 63.0,
+      "sentiment_score": 52.1,
       "grade": "약한 신호",
       "representative_etf": {
         "ticker": "367760",
@@ -420,13 +420,13 @@
       },
       "color": "#84CC16",
       "news_stats": {
-        "total": 257,
+        "total": 261,
         "positive": 67,
-        "neutral": 188,
+        "neutral": 192,
         "negative": 2,
-        "pos_ratio": 26.1,
+        "pos_ratio": 25.7,
         "neg_ratio": 0.8,
-        "neu_ratio": 73.2
+        "neu_ratio": 73.6
       },
       "trading_value_change": 5.4,
       "return_5d": 0.49
@@ -436,8 +436,8 @@
       "industry": "금융",
       "is_score": 44.7,
       "etf_flow_score": 38.8,
-      "news_attention_score": 58.1,
-      "sentiment_score": 39.2,
+      "news_attention_score": 58.5,
+      "sentiment_score": 38.9,
       "grade": "약한 신호",
       "representative_etf": {
         "ticker": "102970",
@@ -446,13 +446,13 @@
       },
       "color": "#A855F7",
       "news_stats": {
-        "total": 250,
+        "total": 252,
         "positive": 51,
-        "neutral": 188,
+        "neutral": 190,
         "negative": 11,
-        "pos_ratio": 20.4,
+        "pos_ratio": 20.2,
         "neg_ratio": 4.4,
-        "neu_ratio": 75.2
+        "neu_ratio": 75.4
       },
       "trading_value_change": 27.2,
       "return_5d": -1.42
@@ -460,10 +460,10 @@
     {
       "rank": 18,
       "industry": "화학/소재",
-      "is_score": 43.4,
+      "is_score": 43.3,
       "etf_flow_score": 35.4,
-      "news_attention_score": 62.7,
-      "sentiment_score": 34.6,
+      "news_attention_score": 62.2,
+      "sentiment_score": 34.5,
       "grade": "약한 신호",
       "representative_etf": {
         "ticker": "-",
@@ -486,10 +486,10 @@
     {
       "rank": 19,
       "industry": "운송/물류",
-      "is_score": 36.7,
+      "is_score": 36.8,
       "etf_flow_score": 11.8,
-      "news_attention_score": 71.1,
-      "sentiment_score": 47.3,
+      "news_attention_score": 71.2,
+      "sentiment_score": 47.8,
       "grade": "약한 신호",
       "representative_etf": {
         "ticker": "140710",
@@ -498,13 +498,13 @@
       },
       "color": "#64748B",
       "news_stats": {
-        "total": 312,
-        "positive": 78,
-        "neutral": 222,
+        "total": 315,
+        "positive": 80,
+        "neutral": 223,
         "negative": 12,
-        "pos_ratio": 25.0,
+        "pos_ratio": 25.4,
         "neg_ratio": 3.8,
-        "neu_ratio": 71.2
+        "neu_ratio": 70.8
       },
       "trading_value_change": -38.5,
       "return_5d": -1.3
@@ -512,10 +512,10 @@
     {
       "rank": 20,
       "industry": "방산/우주항공",
-      "is_score": 34.1,
+      "is_score": 33.9,
       "etf_flow_score": 9.2,
-      "news_attention_score": 67.1,
-      "sentiment_score": 46.7,
+      "news_attention_score": 66.6,
+      "sentiment_score": 46.8,
       "grade": "약한 신호",
       "representative_etf": {
         "ticker": "0080G0",
@@ -524,11 +524,11 @@
       },
       "color": "#6366F1",
       "news_stats": {
-        "total": 284,
+        "total": 283,
         "positive": 67,
-        "neutral": 210,
+        "neutral": 209,
         "negative": 7,
-        "pos_ratio": 23.6,
+        "pos_ratio": 23.7,
         "neg_ratio": 2.5,
         "neu_ratio": 73.9
       },
@@ -693,34 +693,34 @@
   "headlines": {
     "반도체": [
       {
-        "title": "[주요공시] 삼성전자, 남선알미늄, 화천기계, SK케미칼, 씨젠, 대양전기...",
-        "sentiment": "중립",
-        "date": "2026-05-09",
-        "link": "https://www.kdpress.co.kr/news/articleView.html?idxno=205129"
-      },
-      {
-        "title": "[재계 핫이슈] 물구나무 선 아틀라스, 현대차 정체성 바꾸나",
-        "sentiment": "중립",
-        "date": "2026-05-09",
-        "link": "https://www.pennmike.com/news/articleView.html?idxno=120207"
-      },
-      {
-        "title": "삼성전자, 43조 잃는다고?…JP모건의 섬뜩한 경고",
-        "sentiment": "중립",
-        "date": "2026-05-09",
-        "link": "https://www.newsway.co.kr/news/view?ud=2026050920432443393"
-      },
-      {
-        "title": "“가장 핫한 종목만”...키움운용, 회심의 ETF 내놓는다",
+        "title": "[박근종 칼럼] 이달부터 본격화하는 중동발 고물가 쇼크, 경각심을 갖고...",
         "sentiment": "긍정",
-        "date": "2026-05-09",
-        "link": "https://n.news.naver.com/mnews/article/024/0000105456?sid=101"
+        "date": "2026-05-10",
+        "link": "https://www.mhns.co.kr/news/articleView.html?idxno=746986"
       },
       {
-        "title": "&quot;17억 빌려 23억 풀매수&quot; SK하닉에 '올인'…계좌 공개한 공무원",
+        "title": "[김대호 진단] 필라델피아 반도체 지수 SOX의 함정... 뉴욕증시 vs 코스...",
+        "sentiment": "중립",
+        "date": "2026-05-10",
+        "link": "https://www.g-enews.com/view.php?ud=202605081647509968906806b77b_1"
+      },
+      {
+        "title": "[김대호 인물 열전] 마이클 버리(Michael Burry} 뉴욕증시 공매도 선전포...",
+        "sentiment": "중립",
+        "date": "2026-05-10",
+        "link": "https://www.g-enews.com/view.php?ud=202605091251538543906806b77b_1"
+      },
+      {
+        "title": "[증시 프리즘] 외인 '사자' vs 기관 '팔자' 정면충돌…코스피 7500선 앞두...",
+        "sentiment": "중립",
+        "date": "2026-05-10",
+        "link": "https://www.thefairnews.co.kr/news/articleView.html?idxno=76490"
+      },
+      {
+        "title": "이수스페셜티케미컬, 전고체 핵심 플레이어 주목...기술 선점 촉각",
         "sentiment": "긍정",
-        "date": "2026-05-09",
-        "link": "https://n.news.naver.com/mnews/article/215/0001251574?sid=101"
+        "date": "2026-05-10",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=573434"
       }
     ],
     "2차전지": [
@@ -757,10 +757,22 @@
     ],
     "바이오/헬스": [
       {
+        "title": "에이비엘바이오, 13만 원대 강세 유지…바이오 투자심리 회복 속 거래량...",
+        "sentiment": "긍정",
+        "date": "2026-05-10",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=573431"
+      },
+      {
         "title": "알테오젠, SC 플랫폼 수익화 시험대…실적 변동성 확대",
         "sentiment": "중립",
         "date": "2026-05-09",
         "link": "https://www.topstarnews.net/news/articleView.html?idxno=16056280"
+      },
+      {
+        "title": "거래소·금감원 베테랑 전진 배치...상장폐지 대응 선점 경쟁 불붙었다...",
+        "sentiment": "중립",
+        "date": "2026-05-09",
+        "link": "https://n.news.naver.com/mnews/article/011/0004619028?sid=102"
       },
       {
         "title": "[듣는뉴스/알아BIO] 파업 앞둔 삼성바이오…주가·수주 '비상등'",
@@ -773,21 +785,27 @@
         "sentiment": "긍정",
         "date": "2026-05-09",
         "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=451509"
-      },
-      {
-        "title": "유럽·미국·일본 동시 공략…셀트리온 성장판 다시 열린다",
-        "sentiment": "긍정",
-        "date": "2026-05-09",
-        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=451508"
-      },
-      {
-        "title": "K-바이오 볼모 잡은 ‘법 위의 투쟁’…삼성바이오 노조, ‘2차 파업’ ...",
-        "sentiment": "부정",
-        "date": "2026-05-09",
-        "link": "https://n.news.naver.com/mnews/article/016/0002641019?sid=101"
       }
     ],
     "AI/소프트웨어": [
+      {
+        "title": "&quot;PER 부담도 지웠다&quot;…HD현대중공업, 글로벌 조선 최강자 굳히기",
+        "sentiment": "긍정",
+        "date": "2026-05-10",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=451488"
+      },
+      {
+        "title": "[MBTI 오늘의 운세] 2026년 5월 10일",
+        "sentiment": "중립",
+        "date": "2026-05-10",
+        "link": "https://n.news.naver.com/mnews/article/469/0000929835?sid=103"
+      },
+      {
+        "title": "삼천당제약, 40만원대 재진입...흐름 좌우할 요소",
+        "sentiment": "긍정",
+        "date": "2026-05-10",
+        "link": "https://www.cbci.co.kr/news/articleView.html?idxno=573428"
+      },
       {
         "title": "‘실적 좋으니 더 화날 지경’ 불장에도 주가는 꽁꽁…‘네카오’ 반등...",
         "sentiment": "긍정",
@@ -795,31 +813,19 @@
         "link": "https://n.news.naver.com/mnews/article/016/0002641119?sid=101"
       },
       {
-        "title": "SK텔레콤, AI 데이터센터로 통신 수익구조 바뀐다",
-        "sentiment": "긍정",
-        "date": "2026-05-09",
-        "link": "https://www.topstarnews.net/news/articleView.html?idxno=16056261"
-      },
-      {
-        "title": "카카오, 카톡 커머스 AI 전환에 실적 체력 재점검",
-        "sentiment": "긍정",
-        "date": "2026-05-09",
-        "link": "https://www.topstarnews.net/news/articleView.html?idxno=16056238"
-      },
-      {
-        "title": "닌텐도·소니, AI發 메모리 공급난에 콘솔 가격 인상",
+        "title": "‘빅쇼트’ 마이클 버리 “AI발 강세장, 닷컴버블 때와 유사”",
         "sentiment": "중립",
         "date": "2026-05-09",
-        "link": "https://n.news.naver.com/mnews/article/293/0000084278?sid=105"
-      },
-      {
-        "title": "코스피 다음 주 최고치 또 경신할까… 기대감 높아진 ‘삼전닉스’",
-        "sentiment": "긍정",
-        "date": "2026-05-09",
-        "link": "https://n.news.naver.com/mnews/article/005/0001847927?sid=101"
+        "link": "https://n.news.naver.com/mnews/article/029/0003025698?sid=104"
       }
     ],
     "로봇/자율주행": [
+      {
+        "title": "[증시 주간 핫 리뷰 ] 코스피 7000 '삼두마차'…증권·반도체·자동차 동...",
+        "sentiment": "중립",
+        "date": "2026-05-09",
+        "link": "http://www.the-biz.co.kr/news/articleView.html?idxno=720241"
+      },
       {
         "title": "LG전자, 전장·HVAC 확장에 목표주가 상향 지속",
         "sentiment": "긍정",
@@ -843,12 +849,6 @@
         "sentiment": "긍정",
         "date": "2026-05-09",
         "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=451484"
-      },
-      {
-        "title": "[김이코의 기업분석]삼성전자·SK하이닉스, 지금이라도 사야 하나",
-        "sentiment": "중립",
-        "date": "2026-05-09",
-        "link": "https://www.mediapen.com/news/view/1097852"
       }
     ],
     "게임/엔터": [
@@ -859,28 +859,28 @@
         "link": "https://n.news.naver.com/mnews/article/016/0002641088?sid=105"
       },
       {
+        "title": "닌텐도·소니, AI發 메모리 공급난에 콘솔 가격 인상",
+        "sentiment": "중립",
+        "date": "2026-05-09",
+        "link": "https://n.news.naver.com/mnews/article/293/0000084278?sid=105"
+      },
+      {
         "title": "넷마블 1분기 실적 531억원… 전년比 6.8%↑",
         "sentiment": "중립",
         "date": "2026-05-09",
         "link": "https://n.news.naver.com/mnews/article/005/0001847919?sid=105"
       },
       {
+        "title": "별풍선 다시 살아나나…SOOP 실적 회복 시그널 포착됐다",
+        "sentiment": "긍정",
+        "date": "2026-05-09",
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=451528"
+      },
+      {
         "title": "XR·AI 올라탄 한빛소프트…글로벌 콘텐츠 플랫폼 꿈꾼다",
         "sentiment": "중립",
         "date": "2026-05-09",
         "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=451502"
-      },
-      {
-        "title": "미·이란, 협상 중 교전 계속...이란 &quot;제한적 교전&quot;",
-        "sentiment": "중립",
-        "date": "2026-05-09",
-        "link": "https://n.news.naver.com/mnews/article/052/0002350743?sid=104"
-      },
-      {
-        "title": "최종 행선지 우리은행 선택한 FA 최대어 강이슬. 이제 새로운 우리은행...",
-        "sentiment": "긍정",
-        "date": "2026-05-09",
-        "link": "https://m.sports.naver.com/basketball/article/076/0004403540"
       }
     ],
     "자동차/모빌리티": [
@@ -1069,10 +1069,10 @@
         "link": "https://www.topstarnews.net/news/articleView.html?idxno=16056080"
       },
       {
-        "title": "최근 5거래일 LG에너지솔루션 주가 변동 현황",
+        "title": "중동 전쟁 속 '기회의 땅' 아프리카…코트라, AfDB 협력해 프로젝트 다변...",
         "sentiment": "중립",
         "date": "2026-05-09",
-        "link": "https://www.topstarnews.net/news/articleView.html?idxno=16056048"
+        "link": "https://www.cstimes.com/news/articleView.html?idxno=704970"
       }
     ],
     "화학/소재": [
@@ -1109,6 +1109,12 @@
     ],
     "통신/5G": [
       {
+        "title": "SK텔레콤, AI 데이터센터로 통신 수익구조 바뀐다",
+        "sentiment": "긍정",
+        "date": "2026-05-09",
+        "link": "https://www.topstarnews.net/news/articleView.html?idxno=16056261"
+      },
+      {
         "title": "AI가 스스로 일하는 ‘에이전틱 ERP’ 시대… 국내외 기업 주도권 확보...",
         "sentiment": "중립",
         "date": "2026-05-09",
@@ -1127,19 +1133,19 @@
         "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=451486"
       },
       {
-        "title": "빅테크, SK하이닉스에 &quot;생산라인 통째로 비워달라&quot;… HBM 선점에 수조 원...",
-        "sentiment": "중립",
+        "title": "SK텔레콤 드디어 바닥 찍었나... 하반기 반등 기대감 확산",
+        "sentiment": "긍정",
         "date": "2026-05-09",
-        "link": "https://www.g-enews.com/view.php?ud=2026050909203041fbbec65dfb_1"
-      },
-      {
-        "title": "美 S&amp;P500·나스닥 사상 최고치 경신…6주 연속 상승",
-        "sentiment": "중립",
-        "date": "2026-05-09",
-        "link": "https://n.news.naver.com/mnews/article/374/0000509061?sid=101"
+        "link": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=451485"
       }
     ],
     "금융": [
+      {
+        "title": "내사종결·무혐의 돌고 돌아 13년…'김건희 유죄' 험난한 여정",
+        "sentiment": "중립",
+        "date": "2026-05-10",
+        "link": "https://n.news.naver.com/mnews/article/629/0000497782?sid=102"
+      },
       {
         "title": "'원금 손실' 걱정하는 이들을 위한 투자법 [재테크 Lab]",
         "sentiment": "부정",
@@ -1159,16 +1165,10 @@
         "link": "https://www.topstarnews.net/news/articleView.html?idxno=16056263"
       },
       {
-        "title": "JP모건 &quot;삼성전자 노사 갈등 손실 최대 43조 규모 전망&quot;",
-        "sentiment": "중립",
+        "title": "부산시장 여야 후보 선거사무소 열고 본격 선거전",
+        "sentiment": "긍정",
         "date": "2026-05-09",
-        "link": "https://www.getnews.co.kr/news/articleView.html?idxno=869732"
-      },
-      {
-        "title": "급등한 주가가 바꾸는 자산 지형도",
-        "sentiment": "중립",
-        "date": "2026-05-09",
-        "link": "http://www.fntimes.com/html/view.php?ud=2026050917212950499bdb80fab5_18"
+        "link": "https://busanmbc.co.kr/01_new/new01_view.asp?idx=285182"
       }
     ],
     "리츠/부동산": [
@@ -1205,6 +1205,12 @@
     ],
     "건설/인프라": [
       {
+        "title": "애플·인텔, 반도체 생산 협력 잠정 합의…트럼프 정부가 중재",
+        "sentiment": "중립",
+        "date": "2026-05-09",
+        "link": "https://www.etoday.co.kr/news/view/2582942"
+      },
+      {
         "title": "[특징주] 삼성물산, 건설업 실적 개선·중동 재건 기대에 4%대 강세",
         "sentiment": "긍정",
         "date": "2026-05-09",
@@ -1227,12 +1233,6 @@
         "sentiment": "중립",
         "date": "2026-05-09",
         "link": "https://www.topstarnews.net/news/articleView.html?idxno=16056020"
-      },
-      {
-        "title": "김진태 강원지사 후보, 9일 정선서 공추위 간담회·김홍규 강릉시장 후...",
-        "sentiment": "중립",
-        "date": "2026-05-09",
-        "link": "https://gw.newdaily.co.kr/site/data/html/2026/05/09/2026050900098.html"
       }
     ],
     "음식료/식품": [
@@ -3723,7 +3723,7 @@
         20519819
       ],
       "industry": "반도체",
-      "is_score": 68.1,
+      "is_score": 68.6,
       "signal": "Potential Hidden Opportunity"
     },
     {
@@ -3739,7 +3739,7 @@
         20519819
       ],
       "industry": "친환경/신재생",
-      "is_score": 70.5,
+      "is_score": 70.4,
       "signal": "Potential Hidden Opportunity"
     },
     {
@@ -3755,7 +3755,7 @@
         496622
       ],
       "industry": "2차전지",
-      "is_score": 66.3,
+      "is_score": 66.1,
       "signal": "Potential Hidden Opportunity"
     },
     {
@@ -3771,7 +3771,7 @@
         283039
       ],
       "industry": "2차전지",
-      "is_score": 66.3,
+      "is_score": 66.1,
       "signal": "Potential Hidden Opportunity"
     },
     {
@@ -3787,7 +3787,7 @@
         425977
       ],
       "industry": "2차전지",
-      "is_score": 66.3,
+      "is_score": 66.1,
       "signal": "Potential Hidden Opportunity"
     }
   ],
