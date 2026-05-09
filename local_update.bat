@@ -17,12 +17,9 @@ if %errorlevel% neq 0 (
 
 echo.
 echo [2/4] Git pull...
+git stash
 git pull --rebase origin main
-if %errorlevel% neq 0 (
-    echo Pull failed
-    pause
-    exit /b 1
-)
+git stash pop
 
 echo.
 echo [3/4] Git commit...
