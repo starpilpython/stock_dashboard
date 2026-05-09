@@ -104,16 +104,27 @@ def get_latest_business_date():
 
 
 def get_business_days(n_days):
-    """최근 n영업일의 날짜 리스트 반환"""
+    """최근 n영업일의 날짜 리스트 반환 (주말/공휴일/장중 모두 대응)"""
     from pykrx import stock
     today = datetime.now()
-    start = (today - timedelta(days=int(n_days * 2))).strftime("%Y%m%d")
+    # 충분히 넓은 범위로 조회 (공휴일 연휴 대비)
+    start = (today - timedelta(days=max(n_days * 3, 30))).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
     try:
         dates = stock.get_previous_business_days(fromdate=start, todate=end)
-        return [d.strftime("%Y%m%d") for d in dates[-n_days:]]
+        if len(dates) == 0:
+            # 오늘 포함 범위에 영업일이 없으면 더 넓게 조회
+            start = (today - timedelta(days=60)).strftime("%Y%m%d")
+            dates = stock.get_previous_business_days(fromdate=start, todate=end)
+        if len(dates) > 0:
+            return [d.strftime("%Y%m%d") for d in dates[-n_days:]]
     except Exception:
-        return [end]
+        pass
+    # fallback: 주말을 건너뛰고 가장 최근 평일 반환
+    d = today
+    while d.weekday() >= 5:
+        d -= timedelta(days=1)
+    return [d.strftime("%Y%m%d")]
 
 
 def get_existing_dates(csv_path, date_col="date"):

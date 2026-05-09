@@ -56,6 +56,9 @@ def run_closing():
 
     # 수집 날짜 (최신 1영업일)
     dates = collect_data.get_business_days(1)
+    if not dates:
+        print("[!] 영업일을 찾을 수 없습니다. 수집을 건너뜁니다.")
+        return
     print(f"수집 대상 날짜: {dates}")
 
     # 1. ETF 마스터
