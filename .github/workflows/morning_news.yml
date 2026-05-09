@@ -2,9 +2,11 @@ name: "SFNI 아침 뉴스 수집 (08:00 KST)"
 
 on:
   schedule:
-    # 한국시간 08:00 = UTC 23:00 (전날)
     - cron: "0 23 * * 0-4"
-  workflow_dispatch:  # 수동 실행 가능
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   morning-update:
@@ -32,10 +34,8 @@ jobs:
           git add data/ public/data/
           if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No changes to commit"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
-            echo "Changes detected:"
             git diff --staged --stat
           fi
 

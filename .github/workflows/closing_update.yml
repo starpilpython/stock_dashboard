@@ -2,9 +2,11 @@ name: "SFNI 장 마감 전체 업데이트 (16:30 KST)"
 
 on:
   schedule:
-    # 한국시간 16:30 = UTC 07:30
     - cron: "30 7 * * 1-5"
-  workflow_dispatch:  # 수동 실행 가능
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   closing-update:
@@ -32,10 +34,8 @@ jobs:
           git add data/ public/data/
           if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No changes to commit"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
-            echo "Changes detected:"
             git diff --staged --stat
           fi
 
