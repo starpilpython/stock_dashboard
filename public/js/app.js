@@ -467,4 +467,13 @@ document.addEventListener("keydown", e => {
 });
 
 // ── 시작 ──
-document.addEventListener("DOMContentLoaded", loadData);
+document.addEventListener("DOMContentLoaded", () => {
+  loadData();
+
+  // Vercel 배포 환경에서는 업데이트 버튼 숨기기 (로컬 서버 전용 기능)
+  const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  if (!isLocal) {
+    const btn = document.getElementById("update-btn");
+    if (btn) btn.style.display = "none";
+  }
+});
