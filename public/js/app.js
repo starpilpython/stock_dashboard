@@ -132,7 +132,12 @@ function renderHeatmap() {
 // ── Panel B: IS Score 랭킹 ──
 function renderRankings() {
   const list = document.getElementById("ranking-list");
-  const top5 = DATA.rankings.slice(0, 5);
+  const isScoreKey = selectedPeriod !== "custom" && selectedPeriod !== "1w"
+    ? "is_score_" + selectedPeriod : "is_score";
+
+  // 기간별 IS Score로 재정렬
+  const sorted = [...DATA.rankings].sort((a, b) => (b[isScoreKey] || b.is_score) - (a[isScoreKey] || a.is_score));
+  const top5 = sorted.slice(0, 5);
 
   const industryIcons = {
     "반도체": "🔬", "2차전지": "🔋", "바이오/헬스": "🧬", "AI/소프트웨어": "🤖",
@@ -156,13 +161,14 @@ function renderRankings() {
     return r ? r.return_5d : 0;
   }
 
-  list.innerHTML = top5.map(r => {
+  list.innerHTML = top5.map((r, i) => {
     const icon = industryIcons[r.industry] || "📊";
-    const barWidth = Math.max(r.is_score, 5);
+    const score = r[isScoreKey] || r.is_score;
+    const barWidth = Math.max(score, 5);
     const ret = getRankReturn(r.industry);
     const retColor = ret >= 0 ? "#ff4d6d" : "#4d8bff";
     return `<div class="rank-row" onclick="selectIndustry('${r.industry}')">
-      <div class="rank-num">${r.rank}</div>
+      <div class="rank-num">${i + 1}</div>
       <div class="rank-icon" style="background:${r.color}22">${icon}</div>
       <div class="rank-info">
         <div class="rank-name">${r.industry} <span class="rank-return" style="color:${retColor}">${fmtSign(ret)}%</span></div>
@@ -170,7 +176,7 @@ function renderRankings() {
           <div class="rank-bar" style="width:${barWidth}%;background:${r.color}" data-width="${barWidth}"></div>
         </div>
       </div>
-      <div class="rank-score">${fmt(r.is_score, 0)}</div>
+      <div class="rank-score">${fmt(score, 0)}</div>
     </div>`;
   }).join("");
 
@@ -695,8 +701,17 @@ function renderHiddenOpportunities() {
   section.style.display = "block";
 
   const retKey = "return_" + selectedPeriod;
+  const isScoreKey = selectedPeriod !== "custom" && selectedPeriod !== "1w"
+    ? "is_score_" + selectedPeriod : "is_score";
   const periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
   const isCustom = selectedPeriod === "custom";
+
+  // 산업별 기간 IS Score 조회용
+  function getIndustryIsScore(industry) {
+    const r = DATA.rankings.find(r => r.industry === industry);
+    if (!r) return 0;
+    return r[isScoreKey] || r.is_score;
+  }
 
   const list = document.getElementById("hidden-list");
   list.innerHTML = opps.map(o => {
@@ -711,6 +726,7 @@ function renderHiddenOpportunities() {
     const label = isCustom && customPeriod
       ? customPeriod.from.slice(5) + "~" + customPeriod.to.slice(5)
       : periodLabel;
+    const isScore = getIndustryIsScore(o.industry);
     return `<div class="hidden-card">
       <div class="hc-header">
         <div>
@@ -722,7 +738,7 @@ function renderHiddenOpportunities() {
       <div class="hc-detail">
         ETF 비중 합계: <span>${fmt(o.weight)}%</span><br>
         ${label} 수익률: <span style="color:${retColor}">${fmtSign(ret)}%</span><br>
-        IS Score: <span>${fmt(o.is_score, 0)}</span>
+        IS Score: <span>${fmt(isScore, 0)}</span>
       </div>
     </div>`;
   }).join("");

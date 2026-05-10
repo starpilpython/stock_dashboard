@@ -235,7 +235,48 @@ def compute_etf_flow_scores(etf_prices, etf_master):
     for label, days in [("1w", 5), ("1m", 20), ("3m", 60), ("1y", 250)]:
         period_returns[label] = _compute_industry_returns(prices, dates, days)
 
-    return flow_score, raw_data, recent_tv_total, period_returns, prices, dates
+    # ── 기간별 ETF Flow Score 계산 ──
+    period_flow_scores = {}
+    for label, half_period in [("1w", 5), ("1m", 10), ("3m", 30), ("1y", 60)]:
+        p_recent_dates = dates[-half_period:]
+        p_prev_dates = dates[-half_period*2:-half_period] if len(dates) >= half_period*2 else dates[:half_period]
+
+        p_recent = prices[prices["date"].isin(p_recent_dates)]
+        p_prev = prices[prices["date"].isin(p_prev_dates)]
+
+        p_recent_tv = p_recent.groupby("industry")["trading_value"].sum()
+        p_prev_tv = p_prev.groupby("industry")["trading_value"].sum()
+        p_tv_change = ((p_recent_tv - p_prev_tv) / p_prev_tv * 100).fillna(0)
+
+        p_recent_vol = p_recent.groupby("industry")["volume"].sum()
+        p_prev_vol = p_prev.groupby("industry")["volume"].sum()
+        p_vol_change = ((p_recent_vol - p_prev_vol) / p_prev_vol * 100).fillna(0)
+
+        p_returns = period_returns[label]
+
+        p_pos_ratio = {}
+        for ind in TARGET_INDUSTRIES:
+            ind_data = prices[prices["industry"] == ind]
+            latest = ind_data[ind_data["date"] == dates[-1]]
+            base_idx = max(0, len(dates) - half_period)
+            first = ind_data[ind_data["date"] == dates[base_idx]]
+            if len(latest) == 0 or len(first) == 0:
+                p_pos_ratio[ind] = 50
+                continue
+            merged = latest[["ticker", "close"]].merge(first[["ticker", "close"]], on="ticker", suffixes=("_now", "_prev"))
+            if len(merged) > 0:
+                p_pos_ratio[ind] = (merged["close_now"] > merged["close_prev"]).mean() * 100
+            else:
+                p_pos_ratio[ind] = 50
+
+        tv_n = normalize(p_tv_change.reindex(TARGET_INDUSTRIES, fill_value=0))
+        ret_n = normalize(p_returns.reindex(TARGET_INDUSTRIES, fill_value=0))
+        vol_n = normalize(p_vol_change.reindex(TARGET_INDUSTRIES, fill_value=0))
+        pos_n = normalize(pd.Series(p_pos_ratio).reindex(TARGET_INDUSTRIES, fill_value=50))
+
+        period_flow_scores[label] = tv_n * 0.4 + ret_n * 0.3 + vol_n * 0.2 + pos_n * 0.1
+
+    return flow_score, raw_data, recent_tv_total, period_returns, prices, dates, period_flow_scores
 
 
 def compute_news_scores(news):
@@ -666,7 +707,7 @@ def build_heatmap_data(flow_score, raw_etf_data, recent_tv, period_returns):
             "trading_value_billion": round(float(tv), 0),
             "color": INDUSTRY_COLORS.get(ind, "#6B7280"),
         }
-        for label in ["1w", "1m", "3m"]:
+        for label in ["1w", "1m", "3m", "1y"]:
             entry[f"return_{label}"] = round(float(period_returns[label].get(ind, 0)), 2)
         heatmap.append(entry)
     return heatmap
@@ -681,13 +722,17 @@ def main():
     etf_master, etf_prices, etf_pdf, news, index_df, stock_prices, stocks_master = load_data()
 
     # 2. ETF Flow Score
-    flow_score, raw_etf_data, recent_tv, period_returns, etf_prices_merged, etf_dates = compute_etf_flow_scores(etf_prices, etf_master)
+    flow_score, raw_etf_data, recent_tv, period_returns, etf_prices_merged, etf_dates, period_flow_scores = compute_etf_flow_scores(etf_prices, etf_master)
 
     # 3. News Attention & Sentiment Score
     attention_score, sentiment_score, industry_news_stats, headlines, all_news_data = compute_news_scores(news)
 
-    # 4. IS Score
+    # 4. IS Score (기본 + 기간별)
     is_scores = compute_is_scores(flow_score, attention_score, sentiment_score)
+    period_is_scores = {}
+    for label in ["1w", "1m", "3m", "1y"]:
+        p_is = compute_is_scores(period_flow_scores[label], attention_score, sentiment_score)
+        period_is_scores[label] = p_is
 
     # 5. 대표 ETF
     rep_etfs = get_representative_etfs(etf_master, etf_prices)
@@ -724,7 +769,7 @@ def main():
         else:
             grade = "약한 신호"
 
-        rankings.append({
+        entry = {
             "rank": len(rankings) + 1,
             "industry": ind,
             "is_score": score_val,
@@ -737,7 +782,11 @@ def main():
             "news_stats": ns,
             "trading_value_change": round(float(raw_etf_data.loc[ind, "trading_value_change"]) if ind in raw_etf_data.index else 0, 1),
             "return_5d": round(float(raw_etf_data.loc[ind, "return_5d"]) if ind in raw_etf_data.index else 0, 2),
-        })
+        }
+        # 기간별 IS Score
+        for label in ["1w", "1m", "3m", "1y"]:
+            entry[f"is_score_{label}"] = round(float(period_is_scores[label].get(ind, 0)), 1)
+        rankings.append(entry)
 
     # ── 커스텀 기간 조회용 시계열 데이터 ──
     print("Building time series for custom period...")
