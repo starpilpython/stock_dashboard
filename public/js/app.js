@@ -7,6 +7,9 @@ let DATA = null;
 let selectedIndustry = null;
 let selectedStockView = "list";
 let heatmapSort = "return";
+let selectedPeriod = "1w";
+
+const PERIOD_LABELS = { "1w": "1주", "1m": "1개월", "3m": "3개월" };
 
 // ── 유틸 ──
 function fmt(n, d = 1) {
@@ -42,6 +45,7 @@ function render() {
   renderHiddenOpportunities();
   renderDisclaimer();
   initStockSubTabs();
+  initPeriodSelector();
 
   // 기본 선택: IS Score 1위 산업
   if (DATA.rankings.length > 0) {
@@ -75,16 +79,18 @@ function renderMarketInfo() {
 function renderHeatmap() {
   const grid = document.getElementById("heatmap-grid");
 
+  const retKey = "return_" + selectedPeriod;
+
   let sorted;
   if (heatmapSort === "tv") {
     sorted = [...DATA.heatmap].sort((a, b) => b.trading_value_billion - a.trading_value_billion);
   } else {
-    sorted = [...DATA.heatmap].sort((a, b) => b.return_5d - a.return_5d);
+    sorted = [...DATA.heatmap].sort((a, b) => (b[retKey] || 0) - (a[retKey] || 0));
   }
   const top9 = sorted.slice(0, 9);
 
   grid.innerHTML = top9.map(item => {
-    const ret = item.return_5d;
+    const ret = item[retKey] || item.return_5d;
     const intensity = Math.min(Math.abs(ret) / 5, 1); // 5% = max intensity
     let bgColor;
     if (ret >= 0) {
@@ -207,6 +213,24 @@ function initStockSubTabs() {
   });
 }
 
+// ── 기간 선택 ──
+function initPeriodSelector() {
+  const selector = document.getElementById("period-selector");
+  selector.addEventListener("click", e => {
+    const btn = e.target.closest(".period-btn");
+    if (!btn) return;
+    selectedPeriod = btn.dataset.period;
+    selector.querySelectorAll(".period-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // 기간에 영향받는 패널 재렌더링
+    renderHeatmap();
+    if (selectedIndustry) {
+      renderStocks(selectedIndustry);
+    }
+  });
+}
+
 // ── Panel C: 감성 분석 ──
 function renderSentiment(industry) {
   const ranking = DATA.rankings.find(r => r.industry === industry);
@@ -316,15 +340,18 @@ function renderStocks(industry) {
       return;
     }
 
+    const retKey = "return_" + selectedPeriod;
+    const periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
+
     list.innerHTML = `<div class="stock-row stock-header">
         <div class="stock-ticker">코드</div>
         <div class="stock-name-wrap"><span class="stock-name">종목명</span></div>
         <div class="stock-weight">ETF 비중</div>
         <div class="mini-bars">거래량</div>
-        <div class="stock-return">5일 수익률</div>
+        <div class="stock-return">${periodLabel} 수익률</div>
       </div>` + items.map(s => {
-      const retClass = s.return_5d >= 0 ? "positive" : "negative";
-      const retColor = s.return_5d >= 0 ? "var(--red)" : "var(--blue)";
+      const ret = s[retKey] != null ? s[retKey] : s.return_5d;
+      const retColor = ret >= 0 ? "var(--red)" : "var(--blue)";
       const badges = [];
       if (hiddenTickers.has(s.ticker)) badges.push('<span class="hidden-badge">유망주</span>');
       if (s.is_accumulating) badges.push('<span class="acc-badge">매집</span>');
@@ -346,7 +373,7 @@ function renderStocks(industry) {
         </div>
         <div class="stock-weight">${fmt(s.weight)}%</div>
         <div class="mini-bars">${barsHtml}</div>
-        <div class="stock-return" style="color:${retColor}">${fmtSign(s.return_5d)}%</div>
+        <div class="stock-return" style="color:${retColor}">${fmtSign(ret)}%</div>
       </div>`;
     }).join("");
   }

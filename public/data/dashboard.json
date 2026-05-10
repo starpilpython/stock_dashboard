@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10 20:12:08",
+  "generated_at": "2026-05-10 20:27:31",
   "market_summary": {
     "KOSPI": {
       "close": 6598.87,
@@ -18,8 +18,8 @@
     {
       "rank": 1,
       "industry": "로봇/자율주행",
-      "is_score": 76.6,
-      "etf_flow_score": 90.8,
+      "is_score": 76.2,
+      "etf_flow_score": 90.0,
       "news_attention_score": 72.9,
       "sentiment_score": 46.8,
       "grade": "양호한 신호",
@@ -39,16 +39,16 @@
         "neu_ratio": 76.6
       },
       "trading_value_change": 117.2,
-      "return_5d": 3.14
+      "return_5d": 1.81
     },
     {
       "rank": 2,
       "industry": "친환경/신재생",
-      "is_score": 70.4,
-      "etf_flow_score": 66.1,
+      "is_score": 69.2,
+      "etf_flow_score": 63.8,
       "news_attention_score": 87.4,
       "sentiment_score": 55.5,
-      "grade": "양호한 신호",
+      "grade": "보통",
       "representative_etf": {
         "ticker": "457990",
         "name": "PLUS 태양광&ESS",
@@ -65,7 +65,7 @@
         "neu_ratio": 69.9
       },
       "trading_value_change": 53.0,
-      "return_5d": 3.78
+      "return_5d": 1.96
     },
     {
       "rank": 3,
@@ -91,13 +91,13 @@
         "neu_ratio": 77.9
       },
       "trading_value_change": 46.8,
-      "return_5d": 4.49
+      "return_5d": 3.34
     },
     {
       "rank": 4,
       "industry": "반도체",
-      "is_score": 68.6,
-      "etf_flow_score": 57.5,
+      "is_score": 66.7,
+      "etf_flow_score": 53.8,
       "news_attention_score": 86.1,
       "sentiment_score": 70.0,
       "grade": "보통",
@@ -117,13 +117,13 @@
         "neu_ratio": 59.9
       },
       "trading_value_change": 21.1,
-      "return_5d": 4.35
+      "return_5d": 2.1
     },
     {
       "rank": 5,
       "industry": "2차전지",
-      "is_score": 66.1,
-      "etf_flow_score": 43.5,
+      "is_score": 64.2,
+      "etf_flow_score": 39.6,
       "news_attention_score": 92.7,
       "sentiment_score": 82.9,
       "grade": "보통",
@@ -143,13 +143,13 @@
         "neu_ratio": 51.4
       },
       "trading_value_change": -19.2,
-      "return_5d": 3.93
+      "return_5d": 1.62
     },
     {
       "rank": 6,
       "industry": "AI/소프트웨어",
-      "is_score": 63.5,
-      "etf_flow_score": 74.2,
+      "is_score": 63.4,
+      "etf_flow_score": 74.1,
       "news_attention_score": 55.0,
       "sentiment_score": 49.4,
       "grade": "보통",
@@ -169,39 +169,13 @@
         "neu_ratio": 73.8
       },
       "trading_value_change": 104.3,
-      "return_5d": 1.26
+      "return_5d": 0.23
     },
     {
       "rank": 7,
-      "industry": "게임/엔터",
-      "is_score": 57.0,
-      "etf_flow_score": 41.7,
-      "news_attention_score": 100.0,
-      "sentiment_score": 30.8,
-      "grade": "보통",
-      "representative_etf": {
-        "ticker": "364990",
-        "name": "TIGER 게임TOP10",
-        "trading_value": 2652057809
-      },
-      "color": "#F97316",
-      "news_stats": {
-        "total": 423,
-        "positive": 56,
-        "neutral": 358,
-        "negative": 9,
-        "pos_ratio": 13.2,
-        "neg_ratio": 2.1,
-        "neu_ratio": 84.6
-      },
-      "trading_value_change": 15.8,
-      "return_5d": 0.71
-    },
-    {
-      "rank": 8,
       "industry": "통신/5G",
-      "is_score": 56.2,
-      "etf_flow_score": 41.5,
+      "is_score": 56.5,
+      "etf_flow_score": 42.3,
       "news_attention_score": 74.8,
       "sentiment_score": 64.7,
       "grade": "보통",
@@ -221,13 +195,39 @@
         "neu_ratio": 62.6
       },
       "trading_value_change": -30.8,
-      "return_5d": 4.22
+      "return_5d": 3.3
+    },
+    {
+      "rank": 8,
+      "industry": "게임/엔터",
+      "is_score": 56.4,
+      "etf_flow_score": 40.4,
+      "news_attention_score": 100.0,
+      "sentiment_score": 30.8,
+      "grade": "보통",
+      "representative_etf": {
+        "ticker": "364990",
+        "name": "TIGER 게임TOP10",
+        "trading_value": 2652057809
+      },
+      "color": "#F97316",
+      "news_stats": {
+        "total": 423,
+        "positive": 56,
+        "neutral": 358,
+        "negative": 9,
+        "pos_ratio": 13.2,
+        "neg_ratio": 2.1,
+        "neu_ratio": 84.6
+      },
+      "trading_value_change": 15.8,
+      "return_5d": -0.64
     },
     {
       "rank": 9,
       "industry": "자동차/모빌리티",
-      "is_score": 55.0,
-      "etf_flow_score": 55.8,
+      "is_score": 55.5,
+      "etf_flow_score": 56.9,
       "news_attention_score": 61.7,
       "sentiment_score": 42.7,
       "grade": "보통",
@@ -247,13 +247,13 @@
         "neu_ratio": 76.4
       },
       "trading_value_change": 31.0,
-      "return_5d": 1.92
+      "return_5d": 1.23
     },
     {
       "rank": 10,
       "industry": "리츠/부동산",
-      "is_score": 53.6,
-      "etf_flow_score": 50.0,
+      "is_score": 53.8,
+      "etf_flow_score": 50.3,
       "news_attention_score": 78.7,
       "sentiment_score": 25.1,
       "grade": "보통",
@@ -273,65 +273,13 @@
         "neu_ratio": 76.9
       },
       "trading_value_change": 72.9,
-      "return_5d": -2.52
+      "return_5d": -3.23
     },
     {
       "rank": 11,
-      "industry": "뷰티/화장품",
-      "is_score": 52.4,
-      "etf_flow_score": 33.6,
-      "news_attention_score": 76.4,
-      "sentiment_score": 63.5,
-      "grade": "보통",
-      "representative_etf": {
-        "ticker": "228790",
-        "name": "TIGER 화장품",
-        "trading_value": 18548030607
-      },
-      "color": "#E879F9",
-      "news_stats": {
-        "total": 325,
-        "positive": 109,
-        "neutral": 211,
-        "negative": 5,
-        "pos_ratio": 33.5,
-        "neg_ratio": 1.5,
-        "neu_ratio": 64.9
-      },
-      "trading_value_change": 15.4,
-      "return_5d": -1.32
-    },
-    {
-      "rank": 12,
-      "industry": "원자력",
-      "is_score": 52.2,
-      "etf_flow_score": 29.5,
-      "news_attention_score": 79.2,
-      "sentiment_score": 68.5,
-      "grade": "보통",
-      "representative_etf": {
-        "ticker": "0091P0",
-        "name": "TIGER 코리아원자력",
-        "trading_value": 145487745991
-      },
-      "color": "#06B6D4",
-      "news_stats": {
-        "total": 329,
-        "positive": 118,
-        "neutral": 209,
-        "negative": 2,
-        "pos_ratio": 35.9,
-        "neg_ratio": 0.6,
-        "neu_ratio": 63.5
-      },
-      "trading_value_change": 9.1,
-      "return_5d": -1.74
-    },
-    {
-      "rank": 13,
       "industry": "음식료/식품",
-      "is_score": 50.8,
-      "etf_flow_score": 35.4,
+      "is_score": 52.3,
+      "etf_flow_score": 38.5,
       "news_attention_score": 77.6,
       "sentiment_score": 49.1,
       "grade": "보통",
@@ -354,36 +302,36 @@
       "return_5d": 0.0
     },
     {
-      "rank": 14,
-      "industry": "철강/조선",
-      "is_score": 50.1,
-      "etf_flow_score": 38.2,
-      "news_attention_score": 69.6,
-      "sentiment_score": 50.5,
+      "rank": 12,
+      "industry": "원자력",
+      "is_score": 50.5,
+      "etf_flow_score": 26.0,
+      "news_attention_score": 79.2,
+      "sentiment_score": 68.5,
       "grade": "보통",
       "representative_etf": {
-        "ticker": "466920",
-        "name": "SOL 조선TOP3플러스",
-        "trading_value": 123177149871
+        "ticker": "0091P0",
+        "name": "TIGER 코리아원자력",
+        "trading_value": 145487745991
       },
-      "color": "#78716C",
+      "color": "#06B6D4",
       "news_stats": {
-        "total": 303,
-        "positive": 81,
-        "neutral": 212,
-        "negative": 10,
-        "pos_ratio": 26.7,
-        "neg_ratio": 3.3,
-        "neu_ratio": 70.0
+        "total": 329,
+        "positive": 118,
+        "neutral": 209,
+        "negative": 2,
+        "pos_ratio": 35.9,
+        "neg_ratio": 0.6,
+        "neu_ratio": 63.5
       },
-      "trading_value_change": -5.7,
-      "return_5d": 2.92
+      "trading_value_change": 9.1,
+      "return_5d": -3.65
     },
     {
-      "rank": 15,
+      "rank": 13,
       "industry": "바이오/헬스",
-      "is_score": 49.3,
-      "etf_flow_score": 29.8,
+      "is_score": 49.1,
+      "etf_flow_score": 29.5,
       "news_attention_score": 92.7,
       "sentiment_score": 32.7,
       "grade": "약한 신호",
@@ -403,13 +351,13 @@
         "neu_ratio": 79.7
       },
       "trading_value_change": 23.1,
-      "return_5d": -2.84
+      "return_5d": -3.74
     },
     {
-      "rank": 16,
+      "rank": 14,
       "industry": "건설/인프라",
-      "is_score": 47.0,
-      "etf_flow_score": 35.4,
+      "is_score": 46.7,
+      "etf_flow_score": 34.8,
       "news_attention_score": 63.0,
       "sentiment_score": 52.1,
       "grade": "약한 신호",
@@ -429,13 +377,39 @@
         "neu_ratio": 73.6
       },
       "trading_value_change": 5.4,
-      "return_5d": 0.49
+      "return_5d": -0.66
     },
     {
-      "rank": 17,
+      "rank": 15,
+      "industry": "뷰티/화장품",
+      "is_score": 46.5,
+      "etf_flow_score": 21.8,
+      "news_attention_score": 76.4,
+      "sentiment_score": 63.5,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "228790",
+        "name": "TIGER 화장품",
+        "trading_value": 18548030607
+      },
+      "color": "#E879F9",
+      "news_stats": {
+        "total": 325,
+        "positive": 109,
+        "neutral": 211,
+        "negative": 5,
+        "pos_ratio": 33.5,
+        "neg_ratio": 1.5,
+        "neu_ratio": 64.9
+      },
+      "trading_value_change": 15.4,
+      "return_5d": -5.75
+    },
+    {
+      "rank": 16,
       "industry": "금융",
-      "is_score": 44.7,
-      "etf_flow_score": 38.8,
+      "is_score": 46.1,
+      "etf_flow_score": 41.6,
       "news_attention_score": 58.5,
       "sentiment_score": 38.9,
       "grade": "약한 신호",
@@ -455,13 +429,39 @@
         "neu_ratio": 75.4
       },
       "trading_value_change": 27.2,
-      "return_5d": -1.42
+      "return_5d": -1.44
+    },
+    {
+      "rank": 17,
+      "industry": "철강/조선",
+      "is_score": 46.0,
+      "etf_flow_score": 30.0,
+      "news_attention_score": 69.6,
+      "sentiment_score": 50.5,
+      "grade": "약한 신호",
+      "representative_etf": {
+        "ticker": "466920",
+        "name": "SOL 조선TOP3플러스",
+        "trading_value": 123177149871
+      },
+      "color": "#78716C",
+      "news_stats": {
+        "total": 303,
+        "positive": 81,
+        "neutral": 212,
+        "negative": 10,
+        "pos_ratio": 26.7,
+        "neg_ratio": 3.3,
+        "neu_ratio": 70.0
+      },
+      "trading_value_change": -5.7,
+      "return_5d": -0.64
     },
     {
       "rank": 18,
       "industry": "화학/소재",
-      "is_score": 43.3,
-      "etf_flow_score": 35.4,
+      "is_score": 44.8,
+      "etf_flow_score": 38.5,
       "news_attention_score": 62.2,
       "sentiment_score": 34.5,
       "grade": "약한 신호",
@@ -486,8 +486,8 @@
     {
       "rank": 19,
       "industry": "운송/물류",
-      "is_score": 36.8,
-      "etf_flow_score": 11.8,
+      "is_score": 38.7,
+      "etf_flow_score": 15.6,
       "news_attention_score": 71.2,
       "sentiment_score": 47.8,
       "grade": "약한 신호",
@@ -507,13 +507,13 @@
         "neu_ratio": 70.8
       },
       "trading_value_change": -38.5,
-      "return_5d": -1.3
+      "return_5d": -1.02
     },
     {
       "rank": 20,
       "industry": "방산/우주항공",
-      "is_score": 33.9,
-      "etf_flow_score": 9.2,
+      "is_score": 36.0,
+      "etf_flow_score": 13.4,
       "news_attention_score": 66.6,
       "sentiment_score": 46.8,
       "grade": "약한 신호",
@@ -533,13 +533,13 @@
         "neu_ratio": 73.9
       },
       "trading_value_change": -16.2,
-      "return_5d": -5.06
+      "return_5d": -4.47
     },
     {
       "rank": 21,
       "industry": "농업",
-      "is_score": 31.9,
-      "etf_flow_score": 55.0,
+      "is_score": 32.4,
+      "etf_flow_score": 56.0,
       "news_attention_score": 0.0,
       "sentiment_score": 22.2,
       "grade": "약한 신호",
@@ -559,135 +559,198 @@
         "neu_ratio": 88.9
       },
       "trading_value_change": 18.9,
-      "return_5d": 3.04
+      "return_5d": 2.24
     }
   ],
   "heatmap": [
     {
       "industry": "반도체",
-      "return_5d": 4.35,
+      "return_5d": 2.1,
       "trading_value_billion": 170604.0,
-      "color": "#F59E0B"
+      "color": "#F59E0B",
+      "return_1w": 2.1,
+      "return_1m": 30.38,
+      "return_3m": 41.86
     },
     {
       "industry": "2차전지",
-      "return_5d": 3.93,
+      "return_5d": 1.62,
       "trading_value_billion": 37532.0,
-      "color": "#10B981"
+      "color": "#10B981",
+      "return_1w": 1.62,
+      "return_1m": 25.08,
+      "return_3m": 28.61
     },
     {
       "industry": "바이오/헬스",
-      "return_5d": -2.84,
+      "return_5d": -3.74,
       "trading_value_billion": 6929.0,
-      "color": "#EC4899"
+      "color": "#EC4899",
+      "return_1w": -3.74,
+      "return_1m": -1.76,
+      "return_3m": -6.35
     },
     {
       "industry": "AI/소프트웨어",
-      "return_5d": 1.26,
+      "return_5d": 0.23,
       "trading_value_billion": 58531.0,
-      "color": "#8B5CF6"
+      "color": "#8B5CF6",
+      "return_1w": 0.23,
+      "return_1m": 17.53,
+      "return_3m": 19.71
     },
     {
       "industry": "로봇/자율주행",
-      "return_5d": 3.14,
+      "return_5d": 1.81,
       "trading_value_billion": 10785.0,
-      "color": "#3B82F6"
+      "color": "#3B82F6",
+      "return_1w": 1.81,
+      "return_1m": 14.31,
+      "return_3m": 5.96
     },
     {
       "industry": "게임/엔터",
-      "return_5d": 0.71,
+      "return_5d": -0.64,
       "trading_value_billion": 508.0,
-      "color": "#F97316"
+      "color": "#F97316",
+      "return_1w": -0.64,
+      "return_1m": 6.96,
+      "return_3m": -2.9
     },
     {
       "industry": "자동차/모빌리티",
-      "return_5d": 1.92,
+      "return_5d": 1.23,
       "trading_value_billion": 3943.0,
-      "color": "#EAB308"
+      "color": "#EAB308",
+      "return_1w": 1.23,
+      "return_1m": 17.58,
+      "return_3m": 22.6
     },
     {
       "industry": "친환경/신재생",
-      "return_5d": 3.78,
+      "return_5d": 1.96,
       "trading_value_billion": 8885.0,
-      "color": "#22C55E"
+      "color": "#22C55E",
+      "return_1w": 1.96,
+      "return_1m": 19.35,
+      "return_3m": 32.13
     },
     {
       "industry": "원자력",
-      "return_5d": -1.74,
+      "return_5d": -3.65,
       "trading_value_billion": 20403.0,
-      "color": "#06B6D4"
+      "color": "#06B6D4",
+      "return_1w": -3.65,
+      "return_1m": 17.46,
+      "return_3m": 41.71
     },
     {
       "industry": "방산/우주항공",
-      "return_5d": -5.06,
+      "return_5d": -4.47,
       "trading_value_billion": 23924.0,
-      "color": "#6366F1"
+      "color": "#6366F1",
+      "return_1w": -4.47,
+      "return_1m": -0.95,
+      "return_3m": 9.21
     },
     {
       "industry": "철강/조선",
-      "return_5d": 2.92,
+      "return_5d": -0.64,
       "trading_value_billion": 24860.0,
-      "color": "#78716C"
+      "color": "#78716C",
+      "return_1w": -0.64,
+      "return_1m": 25.44,
+      "return_3m": 21.28
     },
     {
       "industry": "에너지/석유",
-      "return_5d": 4.49,
+      "return_5d": 3.34,
       "trading_value_billion": 3902.0,
-      "color": "#D97706"
+      "color": "#D97706",
+      "return_1w": 3.34,
+      "return_1m": 11.3,
+      "return_3m": 32.13
     },
     {
       "industry": "화학/소재",
       "return_5d": 0.0,
       "trading_value_billion": 0.0,
-      "color": "#14B8A6"
+      "color": "#14B8A6",
+      "return_1w": 0.0,
+      "return_1m": 0.0,
+      "return_3m": 0.0
     },
     {
       "industry": "통신/5G",
-      "return_5d": 4.22,
+      "return_5d": 3.3,
       "trading_value_billion": 18.0,
-      "color": "#0EA5E9"
+      "color": "#0EA5E9",
+      "return_1w": 3.3,
+      "return_1m": 32.1,
+      "return_3m": 58.34
     },
     {
       "industry": "금융",
-      "return_5d": -1.42,
+      "return_5d": -1.44,
       "trading_value_billion": 11316.0,
-      "color": "#A855F7"
+      "color": "#A855F7",
+      "return_1w": -1.44,
+      "return_1m": 4.89,
+      "return_3m": 12.36
     },
     {
       "industry": "리츠/부동산",
-      "return_5d": -2.52,
+      "return_5d": -3.23,
       "trading_value_billion": 3993.0,
-      "color": "#F43F5E"
+      "color": "#F43F5E",
+      "return_1w": -3.23,
+      "return_1m": 1.71,
+      "return_3m": 3.04
     },
     {
       "industry": "건설/인프라",
-      "return_5d": 0.49,
+      "return_5d": -0.66,
       "trading_value_billion": 9596.0,
-      "color": "#84CC16"
+      "color": "#84CC16",
+      "return_1w": -0.66,
+      "return_1m": 12.25,
+      "return_3m": 35.1
     },
     {
       "industry": "음식료/식품",
       "return_5d": 0.0,
       "trading_value_billion": 0.0,
-      "color": "#FB923C"
+      "color": "#FB923C",
+      "return_1w": 0.0,
+      "return_1m": 0.0,
+      "return_3m": 0.0
     },
     {
       "industry": "뷰티/화장품",
-      "return_5d": -1.32,
+      "return_5d": -5.75,
       "trading_value_billion": 1685.0,
-      "color": "#E879F9"
+      "color": "#E879F9",
+      "return_1w": -5.75,
+      "return_1m": 14.73,
+      "return_3m": 9.13
     },
     {
       "industry": "운송/물류",
-      "return_5d": -1.3,
+      "return_5d": -1.02,
       "trading_value_billion": 21.0,
-      "color": "#64748B"
+      "color": "#64748B",
+      "return_1w": -1.02,
+      "return_1m": 4.76,
+      "return_3m": 4.44
     },
     {
       "industry": "농업",
-      "return_5d": 3.04,
+      "return_5d": 2.24,
       "trading_value_billion": 94.0,
-      "color": "#4ADE80"
+      "color": "#4ADE80",
+      "return_1w": 2.24,
+      "return_1m": 5.07,
+      "return_3m": 14.01
     }
   ],
   "headlines": {
@@ -1371,6 +1434,9 @@
         "name": "SK하이닉스",
         "weight": 377.7,
         "return_5d": 5.2,
+        "return_1w": 5.2,
+        "return_1m": 46.8,
+        "return_3m": 54.9,
         "recent_volumes": [
           3127857,
           4563073,
@@ -1517,6 +1583,9 @@
         "name": "삼성전자",
         "weight": 314.13,
         "return_5d": 0.5,
+        "return_1w": 0.5,
+        "return_1m": 18.4,
+        "return_3m": 46.6,
         "recent_volumes": [
           19626666,
           22870374,
@@ -1663,6 +1732,9 @@
         "name": "한미반도체",
         "weight": 245.21,
         "return_5d": 24.5,
+        "return_1w": 24.5,
+        "return_1m": 41.5,
+        "return_3m": 96.7,
         "recent_volumes": [
           570284,
           5287941,
@@ -1809,6 +1881,9 @@
         "name": "리노공업",
         "weight": 116.34,
         "return_5d": -4.1,
+        "return_1w": -4.1,
+        "return_1m": 8.1,
+        "return_3m": 26.0,
         "recent_volumes": [
           827192,
           3215459,
@@ -1955,6 +2030,9 @@
         "name": "삼성전기",
         "weight": 99.23,
         "return_5d": 5.6,
+        "return_1w": 5.6,
+        "return_1m": 82.5,
+        "return_3m": 194.0,
         "recent_volumes": [
           548023,
           528597,
@@ -2101,6 +2179,9 @@
         "name": "이수페타시스",
         "weight": 87.17,
         "return_5d": -2.0,
+        "return_1w": -2.0,
+        "return_1m": 46.5,
+        "return_3m": 35.9,
         "recent_volumes": [
           1294903,
           1326945,
@@ -2247,6 +2328,9 @@
         "name": "ISC",
         "weight": 83.01,
         "return_5d": 3.2,
+        "return_1w": 3.2,
+        "return_1m": 2.3,
+        "return_3m": 76.7,
         "recent_volumes": [
           181784,
           291535,
@@ -2393,6 +2477,9 @@
         "name": "원익IPS",
         "weight": 67.36,
         "return_5d": 0.9,
+        "return_1w": 0.9,
+        "return_1m": 3.2,
+        "return_3m": 15.0,
         "recent_volumes": [
           424792,
           719765,
@@ -2539,6 +2626,9 @@
         "name": "이오테크닉스",
         "weight": 62.62,
         "return_5d": -7.5,
+        "return_1w": -7.5,
+        "return_1m": 18.2,
+        "return_3m": 32.0,
         "recent_volumes": [
           98110,
           72815,
@@ -2685,6 +2775,9 @@
         "name": "HPSP",
         "weight": 40.82,
         "return_5d": -1.5,
+        "return_1w": -1.5,
+        "return_1m": 25.2,
+        "return_3m": 23.3,
         "recent_volumes": [
           6316011,
           4303590,
@@ -2833,6 +2926,9 @@
         "name": "삼성SDI",
         "weight": 183.57,
         "return_5d": 8.4,
+        "return_1w": 8.4,
+        "return_1m": 58.5,
+        "return_3m": 95.2,
         "recent_volumes": [
           786062,
           701082,
@@ -2979,6 +3075,9 @@
         "name": "POSCO홀딩스",
         "weight": 158.77,
         "return_5d": 11.3,
+        "return_1w": 11.3,
+        "return_1m": 32.9,
+        "return_3m": 35.3,
         "recent_volumes": [
           292559,
           309760,
@@ -3125,6 +3224,9 @@
         "name": "에코프로비엠",
         "weight": 117.41,
         "return_5d": -1.0,
+        "return_1w": -1.0,
+        "return_1m": 7.0,
+        "return_3m": -4.0,
         "recent_volumes": [
           388962,
           345978,
@@ -3271,6 +3373,9 @@
         "name": "에코프로",
         "weight": 108.56,
         "return_5d": -2.4,
+        "return_1w": -2.4,
+        "return_1m": 8.1,
+        "return_3m": -5.9,
         "recent_volumes": [
           1045704,
           934570,
@@ -3417,6 +3522,9 @@
         "name": "LG에너지솔루션",
         "weight": 99.08,
         "return_5d": -4.3,
+        "return_1w": -4.3,
+        "return_1m": 15.6,
+        "return_3m": 21.2,
         "recent_volumes": [
           402718,
           433687,
@@ -3563,6 +3671,9 @@
         "name": "LG화학",
         "weight": 98.16,
         "return_5d": 1.4,
+        "return_1w": 1.4,
+        "return_1m": 30.4,
+        "return_3m": 33.9,
         "recent_volumes": [
           309047,
           305442,
@@ -3709,6 +3820,9 @@
         "name": "포스코퓨처엠",
         "weight": 96.04,
         "return_5d": 0.0,
+        "return_1w": 0.0,
+        "return_1m": 19.1,
+        "return_3m": 15.9,
         "recent_volumes": [
           314656,
           285322,
@@ -3855,6 +3969,9 @@
         "name": "엘앤에프",
         "weight": 65.11,
         "return_5d": -1.7,
+        "return_1w": -1.7,
+        "return_1m": 17.2,
+        "return_3m": 58.2,
         "recent_volumes": [
           891885,
           820199,
@@ -4001,6 +4118,9 @@
         "name": "SK이노베이션",
         "weight": 52.81,
         "return_5d": 10.0,
+        "return_1w": 10.0,
+        "return_1m": 23.7,
+        "return_3m": 36.8,
         "recent_volumes": [
           445814,
           651104,
@@ -4147,6 +4267,9 @@
         "name": "대주전자재료",
         "weight": 26.45,
         "return_5d": -13.3,
+        "return_1w": -13.3,
+        "return_1m": 30.9,
+        "return_3m": 109.4,
         "recent_volumes": [
           1832728,
           689042,
@@ -4295,6 +4418,9 @@
         "name": "셀트리온",
         "weight": 143.64,
         "return_5d": -4.1,
+        "return_1w": -4.1,
+        "return_1m": 2.7,
+        "return_3m": -1.2,
         "recent_volumes": [
           448117,
           518893,
@@ -4441,6 +4567,9 @@
         "name": "알테오젠",
         "weight": 102.11,
         "return_5d": -0.1,
+        "return_1w": -0.1,
+        "return_1m": 0.8,
+        "return_3m": -6.5,
         "recent_volumes": [
           333849,
           375682,
@@ -4587,6 +4716,9 @@
         "name": "삼성바이오로직스",
         "weight": 101.67,
         "return_5d": -3.8,
+        "return_1w": -3.8,
+        "return_1m": -5.4,
+        "return_3m": -14.1,
         "recent_volumes": [
           59422,
           88430,
@@ -4733,6 +4865,9 @@
         "name": "리가켐바이오",
         "weight": 80.71,
         "return_5d": -8.3,
+        "return_1w": -8.3,
+        "return_1m": 4.8,
+        "return_3m": -4.8,
         "recent_volumes": [
           242608,
           355866,
@@ -4879,6 +5014,9 @@
         "name": "에이비엘바이오",
         "weight": 72.72,
         "return_5d": -14.2,
+        "return_1w": -14.2,
+        "return_1m": -14.0,
+        "return_3m": -32.0,
         "recent_volumes": [
           511957,
           860772,
@@ -5025,6 +5163,9 @@
         "name": "올릭스",
         "weight": 55.53,
         "return_5d": -5.4,
+        "return_1w": -5.4,
+        "return_1m": 5.2,
+        "return_3m": 31.9,
         "recent_volumes": [
           421904,
           370510,
@@ -5171,6 +5312,9 @@
         "name": "에스티팜",
         "weight": 45.15,
         "return_5d": 3.0,
+        "return_1w": 3.0,
+        "return_1m": 10.4,
+        "return_3m": -0.7,
         "recent_volumes": [
           93763,
           424180,
@@ -5317,6 +5461,9 @@
         "name": "한미약품",
         "weight": 39.77,
         "return_5d": -7.5,
+        "return_1w": -7.5,
+        "return_1m": -9.3,
+        "return_3m": -1.5,
         "recent_volumes": [
           72984,
           57961,
@@ -5463,6 +5610,9 @@
         "name": "HLB",
         "weight": 38.75,
         "return_5d": 1.0,
+        "return_1w": 1.0,
+        "return_1m": 19.0,
+        "return_3m": 12.2,
         "recent_volumes": [
           295667,
           536030,
@@ -5609,6 +5759,9 @@
         "name": "유한양행",
         "weight": 38.03,
         "return_5d": -3.4,
+        "return_1w": -3.4,
+        "return_1m": -1.3,
+        "return_3m": -12.4,
         "recent_volumes": [
           170005,
           177933,
@@ -5757,6 +5910,9 @@
         "name": "삼성전자",
         "weight": 169.12,
         "return_5d": 0.5,
+        "return_1w": 0.5,
+        "return_1m": 18.4,
+        "return_3m": 46.6,
         "recent_volumes": [
           19626666,
           22870374,
@@ -5903,6 +6059,9 @@
         "name": "NAVER",
         "weight": 166.68,
         "return_5d": -1.4,
+        "return_1w": -1.4,
+        "return_1m": 6.8,
+        "return_3m": -21.3,
         "recent_volumes": [
           476096,
           458738,
@@ -6049,6 +6208,9 @@
         "name": "SK하이닉스",
         "weight": 150.42,
         "return_5d": 5.2,
+        "return_1w": 5.2,
+        "return_1m": 46.8,
+        "return_3m": 54.9,
         "recent_volumes": [
           3127857,
           4563073,
@@ -6195,6 +6357,9 @@
         "name": "삼성전기",
         "weight": 117.46,
         "return_5d": 5.6,
+        "return_1w": 5.6,
+        "return_1m": 82.5,
+        "return_3m": 194.0,
         "recent_volumes": [
           548023,
           528597,
@@ -6341,6 +6506,9 @@
         "name": "카카오",
         "weight": 116.29,
         "return_5d": -1.6,
+        "return_1w": -1.6,
+        "return_1m": 4.6,
+        "return_3m": -19.0,
         "recent_volumes": [
           1064052,
           1436742,
@@ -6487,6 +6655,9 @@
         "name": "LS ELECTRIC",
         "weight": 79.06,
         "return_5d": 22.7,
+        "return_1w": 22.7,
+        "return_1m": 80.8,
+        "return_3m": 164.3,
         "recent_volumes": [
           1695903,
           1591106,
@@ -6633,6 +6804,9 @@
         "name": "효성중공업",
         "weight": 53.99,
         "return_5d": 10.1,
+        "return_1w": 10.1,
+        "return_1m": 52.8,
+        "return_3m": 71.5,
         "recent_volumes": [
           95360,
           78226,
@@ -6779,6 +6953,9 @@
         "name": "크래프톤",
         "weight": 53.48,
         "return_5d": -3.5,
+        "return_1w": -3.5,
+        "return_1m": 8.8,
+        "return_3m": 6.4,
         "recent_volumes": [
           186903,
           145742,
@@ -6925,6 +7102,9 @@
         "name": "삼성SDI",
         "weight": 53.23,
         "return_5d": 8.4,
+        "return_1w": 8.4,
+        "return_1m": 58.5,
+        "return_3m": 95.2,
         "recent_volumes": [
           786062,
           701082,
@@ -7071,6 +7251,9 @@
         "name": "LG이노텍",
         "weight": 52.63,
         "return_5d": 5.7,
+        "return_1w": 5.7,
+        "return_1m": 76.6,
+        "return_3m": 140.8,
         "recent_volumes": [
           486132,
           420637,
@@ -7219,6 +7402,9 @@
         "name": "로보티즈",
         "weight": 43.72,
         "return_5d": 8.2,
+        "return_1w": 8.2,
+        "return_1m": 28.7,
+        "return_3m": 2.9,
         "recent_volumes": [
           485222,
           1338630,
@@ -7365,6 +7551,9 @@
         "name": "레인보우로보틱스",
         "weight": 33.56,
         "return_5d": 8.5,
+        "return_1w": 8.5,
+        "return_1m": 23.0,
+        "return_3m": -6.7,
         "recent_volumes": [
           139715,
           490051,
@@ -7511,6 +7700,9 @@
         "name": "현대차",
         "weight": 29.17,
         "return_5d": 3.5,
+        "return_1w": 3.5,
+        "return_1m": 12.7,
+        "return_3m": 11.1,
         "recent_volumes": [
           1228355,
           930365,
@@ -7657,6 +7849,9 @@
         "name": "에스피지",
         "weight": 28.2,
         "return_5d": 7.3,
+        "return_1w": 7.3,
+        "return_1m": 20.6,
+        "return_3m": -14.1,
         "recent_volumes": [
           400256,
           1017780,
@@ -7803,6 +7998,9 @@
         "name": "두산로보틱스",
         "weight": 25.14,
         "return_5d": 17.1,
+        "return_1w": 17.1,
+        "return_1m": 33.6,
+        "return_3m": 2.8,
         "recent_volumes": [
           258405,
           664732,
@@ -7949,6 +8147,9 @@
         "name": "현대오토에버",
         "weight": 18.97,
         "return_5d": 4.9,
+        "return_1w": 4.9,
+        "return_1m": 18.4,
+        "return_3m": 4.8,
         "recent_volumes": [
           103989,
           96705,
@@ -8095,6 +8296,9 @@
         "name": "현대모비스",
         "weight": 13.52,
         "return_5d": 0.6,
+        "return_1w": 0.6,
+        "return_1m": 9.4,
+        "return_3m": -2.5,
         "recent_volumes": [
           436579,
           326092,
@@ -8241,6 +8445,9 @@
         "name": "삼성전자",
         "weight": 13.15,
         "return_5d": 0.5,
+        "return_1w": 0.5,
+        "return_1m": 18.4,
+        "return_3m": 46.6,
         "recent_volumes": [
           19626666,
           22870374,
@@ -8387,6 +8594,9 @@
         "name": "뉴로메카",
         "weight": 12.32,
         "return_5d": -7.3,
+        "return_1w": -7.3,
+        "return_1m": 13.3,
+        "return_3m": -21.6,
         "recent_volumes": [
           455598,
           1240192,
@@ -8533,6 +8743,9 @@
         "name": "하이젠알앤엠",
         "weight": 8.25,
         "return_5d": 3.6,
+        "return_1w": 3.6,
+        "return_1m": 30.3,
+        "return_3m": -41.9,
         "recent_volumes": [
           131390,
           292349,
@@ -8681,6 +8894,9 @@
         "name": "NC",
         "weight": 111.67,
         "return_5d": 0.0,
+        "return_1w": 0.0,
+        "return_1m": 27.9,
+        "return_3m": 23.0,
         "recent_volumes": [
           90413,
           127724,
@@ -8827,6 +9043,9 @@
         "name": "크래프톤",
         "weight": 110.68,
         "return_5d": -3.5,
+        "return_1w": -3.5,
+        "return_1m": 8.8,
+        "return_3m": 6.4,
         "recent_volumes": [
           186903,
           145742,
@@ -8973,6 +9192,9 @@
         "name": "넷마블",
         "weight": 60.55,
         "return_5d": -1.5,
+        "return_1w": -1.5,
+        "return_1m": -0.7,
+        "return_3m": -2.1,
         "recent_volumes": [
           171054,
           191119,
@@ -9119,6 +9341,9 @@
         "name": "펄어비스",
         "weight": 58.3,
         "return_5d": 3.3,
+        "return_1w": 3.3,
+        "return_1m": -6.8,
+        "return_3m": 6.5,
         "recent_volumes": [
           794083,
           1052139,
@@ -9265,6 +9490,9 @@
         "name": "하이브",
         "weight": 53.34,
         "return_5d": 4.4,
+        "return_1w": 4.4,
+        "return_1m": -2.6,
+        "return_3m": -26.3,
         "recent_volumes": [
           178136,
           239927,
@@ -9411,6 +9639,9 @@
         "name": "JYP Ent.",
         "weight": 41.57,
         "return_5d": -0.9,
+        "return_1w": -0.9,
+        "return_1m": 4.5,
+        "return_3m": -10.0,
         "recent_volumes": [
           153124,
           154150,
@@ -9557,6 +9788,9 @@
         "name": "시프트업",
         "weight": 35.13,
         "return_5d": -6.3,
+        "return_1w": -6.3,
+        "return_1m": -1.4,
+        "return_3m": -2.3,
         "recent_volumes": [
           132803,
           53677,
@@ -9703,6 +9937,9 @@
         "name": "에스엠",
         "weight": 34.25,
         "return_5d": 3.6,
+        "return_1w": 3.6,
+        "return_1m": 13.6,
+        "return_3m": -8.7,
         "recent_volumes": [
           63672,
           82345,
@@ -9849,6 +10086,9 @@
         "name": "더블유게임즈",
         "weight": 30.15,
         "return_5d": 6.3,
+        "return_1w": 6.3,
+        "return_1m": 23.9,
+        "return_3m": 19.8,
         "recent_volumes": [
           187880,
           122299,
@@ -9995,6 +10235,9 @@
         "name": "위메이드",
         "weight": 24.33,
         "return_5d": 7.8,
+        "return_1w": 7.8,
+        "return_1m": 24.8,
+        "return_3m": -16.6,
         "recent_volumes": [
           185004,
           99793,
@@ -10143,6 +10386,9 @@
         "name": "현대차",
         "weight": 58.9,
         "return_5d": 3.5,
+        "return_1w": 3.5,
+        "return_1m": 12.7,
+        "return_3m": 11.1,
         "recent_volumes": [
           1228355,
           930365,
@@ -10289,6 +10535,9 @@
         "name": "현대모비스",
         "weight": 46.98,
         "return_5d": 0.6,
+        "return_1w": 0.6,
+        "return_1m": 9.4,
+        "return_3m": -2.5,
         "recent_volumes": [
           436579,
           326092,
@@ -10435,6 +10684,9 @@
         "name": "삼성전기",
         "weight": 43.63,
         "return_5d": 5.6,
+        "return_1w": 5.6,
+        "return_1m": 82.5,
+        "return_3m": 194.0,
         "recent_volumes": [
           548023,
           528597,
@@ -10581,6 +10833,9 @@
         "name": "기아",
         "weight": 38.75,
         "return_5d": -1.0,
+        "return_1w": -1.0,
+        "return_1m": 1.1,
+        "return_3m": 1.1,
         "recent_volumes": [
           1088654,
           1418466,
@@ -10727,6 +10982,9 @@
         "name": "현대오토에버",
         "weight": 15.59,
         "return_5d": 4.9,
+        "return_1w": 4.9,
+        "return_1m": 18.4,
+        "return_3m": 4.8,
         "recent_volumes": [
           103989,
           96705,
@@ -10873,6 +11131,9 @@
         "name": "LG이노텍",
         "weight": 15.1,
         "return_5d": 5.7,
+        "return_1w": 5.7,
+        "return_1m": 76.6,
+        "return_3m": 140.8,
         "recent_volumes": [
           486132,
           420637,
@@ -11019,6 +11280,9 @@
         "name": "LG전자",
         "weight": 14.94,
         "return_5d": 10.5,
+        "return_1w": 10.5,
+        "return_1m": 30.1,
+        "return_3m": 45.9,
         "recent_volumes": [
           815555,
           628169,
@@ -11165,6 +11429,9 @@
         "name": "삼성전자",
         "weight": 14.39,
         "return_5d": 0.5,
+        "return_1w": 0.5,
+        "return_1m": 18.4,
+        "return_3m": 46.6,
         "recent_volumes": [
           19626666,
           22870374,
@@ -11311,6 +11578,9 @@
         "name": "한국타이어앤테크놀로지",
         "weight": 9.97,
         "return_5d": -5.6,
+        "return_1w": -5.6,
+        "return_1m": 13.8,
+        "return_3m": -4.7,
         "recent_volumes": [
           324608,
           286329,
@@ -11457,6 +11727,9 @@
         "name": "HL만도",
         "weight": 9.79,
         "return_5d": 7.7,
+        "return_1w": 7.7,
+        "return_1m": 18.1,
+        "return_3m": -7.0,
         "recent_volumes": [
           168604,
           891369,
@@ -11605,6 +11878,9 @@
         "name": "SK하이닉스",
         "weight": 206.24,
         "return_5d": 5.2,
+        "return_1w": 5.2,
+        "return_1m": 46.8,
+        "return_3m": 54.9,
         "recent_volumes": [
           3127857,
           4563073,
@@ -11751,6 +12027,9 @@
         "name": "삼성전자",
         "weight": 195.23,
         "return_5d": 0.5,
+        "return_1w": 0.5,
+        "return_1m": 18.4,
+        "return_3m": 46.6,
         "recent_volumes": [
           19626666,
           22870374,
@@ -11897,6 +12176,9 @@
         "name": "LS ELECTRIC",
         "weight": 83.07,
         "return_5d": 22.7,
+        "return_1w": 22.7,
+        "return_1m": 80.8,
+        "return_3m": 164.3,
         "recent_volumes": [
           1695903,
           1591106,
@@ -12043,6 +12325,9 @@
         "name": "삼성SDI",
         "weight": 71.61,
         "return_5d": 8.4,
+        "return_1w": 8.4,
+        "return_1m": 58.5,
+        "return_3m": 95.2,
         "recent_volumes": [
           786062,
           701082,
@@ -12189,6 +12474,9 @@
         "name": "OCI홀딩스",
         "weight": 56.09,
         "return_5d": -4.2,
+        "return_1w": -4.2,
+        "return_1m": 60.3,
+        "return_3m": 232.4,
         "recent_volumes": [
           1327328,
           405894,
@@ -12335,6 +12623,9 @@
         "name": "한화솔루션",
         "weight": 51.54,
         "return_5d": 2.7,
+        "return_1w": 2.7,
+        "return_1m": 29.8,
+        "return_3m": 91.3,
         "recent_volumes": [
           4857070,
           3998275,
@@ -12481,6 +12772,9 @@
         "name": "두산에너빌리티",
         "weight": 47.35,
         "return_5d": 0.0,
+        "return_1w": 0.0,
+        "return_1m": 31.6,
+        "return_3m": 47.4,
         "recent_volumes": [
           5682618,
           3984476,
@@ -12627,6 +12921,9 @@
         "name": "삼성전기",
         "weight": 46.39,
         "return_5d": 5.6,
+        "return_1w": 5.6,
+        "return_1m": 82.5,
+        "return_3m": 194.0,
         "recent_volumes": [
           548023,
           528597,
@@ -12773,6 +13070,9 @@
         "name": "현대차",
         "weight": 42.38,
         "return_5d": 3.5,
+        "return_1w": 3.5,
+        "return_1m": 12.7,
+        "return_3m": 11.1,
         "recent_volumes": [
           1228355,
           930365,
@@ -12919,6 +13219,9 @@
         "name": "SK스퀘어",
         "weight": 36.56,
         "return_5d": 16.0,
+        "return_1w": 16.0,
+        "return_1m": 74.1,
+        "return_3m": 66.5,
         "recent_volumes": [
           376451,
           536940,
@@ -13067,6 +13370,9 @@
         "name": "두산에너빌리티",
         "weight": 110.0,
         "return_5d": 0.0,
+        "return_1w": 0.0,
+        "return_1m": 31.6,
+        "return_3m": 47.4,
         "recent_volumes": [
           5682618,
           3984476,
@@ -13213,6 +13519,9 @@
         "name": "현대건설",
         "weight": 70.73,
         "return_5d": -6.5,
+        "return_1w": -6.5,
+        "return_1m": 7.1,
+        "return_3m": 63.8,
         "recent_volumes": [
           837252,
           727618,
@@ -13359,6 +13668,9 @@
         "name": "대우건설",
         "weight": 67.99,
         "return_5d": 6.7,
+        "return_1w": 6.7,
+        "return_1m": 108.2,
+        "return_3m": 620.9,
         "recent_volumes": [
           16171273,
           22612731,
@@ -13505,6 +13817,9 @@
         "name": "HD현대일렉트릭",
         "weight": 37.81,
         "return_5d": 0.3,
+        "return_1w": 0.3,
+        "return_1m": 41.8,
+        "return_3m": 49.8,
         "recent_volumes": [
           280050,
           254572,
@@ -13651,6 +13966,9 @@
         "name": "비에이치아이",
         "weight": 34.95,
         "return_5d": -0.8,
+        "return_1w": -0.8,
+        "return_1m": 5.4,
+        "return_3m": 40.1,
         "recent_volumes": [
           856261,
           304646,
@@ -13797,6 +14115,9 @@
         "name": "한국전력",
         "weight": 30.64,
         "return_5d": -5.7,
+        "return_1w": -5.7,
+        "return_1m": 8.1,
+        "return_3m": -24.0,
         "recent_volumes": [
           1663225,
           1797186,
@@ -13943,6 +14264,9 @@
         "name": "한전기술",
         "weight": 28.32,
         "return_5d": -3.2,
+        "return_1w": -3.2,
+        "return_1m": 15.8,
+        "return_3m": 50.4,
         "recent_volumes": [
           313201,
           197295,
@@ -14089,6 +14413,9 @@
         "name": "LS ELECTRIC",
         "weight": 26.75,
         "return_5d": 22.7,
+        "return_1w": 22.7,
+        "return_1m": 80.8,
+        "return_3m": 164.3,
         "recent_volumes": [
           1695903,
           1591106,
@@ -14235,6 +14562,9 @@
         "name": "우리기술",
         "weight": 22.49,
         "return_5d": -5.7,
+        "return_1w": -5.7,
+        "return_1m": 0.0,
+        "return_3m": 146.3,
         "recent_volumes": [
           8247778,
           7784669,
@@ -14381,6 +14711,9 @@
         "name": "효성중공업",
         "weight": 13.97,
         "return_5d": 10.1,
+        "return_1w": 10.1,
+        "return_1m": 52.8,
+        "return_3m": 71.5,
         "recent_volumes": [
           95360,
           78226,
@@ -14529,6 +14862,9 @@
         "name": "한화에어로스페이스",
         "weight": 88.08,
         "return_5d": -3.1,
+        "return_1w": -3.1,
+        "return_1m": -2.2,
+        "return_3m": 14.4,
         "recent_volumes": [
           272846,
           114894,
@@ -14675,6 +15011,9 @@
         "name": "LIG디펜스앤에어로스페이스",
         "weight": 76.81,
         "return_5d": -4.9,
+        "return_1w": -4.9,
+        "return_1m": 9.4,
+        "return_3m": 107.3,
         "recent_volumes": [
           325655,
           279104,
@@ -14821,6 +15160,9 @@
         "name": "현대로템",
         "weight": 70.81,
         "return_5d": 15.2,
+        "return_1w": 15.2,
+        "return_1m": 27.9,
+        "return_3m": 25.2,
         "recent_volumes": [
           1957754,
           944178,
@@ -14967,6 +15309,9 @@
         "name": "한국항공우주",
         "weight": 69.92,
         "return_5d": -1.4,
+        "return_1w": -1.4,
+        "return_1m": -7.4,
+        "return_3m": 5.6,
         "recent_volumes": [
           2626235,
           715645,
@@ -15113,6 +15458,9 @@
         "name": "한화시스템",
         "weight": 48.16,
         "return_5d": -10.0,
+        "return_1w": -10.0,
+        "return_1m": -13.4,
+        "return_3m": 26.3,
         "recent_volumes": [
           680760,
           998518,
@@ -15259,6 +15607,9 @@
         "name": "한화오션",
         "weight": 41.34,
         "return_5d": -2.3,
+        "return_1w": -2.3,
+        "return_1m": 3.0,
+        "return_3m": -1.3,
         "recent_volumes": [
           1520273,
           2554842,
@@ -15405,6 +15756,9 @@
         "name": "STX엔진",
         "weight": 20.6,
         "return_5d": 7.5,
+        "return_1w": 7.5,
+        "return_1m": 70.2,
+        "return_3m": 90.7,
         "recent_volumes": [
           1449488,
           1799478,
@@ -15551,6 +15905,9 @@
         "name": "퍼스텍",
         "weight": 19.62,
         "return_5d": 0,
+        "return_1w": 0,
+        "return_1m": 0,
+        "return_3m": 0,
         "recent_volumes": [],
         "volume_daily": [],
         "volume_weekly": [],
@@ -15619,6 +15976,9 @@
         "name": "쎄트렉아이",
         "weight": 18.66,
         "return_5d": -3.8,
+        "return_1w": -3.8,
+        "return_1m": -0.8,
+        "return_3m": -11.7,
         "recent_volumes": [
           73305,
           198102,
@@ -15765,6 +16125,9 @@
         "name": "인텔리안테크",
         "weight": 16.7,
         "return_5d": 1.8,
+        "return_1w": 1.8,
+        "return_1m": 14.6,
+        "return_3m": 36.1,
         "recent_volumes": [
           142722,
           205290,
@@ -15913,6 +16276,9 @@
         "name": "HD현대중공업",
         "weight": 90.49,
         "return_5d": 2.1,
+        "return_1w": 2.1,
+        "return_1m": 42.9,
+        "return_3m": 24.8,
         "recent_volumes": [
           597616,
           529913,
@@ -16059,6 +16425,9 @@
         "name": "한화오션",
         "weight": 78.96,
         "return_5d": -2.3,
+        "return_1w": -2.3,
+        "return_1m": 3.0,
+        "return_3m": -1.3,
         "recent_volumes": [
           1520273,
           2554842,
@@ -16205,6 +16574,9 @@
         "name": "삼성중공업",
         "weight": 77.26,
         "return_5d": -6.0,
+        "return_1w": -6.0,
+        "return_1m": 15.9,
+        "return_3m": 18.1,
         "recent_volumes": [
           11182486,
           8131764,
@@ -16351,6 +16723,9 @@
         "name": "HD한국조선해양",
         "weight": 68.86,
         "return_5d": -3.0,
+        "return_1w": -3.0,
+        "return_1m": 23.1,
+        "return_3m": 14.9,
         "recent_volumes": [
           267625,
           219985,
@@ -16497,6 +16872,9 @@
         "name": "한화엔진",
         "weight": 48.69,
         "return_5d": 15.8,
+        "return_1w": 15.8,
+        "return_1m": 92.6,
+        "return_3m": 65.7,
         "recent_volumes": [
           3055598,
           3604536,
@@ -16643,6 +17021,9 @@
         "name": "POSCO홀딩스",
         "weight": 44.71,
         "return_5d": 11.3,
+        "return_1w": 11.3,
+        "return_1m": 32.9,
+        "return_3m": 35.3,
         "recent_volumes": [
           292559,
           309760,
@@ -16789,6 +17170,9 @@
         "name": "고려아연",
         "weight": 41.3,
         "return_5d": -3.8,
+        "return_1w": -3.8,
+        "return_1m": 6.4,
+        "return_3m": -4.3,
         "recent_volumes": [
           24407,
           21682,
@@ -16935,6 +17319,9 @@
         "name": "현대제철",
         "weight": 38.61,
         "return_5d": 0.1,
+        "return_1w": 0.1,
+        "return_1m": 24.2,
+        "return_3m": 44.0,
         "recent_volumes": [
           2689781,
           1592988,
@@ -17081,6 +17468,9 @@
         "name": "HD현대마린솔루션",
         "weight": 32.71,
         "return_5d": 4.7,
+        "return_1w": 4.7,
+        "return_1m": 48.8,
+        "return_3m": 52.4,
         "recent_volumes": [
           627159,
           623593,
@@ -17227,6 +17617,9 @@
         "name": "HD현대마린엔진",
         "weight": 25.43,
         "return_5d": -7.7,
+        "return_1w": -7.7,
+        "return_1m": 39.6,
+        "return_3m": 26.0,
         "recent_volumes": [
           1839025,
           855091,
@@ -17375,6 +17768,9 @@
         "name": "LG화학",
         "weight": 32.54,
         "return_5d": 1.4,
+        "return_1w": 1.4,
+        "return_1m": 30.4,
+        "return_3m": 33.9,
         "recent_volumes": [
           309047,
           305442,
@@ -17521,6 +17917,9 @@
         "name": "HD현대",
         "weight": 29.24,
         "return_5d": 7.8,
+        "return_1w": 7.8,
+        "return_1m": 26.7,
+        "return_3m": 39.2,
         "recent_volumes": [
           138822,
           133041,
@@ -17667,6 +18066,9 @@
         "name": "SK이노베이션",
         "weight": 22.72,
         "return_5d": 10.0,
+        "return_1w": 10.0,
+        "return_1m": 23.7,
+        "return_3m": 36.8,
         "recent_volumes": [
           445814,
           651104,
@@ -17813,6 +18215,9 @@
         "name": "SK",
         "weight": 15.03,
         "return_5d": 6.6,
+        "return_1w": 6.6,
+        "return_1m": 36.0,
+        "return_3m": 41.9,
         "recent_volumes": [
           224469,
           173528,
@@ -17959,6 +18364,9 @@
         "name": "S-Oil",
         "weight": 11.72,
         "return_5d": 12.6,
+        "return_1w": 12.6,
+        "return_1m": 20.7,
+        "return_3m": 33.2,
         "recent_volumes": [
           362111,
           450656,
@@ -18105,6 +18513,9 @@
         "name": "한화솔루션",
         "weight": 11.47,
         "return_5d": 2.7,
+        "return_1w": 2.7,
+        "return_1m": 29.8,
+        "return_3m": 91.3,
         "recent_volumes": [
           4857070,
           3998275,
@@ -18251,6 +18662,9 @@
         "name": "OCI홀딩스",
         "weight": 10.17,
         "return_5d": -4.2,
+        "return_1w": -4.2,
+        "return_1m": 60.3,
+        "return_3m": 232.4,
         "recent_volumes": [
           1327328,
           405894,
@@ -18397,6 +18811,9 @@
         "name": "SKC",
         "weight": 6.43,
         "return_5d": 1.6,
+        "return_1w": 1.6,
+        "return_1m": 32.3,
+        "return_3m": 12.7,
         "recent_volumes": [
           398482,
           1966444,
@@ -18543,6 +18960,9 @@
         "name": "한솔케미칼",
         "weight": 5.29,
         "return_5d": -2.7,
+        "return_1w": -2.7,
+        "return_1m": 7.8,
+        "return_3m": 4.2,
         "recent_volumes": [
           70188,
           93034,
@@ -18689,6 +19109,9 @@
         "name": "이수스페셜티케미컬",
         "weight": 5.12,
         "return_5d": -0.1,
+        "return_1w": -0.1,
+        "return_1m": 31.5,
+        "return_3m": 17.3,
         "recent_volumes": [
           455778,
           303476,
@@ -18838,6 +19261,9 @@
         "name": "삼성전기",
         "weight": 13.2,
         "return_5d": 5.6,
+        "return_1w": 5.6,
+        "return_1m": 82.5,
+        "return_3m": 194.0,
         "recent_volumes": [
           548023,
           528597,
@@ -18984,6 +19410,9 @@
         "name": "한미반도체",
         "weight": 9.73,
         "return_5d": 24.5,
+        "return_1w": 24.5,
+        "return_1m": 41.5,
+        "return_3m": 96.7,
         "recent_volumes": [
           570284,
           5287941,
@@ -19130,6 +19559,9 @@
         "name": "SK하이닉스",
         "weight": 9.68,
         "return_5d": 5.2,
+        "return_1w": 5.2,
+        "return_1m": 46.8,
+        "return_3m": 54.9,
         "recent_volumes": [
           3127857,
           4563073,
@@ -19276,6 +19708,9 @@
         "name": "삼성SDI",
         "weight": 9.58,
         "return_5d": 8.4,
+        "return_1w": 8.4,
+        "return_1m": 58.5,
+        "return_3m": 95.2,
         "recent_volumes": [
           786062,
           701082,
@@ -19422,6 +19857,9 @@
         "name": "SK텔레콤",
         "weight": 9.27,
         "return_5d": -4.9,
+        "return_1w": -4.9,
+        "return_1m": 17.6,
+        "return_3m": 37.6,
         "recent_volumes": [
           805874,
           832809,
@@ -19568,6 +20006,9 @@
         "name": "삼성전자",
         "weight": 8.79,
         "return_5d": 0.5,
+        "return_1w": 0.5,
+        "return_1m": 18.4,
+        "return_3m": 46.6,
         "recent_volumes": [
           19626666,
           22870374,
@@ -19714,6 +20155,9 @@
         "name": "LG이노텍",
         "weight": 7.2,
         "return_5d": 5.7,
+        "return_1w": 5.7,
+        "return_1m": 76.6,
+        "return_3m": 140.8,
         "recent_volumes": [
           486132,
           420637,
@@ -19860,6 +20304,9 @@
         "name": "KT",
         "weight": 6.03,
         "return_5d": -1.3,
+        "return_1w": -1.3,
+        "return_1m": 2.4,
+        "return_3m": 10.3,
         "recent_volumes": [
           375729,
           357319,
@@ -20006,6 +20453,9 @@
         "name": "이수페타시스",
         "weight": 4.8,
         "return_5d": -2.0,
+        "return_1w": -2.0,
+        "return_1m": 46.5,
+        "return_3m": 35.9,
         "recent_volumes": [
           1294903,
           1326945,
@@ -20152,6 +20602,9 @@
         "name": "LG유플러스",
         "weight": 3.73,
         "return_5d": -4.6,
+        "return_1w": -4.6,
+        "return_1m": 3.3,
+        "return_3m": -0.4,
         "recent_volumes": [
           552044,
           675256,
@@ -20300,6 +20753,9 @@
         "name": "KB금융",
         "weight": 165.96,
         "return_5d": 2.0,
+        "return_1w": 2.0,
+        "return_1m": 10.3,
+        "return_3m": 20.0,
         "recent_volumes": [
           1072760,
           884797,
@@ -20446,6 +20902,9 @@
         "name": "하나금융지주",
         "weight": 150.08,
         "return_5d": 3.7,
+        "return_1w": 3.7,
+        "return_1m": 16.6,
+        "return_3m": 23.8,
         "recent_volumes": [
           796290,
           1080908,
@@ -20592,6 +21051,9 @@
         "name": "신한지주",
         "weight": 146.87,
         "return_5d": -0.1,
+        "return_1w": -0.1,
+        "return_1m": 8.8,
+        "return_3m": 21.1,
         "recent_volumes": [
           1046117,
           1224148,
@@ -20738,6 +21200,9 @@
         "name": "미래에셋증권",
         "weight": 124.42,
         "return_5d": -3.1,
+        "return_1w": -3.1,
+        "return_1m": 2.7,
+        "return_3m": 62.5,
         "recent_volumes": [
           1587432,
           3580422,
@@ -20884,6 +21349,9 @@
         "name": "우리금융지주",
         "weight": 120.25,
         "return_5d": -4.9,
+        "return_1w": -4.9,
+        "return_1m": 4.4,
+        "return_3m": 10.8,
         "recent_volumes": [
           1378755,
           5571266,
@@ -21030,6 +21498,9 @@
         "name": "한국금융지주",
         "weight": 99.02,
         "return_5d": -7.3,
+        "return_1w": -7.3,
+        "return_1m": 13.2,
+        "return_3m": 20.1,
         "recent_volumes": [
           203236,
           279881,
@@ -21176,6 +21647,9 @@
         "name": "NH투자증권",
         "weight": 72.26,
         "return_5d": -4.1,
+        "return_1w": -4.1,
+        "return_1m": 12.4,
+        "return_3m": 33.8,
         "recent_volumes": [
           823905,
           772342,
@@ -21322,6 +21796,9 @@
         "name": "키움증권",
         "weight": 67.9,
         "return_5d": -11.5,
+        "return_1w": -11.5,
+        "return_1m": -3.4,
+        "return_3m": -4.6,
         "recent_volumes": [
           96220,
           129872,
@@ -21468,6 +21945,9 @@
         "name": "삼성증권",
         "weight": 64.92,
         "return_5d": -3.7,
+        "return_1w": -3.7,
+        "return_1m": 15.1,
+        "return_3m": 28.4,
         "recent_volumes": [
           229581,
           360261,
@@ -21614,6 +22094,9 @@
         "name": "삼성생명",
         "weight": 48.26,
         "return_5d": 2.0,
+        "return_1w": 2.0,
+        "return_1m": 12.9,
+        "return_3m": 39.4,
         "recent_volumes": [
           275279,
           328458,
@@ -21763,6 +22246,9 @@
         "name": "현대건설",
         "weight": 43.93,
         "return_5d": -6.5,
+        "return_1w": -6.5,
+        "return_1m": 7.1,
+        "return_3m": 63.8,
         "recent_volumes": [
           837252,
           727618,
@@ -21909,6 +22395,9 @@
         "name": "삼성E&A",
         "weight": 35.88,
         "return_5d": 1.1,
+        "return_1w": 1.1,
+        "return_1m": 30.9,
+        "return_3m": 72.4,
         "recent_volumes": [
           3611224,
           3433235,
@@ -22055,6 +22544,9 @@
         "name": "대우건설",
         "weight": 34.72,
         "return_5d": 6.7,
+        "return_1w": 6.7,
+        "return_1m": 108.2,
+        "return_3m": 620.9,
         "recent_volumes": [
           16171273,
           22612731,
@@ -22201,6 +22693,9 @@
         "name": "삼성전기",
         "weight": 28.72,
         "return_5d": 5.6,
+        "return_1w": 5.6,
+        "return_1m": 82.5,
+        "return_3m": 194.0,
         "recent_volumes": [
           548023,
           528597,
@@ -22347,6 +22842,9 @@
         "name": "SK하이닉스",
         "weight": 21.16,
         "return_5d": 5.2,
+        "return_1w": 5.2,
+        "return_1m": 46.8,
+        "return_3m": 54.9,
         "recent_volumes": [
           3127857,
           4563073,
@@ -22493,6 +22991,9 @@
         "name": "삼성전자",
         "weight": 19.11,
         "return_5d": 0.5,
+        "return_1w": 0.5,
+        "return_1m": 18.4,
+        "return_3m": 46.6,
         "recent_volumes": [
           19626666,
           22870374,
@@ -22639,6 +23140,9 @@
         "name": "한전기술",
         "weight": 17.8,
         "return_5d": -3.2,
+        "return_1w": -3.2,
+        "return_1m": 15.8,
+        "return_3m": 50.4,
         "recent_volumes": [
           313201,
           197295,
@@ -22785,6 +23289,9 @@
         "name": "DL이앤씨",
         "weight": 14.65,
         "return_5d": 0.0,
+        "return_1w": 0.0,
+        "return_1m": 32.0,
+        "return_3m": 127.3,
         "recent_volumes": [
           1364411,
           803922,
@@ -22931,6 +23438,9 @@
         "name": "삼성물산",
         "weight": 12.32,
         "return_5d": -4.2,
+        "return_1w": -4.2,
+        "return_1m": 13.5,
+        "return_3m": 2.6,
         "recent_volumes": [
           322709,
           231196,
@@ -23077,6 +23587,9 @@
         "name": "GS건설",
         "weight": 12.28,
         "return_5d": -6.6,
+        "return_1w": -6.6,
+        "return_1m": 39.6,
+        "return_3m": 107.9,
         "recent_volumes": [
           1919013,
           1461753,
@@ -23226,6 +23739,9 @@
         "name": "에이피알",
         "weight": 61.13,
         "return_5d": -5.7,
+        "return_1w": -5.7,
+        "return_1m": 29.8,
+        "return_3m": 54.9,
         "recent_volumes": [
           212848,
           142056,
@@ -23372,6 +23888,9 @@
         "name": "코스맥스",
         "weight": 36.68,
         "return_5d": -7.3,
+        "return_1w": -7.3,
+        "return_1m": 11.2,
+        "return_3m": 11.1,
         "recent_volumes": [
           115728,
           59960,
@@ -23518,6 +24037,9 @@
         "name": "실리콘투",
         "weight": 33.86,
         "return_5d": -9.8,
+        "return_1w": -9.8,
+        "return_1m": 12.0,
+        "return_3m": -15.4,
         "recent_volumes": [
           854247,
           1529535,
@@ -23664,6 +24186,9 @@
         "name": "아모레퍼시픽",
         "weight": 30.82,
         "return_5d": -6.0,
+        "return_1w": -6.0,
+        "return_1m": 2.9,
+        "return_3m": -2.1,
         "recent_volumes": [
           669397,
           516517,
@@ -23810,6 +24335,9 @@
         "name": "달바글로벌",
         "weight": 26.89,
         "return_5d": -6.2,
+        "return_1w": -6.2,
+        "return_1m": 53.2,
+        "return_3m": 42.5,
         "recent_volumes": [
           271894,
           150251,
@@ -23956,6 +24484,9 @@
         "name": "LG생활건강",
         "weight": 24.27,
         "return_5d": 0.4,
+        "return_1w": 0.4,
+        "return_1m": 2.8,
+        "return_3m": -1.2,
         "recent_volumes": [
           54684,
           41026,
@@ -24102,6 +24633,9 @@
         "name": "한국콜마",
         "weight": 22.97,
         "return_5d": -3.2,
+        "return_1w": -3.2,
+        "return_1m": 16.6,
+        "return_3m": 31.8,
         "recent_volumes": [
           281632,
           183745,
@@ -24248,6 +24782,9 @@
         "name": "파마리서치",
         "weight": 17.4,
         "return_5d": -2.9,
+        "return_1w": -2.9,
+        "return_1m": 7.9,
+        "return_3m": -25.8,
         "recent_volumes": [
           146721,
           99965,
@@ -24394,6 +24931,9 @@
         "name": "코스메카코리아",
         "weight": 14.04,
         "return_5d": -5.8,
+        "return_1w": -5.8,
+        "return_1m": 5.6,
+        "return_3m": -18.5,
         "recent_volumes": [
           79029,
           64815,
@@ -24540,6 +25080,9 @@
         "name": "펌텍코리아",
         "weight": 5.09,
         "return_5d": 0,
+        "return_1w": 0,
+        "return_1m": 0,
+        "return_3m": 0,
         "recent_volumes": [],
         "volume_daily": [],
         "volume_weekly": [],
@@ -24610,6 +25153,9 @@
         "name": "현대글로비스",
         "weight": 27.9,
         "return_5d": 2.0,
+        "return_1w": 2.0,
+        "return_1m": 8.1,
+        "return_3m": -7.7,
         "recent_volumes": [
           244317,
           388989,
@@ -24756,6 +25302,9 @@
         "name": "대한항공",
         "weight": 18.45,
         "return_5d": -1.2,
+        "return_1w": -1.2,
+        "return_1m": 6.7,
+        "return_3m": 9.1,
         "recent_volumes": [
           947132,
           993666,
@@ -24902,6 +25451,9 @@
         "name": "HMM",
         "weight": 14.46,
         "return_5d": -2.8,
+        "return_1w": -2.8,
+        "return_1m": 2.2,
+        "return_3m": 5.0,
         "recent_volumes": [
           1373810,
           853387,
@@ -25048,6 +25600,9 @@
         "name": "팬오션",
         "weight": 10.6,
         "return_5d": -1.6,
+        "return_1w": -1.6,
+        "return_1m": 5.3,
+        "return_3m": 14.5,
         "recent_volumes": [
           2433962,
           2438983,
@@ -25194,6 +25749,9 @@
         "name": "CJ대한통운",
         "weight": 9.43,
         "return_5d": -1.3,
+        "return_1w": -1.3,
+        "return_1m": -2.1,
+        "return_3m": 2.1,
         "recent_volumes": [
           66837,
           68430,
@@ -25340,6 +25898,9 @@
         "name": "아시아나항공",
         "weight": 4.57,
         "return_5d": -1.3,
+        "return_1w": -1.3,
+        "return_1m": 1.1,
+        "return_3m": -6.3,
         "recent_volumes": [
           40597,
           105595,
@@ -25486,6 +26047,9 @@
         "name": "롯데렌탈",
         "weight": 3.74,
         "return_5d": -1.5,
+        "return_1w": -1.5,
+        "return_1m": 7.3,
+        "return_3m": 10.7,
         "recent_volumes": [
           49262,
           27602,
@@ -25632,6 +26196,9 @@
         "name": "대한해운",
         "weight": 3.71,
         "return_5d": -6.1,
+        "return_1w": -6.1,
+        "return_1m": 8.6,
+        "return_3m": 31.1,
         "recent_volumes": [
           36225155,
           10846099,
@@ -25778,6 +26345,9 @@
         "name": "한진",
         "weight": 1.54,
         "return_5d": 0,
+        "return_1w": 0,
+        "return_1m": 0,
+        "return_3m": 0,
         "recent_volumes": [],
         "volume_daily": [],
         "volume_weekly": [],
@@ -25846,6 +26416,9 @@
         "name": "흥아해운",
         "weight": 1.54,
         "return_5d": -8.5,
+        "return_1w": -8.5,
+        "return_1m": -29.3,
+        "return_3m": 71.5,
         "recent_volumes": [
           19747078,
           10340539,
@@ -25994,6 +26567,9 @@
         "name": "KT&G",
         "weight": 19.98,
         "return_5d": 1.2,
+        "return_1w": 1.2,
+        "return_1m": 14.1,
+        "return_3m": 15.3,
         "recent_volumes": [
           297692,
           186304,
@@ -26140,6 +26716,9 @@
         "name": "LG화학",
         "weight": 17.24,
         "return_5d": 1.4,
+        "return_1w": 1.4,
+        "return_1m": 30.4,
+        "return_3m": 33.9,
         "recent_volumes": [
           309047,
           305442,
@@ -26286,6 +26865,9 @@
         "name": "LS",
         "weight": 14.62,
         "return_5d": 13.7,
+        "return_1w": 13.7,
+        "return_1m": 69.0,
+        "return_3m": 130.3,
         "recent_volumes": [
           223625,
           229840,
@@ -26432,6 +27014,9 @@
         "name": "CJ제일제당",
         "weight": 11.38,
         "return_5d": 4.4,
+        "return_1w": 4.4,
+        "return_1m": 9.1,
+        "return_3m": 17.1,
         "recent_volumes": [
           44324,
           46228,
@@ -26578,6 +27163,9 @@
         "name": "하림",
         "weight": 10.14,
         "return_5d": 0,
+        "return_1w": 0,
+        "return_1m": 0,
+        "return_3m": 0,
         "recent_volumes": [],
         "volume_daily": [],
         "volume_weekly": [],
@@ -26646,6 +27234,9 @@
         "name": "롯데정밀화학",
         "weight": 8.1,
         "return_5d": 12.8,
+        "return_1w": 12.8,
+        "return_1m": 47.2,
+        "return_3m": 48.8,
         "recent_volumes": [
           391553,
           144107,
@@ -26792,6 +27383,9 @@
         "name": "오뚜기",
         "weight": 6.83,
         "return_5d": -0.8,
+        "return_1w": -0.8,
+        "return_1m": 2.8,
+        "return_3m": -3.6,
         "recent_volumes": [
           3200,
           4028,
@@ -26938,6 +27532,9 @@
         "name": "유니드",
         "weight": 2.95,
         "return_5d": 0,
+        "return_1w": 0,
+        "return_1m": 0,
+        "return_3m": 0,
         "recent_volumes": [],
         "volume_daily": [],
         "volume_weekly": [],
@@ -27006,6 +27603,9 @@
         "name": "파미셀",
         "weight": 1.96,
         "return_5d": -0.9,
+        "return_1w": -0.9,
+        "return_1m": 21.2,
+        "return_3m": 34.5,
         "recent_volumes": [
           756747,
           1019398,
@@ -27152,6 +27752,9 @@
         "name": "사조대림",
         "weight": 1.67,
         "return_5d": 0,
+        "return_1w": 0,
+        "return_1m": 0,
+        "return_3m": 0,
         "recent_volumes": [],
         "volume_daily": [],
         "volume_weekly": [],
@@ -27223,6 +27826,9 @@
       "name": "삼성전자",
       "weight": 314.13,
       "return_5d": 0.5,
+      "return_1w": 0.5,
+      "return_1m": 18.4,
+      "return_3m": 46.6,
       "recent_volumes": [
         19626666,
         22870374,
@@ -27364,7 +27970,7 @@
       "etf_count_change": 0,
       "is_accumulating": false,
       "industry": "반도체",
-      "is_score": 68.6,
+      "is_score": 66.7,
       "signal": "Potential Hidden Opportunity"
     },
     {
@@ -27372,6 +27978,9 @@
       "name": "삼성전자",
       "weight": 195.23,
       "return_5d": 0.5,
+      "return_1w": 0.5,
+      "return_1m": 18.4,
+      "return_3m": 46.6,
       "recent_volumes": [
         19626666,
         22870374,
@@ -27513,7 +28122,7 @@
       "etf_count_change": 0,
       "is_accumulating": false,
       "industry": "친환경/신재생",
-      "is_score": 70.4,
+      "is_score": 69.2,
       "signal": "Potential Hidden Opportunity"
     },
     {
@@ -27521,6 +28130,9 @@
       "name": "에코프로비엠",
       "weight": 117.41,
       "return_5d": -1.0,
+      "return_1w": -1.0,
+      "return_1m": 7.0,
+      "return_3m": -4.0,
       "recent_volumes": [
         388962,
         345978,
@@ -27662,7 +28274,7 @@
       "etf_count_change": 0,
       "is_accumulating": false,
       "industry": "2차전지",
-      "is_score": 66.1,
+      "is_score": 64.2,
       "signal": "Potential Hidden Opportunity"
     },
     {
@@ -27670,6 +28282,9 @@
       "name": "LG화학",
       "weight": 98.16,
       "return_5d": 1.4,
+      "return_1w": 1.4,
+      "return_1m": 30.4,
+      "return_3m": 33.9,
       "recent_volumes": [
         309047,
         305442,
@@ -27811,7 +28426,7 @@
       "etf_count_change": 0,
       "is_accumulating": false,
       "industry": "2차전지",
-      "is_score": 66.1,
+      "is_score": 64.2,
       "signal": "Potential Hidden Opportunity"
     },
     {
@@ -27819,6 +28434,9 @@
       "name": "포스코퓨처엠",
       "weight": 96.04,
       "return_5d": 0.0,
+      "return_1w": 0.0,
+      "return_1m": 19.1,
+      "return_3m": 15.9,
       "recent_volumes": [
         314656,
         285322,
@@ -27960,7 +28578,7 @@
       "etf_count_change": 1,
       "is_accumulating": true,
       "industry": "2차전지",
-      "is_score": 66.1,
+      "is_score": 64.2,
       "signal": "Potential Hidden Opportunity"
     }
   ],

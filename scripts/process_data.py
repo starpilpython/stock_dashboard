@@ -130,6 +130,29 @@ def parse_news_dates(news):
     return news
 
 
+def _compute_industry_returns(prices, dates, period_days):
+    """산업별 수익률 계산 (지정 기간)"""
+    n = min(period_days, len(dates))
+    latest_date = dates[-1]
+    base_date = dates[-n] if n > 0 else dates[0]
+
+    industry_returns = {}
+    for ind in TARGET_INDUSTRIES:
+        ind_data = prices[prices["industry"] == ind]
+        if len(ind_data) == 0:
+            industry_returns[ind] = 0
+            continue
+        latest_close = ind_data[ind_data["date"] == latest_date].groupby("ticker")["close"].last()
+        base_close = ind_data[ind_data["date"] == base_date].groupby("ticker")["close"].last()
+        common = latest_close.index.intersection(base_close.index)
+        if len(common) > 0:
+            ret = ((latest_close[common] - base_close[common]) / base_close[common] * 100).mean()
+            industry_returns[ind] = ret
+        else:
+            industry_returns[ind] = 0
+    return pd.Series(industry_returns)
+
+
 def compute_etf_flow_scores(etf_prices, etf_master):
     """산업별 ETF Flow Score 계산"""
     print("Computing ETF Flow Scores...")
@@ -156,26 +179,8 @@ def compute_etf_flow_scores(etf_prices, etf_master):
     # 거래대금 증가율
     tv_change = ((recent_tv - prev_tv) / prev_tv * 100).fillna(0)
 
-    # 산업별 수익률 계산 (최근 5일 평균 수익률)
-    # close 기준 수익률 계산
-    industry_returns = {}
-    for ind in TARGET_INDUSTRIES:
-        ind_data = prices[prices["industry"] == ind]
-        if len(ind_data) == 0:
-            industry_returns[ind] = 0
-            continue
-
-        # 최근일 vs 5일전 수익률
-        latest_close = ind_data[ind_data["date"].isin(latest_dates)].groupby("ticker")["close"].last()
-        prev_close = ind_data[ind_data["date"].isin(prev_dates)].groupby("ticker")["close"].last()
-        common = latest_close.index.intersection(prev_close.index)
-        if len(common) > 0:
-            ret = ((latest_close[common] - prev_close[common]) / prev_close[common] * 100).mean()
-            industry_returns[ind] = ret
-        else:
-            industry_returns[ind] = 0
-
-    returns_series = pd.Series(industry_returns)
+    # 산업별 수익률 계산 (최근 5일)
+    returns_series = _compute_industry_returns(prices, dates, 5)
 
     # 거래량 증가율
     recent_vol = recent.groupby("industry")["volume"].sum()
@@ -225,7 +230,12 @@ def compute_etf_flow_scores(etf_prices, etf_master):
     # 산업별 거래대금 (최근 5일 합계, 억 원 단위)
     recent_tv_total = recent_tv.reindex(TARGET_INDUSTRIES, fill_value=0) / 1e8
 
-    return flow_score, raw_data, recent_tv_total
+    # ── 기간별 수익률 (1주/1개월/3개월) ──
+    period_returns = {}
+    for label, days in [("1w", 5), ("1m", 20), ("3m", 60)]:
+        period_returns[label] = _compute_industry_returns(prices, dates, days)
+
+    return flow_score, raw_data, recent_tv_total, period_returns, prices, dates
 
 
 def compute_news_scores(news):
@@ -369,7 +379,7 @@ def get_representative_etfs(etf_master, etf_prices):
     return result
 
 
-def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices):
+def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices, available_dates=None):
     """산업별 핵심 구성종목 추출"""
     print("Computing Industry Stocks...")
 
@@ -435,6 +445,23 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices):
                         / sp["close"].iloc[0] * 100, 1
                     )
                     recent_volumes = sp["volume"].tail(5).tolist()
+
+            # 기간별 수익률 (1주/1개월/3개월)
+            period_stock_returns = {}
+            for plabel, pdays in [("1w", 5), ("1m", 20), ("3m", 60)]:
+                if len(sp) >= pdays:
+                    r = round(
+                        (sp["close"].iloc[-1] - sp["close"].iloc[-pdays])
+                        / sp["close"].iloc[-pdays] * 100, 1
+                    )
+                elif len(sp) >= 2:
+                    r = round(
+                        (sp["close"].iloc[-1] - sp["close"].iloc[0])
+                        / sp["close"].iloc[0] * 100, 1
+                    )
+                else:
+                    r = 0
+                period_stock_returns[plabel] = r
 
             # 일별 수량 증감 (최근 10일)
             volume_daily = []
@@ -525,6 +552,9 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices):
                 "name": name,
                 "weight": round(row["weight"], 2),
                 "return_5d": return_5d,
+                "return_1w": period_stock_returns["1w"],
+                "return_1m": period_stock_returns["1m"],
+                "return_3m": period_stock_returns["3m"],
                 "recent_volumes": [int(v) for v in recent_volumes],
                 "volume_daily": volume_daily,
                 "volume_weekly": volume_weekly,
@@ -606,18 +636,21 @@ def detect_hidden_opportunities(industry_stocks, is_scores, flow_score):
     return candidates
 
 
-def build_heatmap_data(flow_score, raw_etf_data, recent_tv):
-    """히트맵 데이터 구성"""
+def build_heatmap_data(flow_score, raw_etf_data, recent_tv, period_returns):
+    """히트맵 데이터 구성 (기간별 수익률 포함)"""
     heatmap = []
     for ind in TARGET_INDUSTRIES:
         ret = raw_etf_data.loc[ind, "return_5d"] if ind in raw_etf_data.index else 0
         tv = recent_tv.get(ind, 0)
-        heatmap.append({
+        entry = {
             "industry": ind,
             "return_5d": round(float(ret), 2),
             "trading_value_billion": round(float(tv), 0),
             "color": INDUSTRY_COLORS.get(ind, "#6B7280"),
-        })
+        }
+        for label in ["1w", "1m", "3m"]:
+            entry[f"return_{label}"] = round(float(period_returns[label].get(ind, 0)), 2)
+        heatmap.append(entry)
     return heatmap
 
 
@@ -630,7 +663,7 @@ def main():
     etf_master, etf_prices, etf_pdf, news, index_df, stock_prices, stocks_master = load_data()
 
     # 2. ETF Flow Score
-    flow_score, raw_etf_data, recent_tv = compute_etf_flow_scores(etf_prices, etf_master)
+    flow_score, raw_etf_data, recent_tv, period_returns, etf_prices_merged, etf_dates = compute_etf_flow_scores(etf_prices, etf_master)
 
     # 3. News Attention & Sentiment Score
     attention_score, sentiment_score, industry_news_stats, headlines = compute_news_scores(news)
@@ -651,7 +684,7 @@ def main():
     hidden_opps = detect_hidden_opportunities(industry_stocks, is_scores, flow_score)
 
     # 9. 히트맵 데이터
-    heatmap_data = build_heatmap_data(flow_score, raw_etf_data, recent_tv)
+    heatmap_data = build_heatmap_data(flow_score, raw_etf_data, recent_tv, period_returns)
 
     # ── 최종 JSON 구성 ──
     print("\nBuilding JSON output...")
