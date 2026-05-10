@@ -189,16 +189,38 @@ function renderRankings() {
 // ── 산업 탭 ──
 function renderTabs() {
   const tabs = document.getElementById("industry-tabs");
-  const top = DATA.rankings.slice(0, 10);
-  tabs.innerHTML = top.map(r =>
-    `<button class="tab-btn" data-industry="${r.industry}">${r.industry}</button>`
-  ).join("");
+  // 전체 산업 탭 (IS Score 순) + "전체" 탭
+  const all = DATA.rankings;
+  tabs.innerHTML =
+    `<button class="tab-btn" data-industry="__all__">전체</button>` +
+    all.map(r =>
+      `<button class="tab-btn" data-industry="${r.industry}">${r.industry}</button>`
+    ).join("");
 
   tabs.addEventListener("click", e => {
     if (e.target.classList.contains("tab-btn")) {
-      selectIndustry(e.target.dataset.industry);
+      const ind = e.target.dataset.industry;
+      if (ind === "__all__") {
+        selectAll();
+      } else {
+        selectIndustry(ind);
+      }
     }
   });
+}
+
+function selectAll() {
+  selectedIndustry = "__all__";
+
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.industry === "__all__");
+  });
+
+  document.getElementById("panel-c-label").textContent = "전체";
+  document.getElementById("panel-d-label").textContent = "전체";
+
+  renderSentimentAll();
+  renderStocksAll();
 }
 
 function selectIndustry(industry) {
@@ -277,14 +299,14 @@ function getCustomStockReturn(ticker) {
 }
 
 // ── 기간 선택 ──
-// 현재 기간의 날짜 범위 반환
+// 현재 기간의 날짜 범위 반환 (뉴스 필터용 — 오늘까지 포함)
 function getPeriodDateRange() {
   if (selectedPeriod === "custom" && customPeriod) {
     return { from: customPeriod.from, to: customPeriod.to };
   }
-  const dates = DATA.available_dates || [];
-  if (dates.length === 0) return null;
-  const to = dates[dates.length - 1];
+  // to는 오늘 날짜 (뉴스가 ETF 데이터보다 최신일 수 있음)
+  const today = new Date().toISOString().slice(0, 10);
+  const to = today;
   const periodDays = { "1w": 7, "1m": 30, "3m": 90, "1y": 365 };
   const days = periodDays[selectedPeriod] || 7;
   const fromDate = new Date(to);
@@ -296,7 +318,10 @@ function getPeriodDateRange() {
 function applyPeriodChange() {
   renderHeatmap();
   renderRankings();
-  if (selectedIndustry) {
+  if (selectedIndustry === "__all__") {
+    renderSentimentAll();
+    renderStocksAll();
+  } else if (selectedIndustry) {
     renderSentiment(selectedIndustry);
     renderStocks(selectedIndustry);
   }
@@ -404,6 +429,127 @@ function renderSentiment(industry) {
 }
 
 function round1(n) { return Math.round(n * 10) / 10; }
+
+// ── Panel C: 전체 산업 감성 분석 ──
+function renderSentimentAll() {
+  const range = getPeriodDateRange();
+  let allFiltered = [];
+  for (const ind of Object.keys(DATA.all_news || {})) {
+    const news = DATA.all_news[ind] || [];
+    if (range) {
+      allFiltered = allFiltered.concat(news.filter(n => n.date >= range.from && n.date <= range.to));
+    } else {
+      allFiltered = allFiltered.concat(news);
+    }
+  }
+
+  const total = allFiltered.length;
+  const pos = allFiltered.filter(n => n.sentiment === "긍정").length;
+  const neg = allFiltered.filter(n => n.sentiment === "부정").length;
+  const neu = total - pos - neg;
+  const posRatio = total > 0 ? round1(pos / total * 100) : 0;
+  const negRatio = total > 0 ? round1(neg / total * 100) : 0;
+  const neuRatio = total > 0 ? round1(neu / total * 100) : 0;
+
+  drawGauge(posRatio);
+
+  const cards = document.getElementById("sentiment-cards");
+  cards.innerHTML = `
+    <div class="sent-card negative">
+      <div class="sent-value">${fmt(negRatio)}%</div>
+      <div class="sent-label">부정 (${neg}건)</div>
+    </div>
+    <div class="sent-card neutral">
+      <div class="sent-value">${fmt(neuRatio)}%</div>
+      <div class="sent-label">중립 (${neu}건)</div>
+    </div>
+    <div class="sent-card positive">
+      <div class="sent-value">${fmt(posRatio)}%</div>
+      <div class="sent-label">긍정 (${pos}건)</div>
+    </div>
+  `;
+
+  // 전체 헤드라인 최신 5개
+  allFiltered.sort((a, b) => b.date.localeCompare(a.date));
+  const hlist = document.getElementById("headlines-list");
+  hlist.innerHTML = allFiltered.slice(0, 5).map(h => {
+    let badgeCls = "neutral", badgeText = "중립";
+    if (h.sentiment === "긍정") { badgeCls = "positive"; badgeText = "긍정"; }
+    if (h.sentiment === "부정") { badgeCls = "negative"; badgeText = "부정"; }
+    return `<div class="headline-row">
+      <span class="sent-badge ${badgeCls}">${badgeText}</span>
+      <a href="${h.link || '#'}" target="_blank" rel="noopener">${escapeHtml(h.title)}</a>
+    </div>`;
+  }).join("");
+}
+
+// ── Panel D: 전체 산업 종목 (비중 TOP) ──
+function renderStocksAll() {
+  const list = document.getElementById("stock-list");
+  const retKey = "return_" + selectedPeriod;
+  const periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
+  const isCustom = selectedPeriod === "custom";
+
+  // 모든 산업의 종목을 합쳐서 비중 순 정렬
+  let allStocks = [];
+  for (const ind of Object.keys(DATA.industry_stocks)) {
+    for (const s of DATA.industry_stocks[ind]) {
+      allStocks.push({ ...s, industry: ind });
+    }
+  }
+  // 중복 제거 (같은 티커는 비중 높은 것만)
+  const seen = new Map();
+  for (const s of allStocks) {
+    if (!seen.has(s.ticker) || seen.get(s.ticker).weight < s.weight) {
+      seen.set(s.ticker, s);
+    }
+  }
+  allStocks = [...seen.values()].sort((a, b) => b.weight - a.weight).slice(0, 20);
+
+  let headerLabel = isCustom && customPeriod
+    ? customPeriod.from.slice(5) + "~" + customPeriod.to.slice(5)
+    : periodLabel;
+
+  list.innerHTML = `<div class="stock-row stock-header">
+      <div class="stock-ticker">코드</div>
+      <div class="stock-name-wrap"><span class="stock-name">종목명</span></div>
+      <div class="stock-weight">ETF 비중</div>
+      <div class="mini-bars">산업</div>
+      <div class="stock-return">${headerLabel} 수익률</div>
+    </div>` + allStocks.map(s => {
+    let ret;
+    if (isCustom) {
+      const cr = getCustomStockReturn(s.ticker);
+      ret = cr != null ? cr : s.return_5d;
+    } else {
+      ret = s[retKey] != null ? s[retKey] : s.return_5d;
+    }
+    const retColor = ret >= 0 ? "var(--red)" : "var(--blue)";
+    return `<div class="stock-row">
+      <div class="stock-ticker">${s.ticker}</div>
+      <div class="stock-name-wrap"><span class="stock-name">${escapeHtml(s.name)}</span></div>
+      <div class="stock-weight">${fmt(s.weight)}%</div>
+      <div class="mini-bars" style="font-size:10px;color:var(--text-dim)">${s.industry}</div>
+      <div class="stock-return" style="color:${retColor}">${fmtSign(ret)}%</div>
+    </div>`;
+  }).join("");
+
+  // 검색 필터 초기화
+  const input = document.getElementById("stock-search-input");
+  input.value = "";
+  input.oninput = () => {
+    const q = input.value.trim().toLowerCase();
+    const filtered = allStocks.filter(s => s.name.toLowerCase().includes(q) || s.ticker.includes(q));
+    // 간단히 재렌더
+    const rows = list.querySelectorAll(".stock-row:not(.stock-header)");
+    rows.forEach((row, i) => {
+      if (i < allStocks.length) {
+        const s = allStocks[i];
+        row.style.display = (!q || s.name.toLowerCase().includes(q) || s.ticker.includes(q)) ? "" : "none";
+      }
+    });
+  };
+}
 
 function escapeHtml(text) {
   const div = document.createElement("div");
