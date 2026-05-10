@@ -715,6 +715,22 @@ body {
   color: var(--text);
   font-weight: 500;
 }
+.hc-reason {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.hc-reason-tag {
+  display: inline-block;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(139,92,246,0.2);
+  color: #c4b5fd;
+  margin-right: 4px;
+}
 
 /* ── Disclaimer ── */
 .disclaimer {

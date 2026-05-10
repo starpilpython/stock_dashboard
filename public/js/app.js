@@ -692,41 +692,70 @@ function renderVolumeWeekly(industry) {
 
 // ── Hidden Opportunities ──
 function renderHiddenOpportunities() {
-  const opps = DATA.hidden_opportunities || [];
   const section = document.getElementById("hidden-section");
+  const isScoreKey = selectedPeriod !== "custom" && selectedPeriod !== "1w"
+    ? "is_score_" + selectedPeriod : "is_score";
+  const retKey = "return_" + selectedPeriod;
+  const isCustom = selectedPeriod === "custom";
+  const periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
+
+  // 기간별 IS Score로 TOP 5 산업 선정
+  const sortedRankings = [...DATA.rankings].sort((a, b) => (b[isScoreKey] || b.is_score) - (a[isScoreKey] || a.is_score));
+  const topIndustries = sortedRankings.slice(0, 5).map(r => r.industry);
+
+  // 각 종목의 기간별 수익률 계산
+  function getStockReturn(stock) {
+    if (isCustom) {
+      const cr = getCustomStockReturn(stock.ticker);
+      return cr != null ? cr : stock.return_5d;
+    }
+    return stock[retKey] != null ? stock[retKey] : stock.return_5d;
+  }
+
+  function getIsScore(industry) {
+    const r = DATA.rankings.find(r => r.industry === industry);
+    return r ? (r[isScoreKey] || r.is_score) : 0;
+  }
+
+  // 조건: IS Score TOP 5 산업 + 비중 높음 + 해당 기간 수익률 저조
+  const candidates = [];
+  const seenTickers = new Set();
+  for (const ind of topIndustries) {
+    const stocks = DATA.industry_stocks[ind] || [];
+    for (const s of stocks) {
+      if (seenTickers.has(s.ticker)) continue;
+      const ret = getStockReturn(s);
+      // 기간별 수익률이 낮은 종목 (산업 평균 대비 미반영)
+      if (s.weight > 5 && ret > -5 && ret < 5) {
+        seenTickers.add(s.ticker);
+        candidates.push({
+          ...s,
+          industry: ind,
+          period_return: ret,
+          is_score: getIsScore(ind),
+        });
+      }
+    }
+  }
+
+  // 비중 높은 순 정렬, 최대 5개
+  candidates.sort((a, b) => b.weight - a.weight);
+  const opps = candidates.slice(0, 5);
+
   if (opps.length === 0) {
     section.style.display = "none";
     return;
   }
   section.style.display = "block";
 
-  const retKey = "return_" + selectedPeriod;
-  const isScoreKey = selectedPeriod !== "custom" && selectedPeriod !== "1w"
-    ? "is_score_" + selectedPeriod : "is_score";
-  const periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
-  const isCustom = selectedPeriod === "custom";
-
-  // 산업별 기간 IS Score 조회용
-  function getIndustryIsScore(industry) {
-    const r = DATA.rankings.find(r => r.industry === industry);
-    if (!r) return 0;
-    return r[isScoreKey] || r.is_score;
-  }
+  const label = isCustom && customPeriod
+    ? customPeriod.from.slice(5) + "~" + customPeriod.to.slice(5)
+    : periodLabel;
 
   const list = document.getElementById("hidden-list");
   list.innerHTML = opps.map(o => {
-    let ret;
-    if (isCustom) {
-      const cr = getCustomStockReturn(o.ticker);
-      ret = cr != null ? cr : o.return_5d;
-    } else {
-      ret = o[retKey] != null ? o[retKey] : o.return_5d;
-    }
+    const ret = o.period_return;
     const retColor = ret >= 0 ? "var(--red)" : "var(--blue)";
-    const label = isCustom && customPeriod
-      ? customPeriod.from.slice(5) + "~" + customPeriod.to.slice(5)
-      : periodLabel;
-    const isScore = getIndustryIsScore(o.industry);
     return `<div class="hidden-card">
       <div class="hc-header">
         <div>
@@ -738,7 +767,11 @@ function renderHiddenOpportunities() {
       <div class="hc-detail">
         ETF 비중 합계: <span>${fmt(o.weight)}%</span><br>
         ${label} 수익률: <span style="color:${retColor}">${fmtSign(ret)}%</span><br>
-        IS Score: <span>${fmt(isScore, 0)}</span>
+        IS Score (${label}): <span>${fmt(o.is_score, 0)}</span>
+      </div>
+      <div class="hc-reason">
+        <span class="hc-reason-tag">탐지 이유</span>
+        IS Score TOP 5 산업 + ETF 핵심 비중 + ${label} 주가 미반영
       </div>
     </div>`;
   }).join("");
