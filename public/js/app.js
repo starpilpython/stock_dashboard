@@ -94,9 +94,7 @@ function renderHeatmap() {
   } else {
     sorted = [...DATA.heatmap].sort((a, b) => getHeatmapReturn(b) - getHeatmapReturn(a));
   }
-  const top9 = sorted.slice(0, 9);
-
-  grid.innerHTML = top9.map(item => {
+  grid.innerHTML = sorted.map(item => {
     const ret = getHeatmapReturn(item);
     const intensity = Math.min(Math.abs(ret) / 5, 1); // 5% = max intensity
     let bgColor;
