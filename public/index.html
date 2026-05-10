@@ -131,13 +131,26 @@
         <h2 class="panel-title">핵심 구성 종목 탐색</h2>
         <span class="panel-industry-label" id="panel-d-label"></span>
       </div>
-      <div class="stock-search">
-        <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-        </svg>
-        <input type="text" id="stock-search-input" placeholder="종목명 또는 종목코드 검색...">
+      <div class="stock-sub-tabs">
+        <button class="stock-sub-tab active" data-view="list">종목 목록</button>
+        <button class="stock-sub-tab" data-view="daily">일별 수량 증감</button>
+        <button class="stock-sub-tab" data-view="weekly">주별 수량 증감</button>
       </div>
-      <div class="stock-list" id="stock-list"></div>
+      <div id="stock-view-list">
+        <div class="stock-search">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input type="text" id="stock-search-input" placeholder="종목명 또는 종목코드 검색...">
+        </div>
+        <div class="stock-list" id="stock-list"></div>
+      </div>
+      <div id="stock-view-daily" style="display:none;">
+        <div class="volume-table-wrap" id="volume-daily-table"></div>
+      </div>
+      <div id="stock-view-weekly" style="display:none;">
+        <div class="volume-table-wrap" id="volume-weekly-table"></div>
+      </div>
     </section>
   </div>
 

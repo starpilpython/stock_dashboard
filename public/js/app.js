@@ -5,6 +5,7 @@
 
 let DATA = null;
 let selectedIndustry = null;
+let selectedStockView = "list";
 
 // ── 유틸 ──
 function fmt(n, d = 1) {
@@ -39,6 +40,7 @@ function render() {
   renderTabs();
   renderHiddenOpportunities();
   renderDisclaimer();
+  initStockSubTabs();
 
   // 기본 선택: IS Score 1위 산업
   if (DATA.rankings.length > 0) {
@@ -162,6 +164,25 @@ function selectIndustry(industry) {
 
   renderSentiment(industry);
   renderStocks(industry);
+  renderVolumeDaily(industry);
+  renderVolumeWeekly(industry);
+}
+
+// ── Panel D: 서브 탭 전환 ──
+function initStockSubTabs() {
+  document.querySelector(".stock-sub-tabs").addEventListener("click", e => {
+    const btn = e.target.closest(".stock-sub-tab");
+    if (!btn) return;
+    const view = btn.dataset.view;
+    selectedStockView = view;
+
+    document.querySelectorAll(".stock-sub-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    document.getElementById("stock-view-list").style.display = view === "list" ? "" : "none";
+    document.getElementById("stock-view-daily").style.display = view === "daily" ? "" : "none";
+    document.getElementById("stock-view-weekly").style.display = view === "weekly" ? "" : "none";
+  });
 }
 
 // ── Panel C: 감성 분석 ──
@@ -315,6 +336,83 @@ function renderStocks(industry) {
     );
     renderList(filtered);
   };
+}
+
+// ── Panel D: 일별 수량 증감 ──
+function renderVolumeDaily(industry) {
+  const stocks = DATA.industry_stocks[industry] || [];
+  const container = document.getElementById("volume-daily-table");
+
+  if (stocks.length === 0 || !stocks[0].volume_daily || stocks[0].volume_daily.length === 0) {
+    container.innerHTML = '<div style="color:var(--text-dim);text-align:center;padding:30px;">일별 수량 데이터가 없습니다.</div>';
+    return;
+  }
+
+  // 날짜 컬럼 추출 (첫 종목 기준)
+  const dates = stocks[0].volume_daily.map(d => d.date.slice(5)); // MM-DD
+
+  let html = `<table class="volume-table">
+    <thead><tr>
+      <th class="vol-th-name">종목</th>
+      ${dates.map(d => `<th>${d}</th>`).join("")}
+    </tr></thead><tbody>`;
+
+  stocks.forEach(s => {
+    const daily = s.volume_daily || [];
+    html += `<tr>
+      <td class="vol-td-name"><span class="vol-ticker">${s.ticker}</span> ${escapeHtml(s.name)}</td>
+      ${daily.map(d => {
+        const color = d.change_pct > 0 ? "var(--red)" : d.change_pct < 0 ? "var(--blue)" : "var(--text-dim)";
+        const arrow = d.change_pct > 0 ? "▲" : d.change_pct < 0 ? "▼" : "";
+        return `<td>
+          <div class="vol-cell-num">${(d.volume / 1000).toFixed(0)}K</div>
+          <div class="vol-cell-chg" style="color:${color}">${arrow}${Math.abs(d.change_pct)}%</div>
+        </td>`;
+      }).join("")}
+    </tr>`;
+  });
+
+  html += "</tbody></table>";
+  container.innerHTML = html;
+}
+
+// ── Panel D: 주별 수량 증감 ──
+function renderVolumeWeekly(industry) {
+  const stocks = DATA.industry_stocks[industry] || [];
+  const container = document.getElementById("volume-weekly-table");
+
+  if (stocks.length === 0 || !stocks[0].volume_weekly || stocks[0].volume_weekly.length === 0) {
+    container.innerHTML = '<div style="color:var(--text-dim);text-align:center;padding:30px;">주별 수량 데이터가 없습니다.</div>';
+    return;
+  }
+
+  const weeks = stocks[0].volume_weekly.map(w => w.week_label);
+
+  let html = `<table class="volume-table">
+    <thead><tr>
+      <th class="vol-th-name">종목</th>
+      ${weeks.map(w => `<th>${w}</th>`).join("")}
+    </tr></thead><tbody>`;
+
+  stocks.forEach(s => {
+    const weekly = s.volume_weekly || [];
+    html += `<tr>
+      <td class="vol-td-name"><span class="vol-ticker">${s.ticker}</span> ${escapeHtml(s.name)}</td>
+      ${weekly.map((w, i) => {
+        const color = w.change_pct > 0 ? "var(--red)" : w.change_pct < 0 ? "var(--blue)" : "var(--text-dim)";
+        const arrow = w.change_pct > 0 ? "▲" : w.change_pct < 0 ? "▼" : "";
+        const chgText = i === 0 ? "-" : `${arrow}${Math.abs(w.change_pct)}%`;
+        const chgColor = i === 0 ? "var(--text-dim)" : color;
+        return `<td>
+          <div class="vol-cell-num">${(w.avg_volume / 1000).toFixed(0)}K</div>
+          <div class="vol-cell-chg" style="color:${chgColor}">${chgText}</div>
+        </td>`;
+      }).join("")}
+    </tr>`;
+  });
+
+  html += "</tbody></table>";
+  container.innerHTML = html;
 }
 
 // ── Hidden Opportunities ──

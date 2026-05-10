@@ -431,12 +431,63 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices):
                     )
                     recent_volumes = sp["volume"].tail(5).tolist()
 
+            # 일별 수량 증감 (최근 10일)
+            volume_daily = []
+            if len(sp) >= 2:
+                sp_tail = sp.tail(10)
+                for i in range(len(sp_tail)):
+                    row_sp = sp_tail.iloc[i]
+                    vol = int(row_sp["volume"])
+                    if i == 0:
+                        # 첫 날은 이전 데이터와 비교
+                        idx = sp.index.get_loc(sp_tail.index[0])
+                        if idx > 0:
+                            prev_vol = int(sp.iloc[idx - 1]["volume"])
+                            chg = round((vol - prev_vol) / max(prev_vol, 1) * 100, 1)
+                        else:
+                            chg = 0
+                    else:
+                        prev_vol = int(sp_tail.iloc[i - 1]["volume"])
+                        chg = round((vol - prev_vol) / max(prev_vol, 1) * 100, 1)
+                    volume_daily.append({
+                        "date": str(row_sp["date"])[:10],
+                        "volume": vol,
+                        "change_pct": chg,
+                    })
+
+            # 주별 수량 증감 (최근 4주)
+            volume_weekly = []
+            if len(sp) >= 10:
+                sp_recent = sp.tail(20).copy()
+                sp_recent["date"] = pd.to_datetime(sp_recent["date"])
+                sp_recent["week"] = sp_recent["date"].dt.isocalendar().week.astype(int)
+                sp_recent["year"] = sp_recent["date"].dt.isocalendar().year.astype(int)
+                weekly = sp_recent.groupby(["year", "week"]).agg(
+                    avg_volume=("volume", "mean"),
+                    start_date=("date", "min"),
+                    end_date=("date", "max"),
+                ).reset_index().sort_values(["year", "week"]).tail(4)
+                for i, (_, wrow) in enumerate(weekly.iterrows()):
+                    avg_vol = int(wrow["avg_volume"])
+                    if i == 0:
+                        chg = 0
+                    else:
+                        prev_avg = int(weekly.iloc[i - 1]["avg_volume"])
+                        chg = round((avg_vol - prev_avg) / max(prev_avg, 1) * 100, 1)
+                    volume_weekly.append({
+                        "week_label": wrow["start_date"].strftime("%m/%d") + "~" + wrow["end_date"].strftime("%m/%d"),
+                        "avg_volume": avg_vol,
+                        "change_pct": chg,
+                    })
+
             stocks_list.append({
                 "ticker": ticker,
                 "name": name,
                 "weight": round(row["weight"], 2),
                 "return_5d": return_5d,
                 "recent_volumes": [int(v) for v in recent_volumes],
+                "volume_daily": volume_daily,
+                "volume_weekly": volume_weekly,
             })
 
         industry_stocks[ind] = stocks_list

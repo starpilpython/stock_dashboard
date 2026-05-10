@@ -355,6 +355,91 @@ body {
 .sent-badge.neutral { background: #555; color: #ccc; }
 .sent-badge.negative { background: var(--red); color: #fff; }
 
+/* ── Panel D: Sub-tabs ── */
+.stock-sub-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+.stock-sub-tab {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px 6px 0 0;
+  color: var(--text-dim);
+  font-size: 12px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.stock-sub-tab:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+.stock-sub-tab.active {
+  color: #fff;
+  border-color: var(--border);
+  border-bottom-color: transparent;
+  background: rgba(255,255,255,0.06);
+}
+
+/* ── Volume Tables ── */
+.volume-table-wrap {
+  max-height: 420px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.volume-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.volume-table thead { position: sticky; top: 0; z-index: 1; }
+.volume-table th {
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  font-weight: 500;
+  padding: 8px 6px;
+  text-align: center;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+.volume-table th.vol-th-name {
+  text-align: left;
+  min-width: 120px;
+  position: sticky;
+  left: 0;
+  background: var(--bg-panel);
+}
+.volume-table td {
+  padding: 8px 6px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  white-space: nowrap;
+}
+.volume-table td.vol-td-name {
+  text-align: left;
+  font-weight: 500;
+  position: sticky;
+  left: 0;
+  background: var(--bg-panel);
+}
+.volume-table tr:hover td { background: rgba(255,255,255,0.03); }
+.volume-table tr:hover td.vol-td-name { background: #2a2a2a; }
+.vol-ticker {
+  color: var(--text-dim);
+  font-size: 10px;
+  margin-right: 4px;
+}
+.vol-cell-num {
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.vol-cell-chg {
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
 /* ── Panel D: Stocks ── */
 .stock-search {
   display: flex;
