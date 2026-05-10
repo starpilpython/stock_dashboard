@@ -613,11 +613,13 @@ body {
 .stock-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0;
   max-height: 400px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
 }
 .stock-row {
   display: grid;
@@ -625,22 +627,25 @@ body {
   align-items: center;
   gap: 8px;
   padding: 10px 12px;
-  background: var(--bg-card);
-  border-radius: 8px;
   font-size: 13px;
   transition: background 0.15s;
+  border-bottom: 1px solid var(--border);
 }
-.stock-row:hover { background: #2a2a2a; }
+.stock-row:last-child { border-bottom: none; }
+.stock-row:hover { background: rgba(255,255,255,0.03); }
 .stock-row.stock-header {
-  background: none;
+  background: var(--bg-card);
   color: var(--text-dim);
   font-size: 11px;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 8px 12px;
   border-bottom: 1px solid var(--border);
-  border-radius: 0;
+  border-radius: 8px 8px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
-.stock-row.stock-header:hover { background: none; }
+.stock-row.stock-header:hover { background: var(--bg-card); }
 .stock-row.stock-header .mini-bars { height: auto; align-items: center; }
 .stock-ticker { color: var(--text-dim); font-size: 11px; font-variant-numeric: tabular-nums; }
 .stock-name-wrap {
