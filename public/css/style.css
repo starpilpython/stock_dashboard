@@ -449,6 +449,7 @@ body {
   margin-bottom: 12px;
   border-bottom: 1px solid var(--border);
   padding-bottom: 8px;
+  overflow-x: auto;
 }
 .stock-sub-tab {
   background: none;
@@ -459,6 +460,7 @@ body {
   padding: 6px 14px;
   cursor: pointer;
   transition: all 0.15s;
+  white-space: nowrap;
 }
 .stock-sub-tab:hover { color: var(--text); background: rgba(255,255,255,0.04); }
 .stock-sub-tab.active {
