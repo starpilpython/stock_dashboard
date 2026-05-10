@@ -896,11 +896,30 @@ function renderHiddenOpportunities() {
     ? customPeriod.from.slice(5) + "~" + customPeriod.to.slice(5)
     : periodLabel;
 
+  // 산업별 뉴스 감성 계산 (기간 내)
+  const range = getPeriodDateRange();
+  function getIndustrySentiment(industry) {
+    const news = (DATA.all_news && DATA.all_news[industry]) || [];
+    const filtered = range ? news.filter(n => n.date >= range.from && n.date <= range.to) : news;
+    const total = filtered.length;
+    if (total === 0) return { posRatio: 0, negRatio: 0, total: 0, label: "-" };
+    const pos = filtered.filter(n => n.sentiment === "긍정").length;
+    const neg = filtered.filter(n => n.sentiment === "부정").length;
+    const posRatio = round1(pos / total * 100);
+    const negRatio = round1(neg / total * 100);
+    let sentLabel = "중립";
+    if (posRatio > 30) sentLabel = "긍정";
+    else if (negRatio > 20) sentLabel = "부정";
+    return { posRatio, negRatio, total, label: sentLabel };
+  }
+
   const list = document.getElementById("hidden-list");
   list.innerHTML = opps.map(o => {
     const ret = o.period_return;
     const retColor = ret >= 0 ? "var(--red)" : "var(--blue)";
-    return `<div class="hidden-card">
+    const sent = getIndustrySentiment(o.industry);
+    const sentColor = sent.label === "긍정" ? "var(--green, #10b981)" : sent.label === "부정" ? "var(--red)" : "var(--text-dim)";
+    return `<div class="hidden-card" onclick="selectIndustry('${o.industry}')" style="cursor:pointer">
       <div class="hc-header">
         <div>
           <div class="hc-name">${escapeHtml(o.name)}</div>
@@ -911,11 +930,11 @@ function renderHiddenOpportunities() {
       <div class="hc-detail">
         ETF 비중 합계: <span>${fmt(o.weight)}%</span><br>
         ${label} 수익률: <span style="color:${retColor}">${fmtSign(ret)}%</span><br>
-        IS Score (${label}): <span>${fmt(o.is_score, 0)}</span>
+        IS Score: <span>${fmt(o.is_score, 0)}</span>
       </div>
-      <div class="hc-reason">
-        <span class="hc-reason-tag">탐지 이유</span>
-        IS Score TOP 5 산업 + ETF 핵심 비중 + ${label} 주가 미반영
+      <div class="hc-sentiment">
+        <span class="hc-sent-badge" style="color:${sentColor}">뉴스 감성: ${sent.label}</span>
+        <span class="hc-sent-detail">긍정 ${sent.posRatio}% · 부정 ${sent.negRatio}% (${sent.total}건)</span>
       </div>
     </div>`;
   }).join("");
