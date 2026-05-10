@@ -483,6 +483,17 @@ body {
   transition: background 0.15s;
 }
 .stock-row:hover { background: #2a2a2a; }
+.stock-row.stock-header {
+  background: none;
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+.stock-row.stock-header:hover { background: none; }
+.stock-row.stock-header .mini-bars { height: auto; align-items: center; }
 .stock-ticker { color: var(--text-dim); font-size: 11px; font-variant-numeric: tabular-nums; }
 .stock-name-wrap {
   display: flex;

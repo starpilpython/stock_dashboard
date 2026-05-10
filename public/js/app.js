@@ -294,7 +294,13 @@ function renderStocks(industry) {
       return;
     }
 
-    list.innerHTML = items.map(s => {
+    list.innerHTML = `<div class="stock-row stock-header">
+        <div class="stock-ticker">코드</div>
+        <div class="stock-name-wrap"><span class="stock-name">종목명</span></div>
+        <div class="stock-weight">ETF 비중</div>
+        <div class="mini-bars">거래량</div>
+        <div class="stock-return">5일 수익률</div>
+      </div>` + items.map(s => {
       const retClass = s.return_5d >= 0 ? "positive" : "negative";
       const retColor = s.return_5d >= 0 ? "var(--red)" : "var(--blue)";
       const badge = hiddenTickers.has(s.ticker) ? '<span class="hidden-badge">유망주</span>' : '';
