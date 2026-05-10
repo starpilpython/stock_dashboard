@@ -79,7 +79,7 @@ function renderHeatmap() {
   if (heatmapSort === "tv") {
     sorted = [...DATA.heatmap].sort((a, b) => b.trading_value_billion - a.trading_value_billion);
   } else {
-    sorted = [...DATA.heatmap].sort((a, b) => Math.abs(b.return_5d) - Math.abs(a.return_5d));
+    sorted = [...DATA.heatmap].sort((a, b) => b.return_5d - a.return_5d);
   }
   const top9 = sorted.slice(0, 9);
 
