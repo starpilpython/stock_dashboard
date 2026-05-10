@@ -230,9 +230,9 @@ def compute_etf_flow_scores(etf_prices, etf_master):
     # 산업별 거래대금 (최근 5일 합계, 억 원 단위)
     recent_tv_total = recent_tv.reindex(TARGET_INDUSTRIES, fill_value=0) / 1e8
 
-    # ── 기간별 수익률 (1주/1개월/3개월) ──
+    # ── 기간별 수익률 (1주/1개월/3개월/1년) ──
     period_returns = {}
-    for label, days in [("1w", 5), ("1m", 20), ("3m", 60)]:
+    for label, days in [("1w", 5), ("1m", 20), ("3m", 60), ("1y", 250)]:
         period_returns[label] = _compute_industry_returns(prices, dates, days)
 
     return flow_score, raw_data, recent_tv_total, period_returns, prices, dates
@@ -448,7 +448,7 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices, availa
 
             # 기간별 수익률 (1주/1개월/3개월)
             period_stock_returns = {}
-            for plabel, pdays in [("1w", 5), ("1m", 20), ("3m", 60)]:
+            for plabel, pdays in [("1w", 5), ("1m", 20), ("3m", 60), ("1y", 250)]:
                 if len(sp) >= pdays:
                     r = round(
                         (sp["close"].iloc[-1] - sp["close"].iloc[-pdays])
@@ -555,6 +555,7 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices, availa
                 "return_1w": period_stock_returns["1w"],
                 "return_1m": period_stock_returns["1m"],
                 "return_3m": period_stock_returns["3m"],
+                "return_1y": period_stock_returns["1y"],
                 "recent_volumes": [int(v) for v in recent_volumes],
                 "volume_daily": volume_daily,
                 "volume_weekly": volume_weekly,
@@ -619,11 +620,16 @@ def detect_hidden_opportunities(industry_stocks, is_scores, flow_score):
     top_industries = is_scores.sort_values(ascending=False).head(5).index.tolist()
 
     candidates = []
+    seen_tickers = set()
     for ind in top_industries:
         stocks = industry_stocks.get(ind, [])
         for stock in stocks:
+            # 동일 종목 중복 방지
+            if stock["ticker"] in seen_tickers:
+                continue
             # 조건: IS Score 상위 산업 + 주가 반응 낮음 + 비중 높음
             if stock["weight"] > 5 and -2 < stock["return_5d"] < 3:
+                seen_tickers.add(stock["ticker"])
                 candidates.append({
                     **stock,
                     "industry": ind,
@@ -721,6 +727,33 @@ def main():
             "return_5d": round(float(raw_etf_data.loc[ind, "return_5d"]) if ind in raw_etf_data.index else 0, 2),
         })
 
+    # ── 커스텀 기간 조회용 시계열 데이터 ──
+    print("Building time series for custom period...")
+    available_dates = [str(d)[:10] for d in etf_dates]
+
+    # 산업별 일자별 평균 수익률 (기준일 대비 계산용 종가 인덱스)
+    industry_close_series = {}
+    for ind in TARGET_INDUSTRIES:
+        ind_data = etf_prices_merged[etf_prices_merged["industry"] == ind]
+        # 날짜별 평균 종가 (산업 내 ETF 평균)
+        daily_avg = ind_data.groupby("date")["close"].mean().sort_index()
+        industry_close_series[ind] = {
+            str(d)[:10]: round(float(v), 2) for d, v in daily_avg.items()
+        }
+
+    # 종목별 일자별 종가
+    stock_close_series = {}
+    all_stock_tickers = set()
+    for ind_stocks in industry_stocks.values():
+        for s in ind_stocks:
+            all_stock_tickers.add(s["ticker"])
+    for ticker in all_stock_tickers:
+        sp = stock_prices[stock_prices["ticker"] == ticker].sort_values("date")
+        if len(sp) > 0:
+            stock_close_series[ticker] = {
+                str(d)[:10]: round(float(c), 0) for d, c in zip(sp["date"], sp["close"])
+            }
+
     # 전체 데이터
     dashboard_data = {
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -730,6 +763,9 @@ def main():
         "headlines": headlines,
         "industry_stocks": industry_stocks,
         "hidden_opportunities": hidden_opps,
+        "available_dates": available_dates,
+        "industry_close_series": industry_close_series,
+        "stock_close_series": stock_close_series,
         "disclaimer": "이 대시보드는 데이터 기반 시장 인사이트를 제공하며, 금융 투자 자문에 해당하지 않습니다. 사용자는 최종 투자 판단을 본인의 책임과 판단에 따라 내려야 합니다.",
     }
 

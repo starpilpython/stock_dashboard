@@ -9,7 +9,8 @@ let selectedStockView = "list";
 let heatmapSort = "return";
 let selectedPeriod = "1w";
 
-const PERIOD_LABELS = { "1w": "1주", "1m": "1개월", "3m": "3개월" };
+let customPeriod = null; // { from, to } for custom date range
+const PERIOD_LABELS = { "1w": "1주", "1m": "1개월", "3m": "3개월", "1y": "1년", "custom": "지정 기간" };
 
 // ── 유틸 ──
 function fmt(n, d = 1) {
@@ -79,18 +80,24 @@ function renderMarketInfo() {
 function renderHeatmap() {
   const grid = document.getElementById("heatmap-grid");
 
+  const customReturns = selectedPeriod === "custom" ? getCustomIndustryReturns() : null;
   const retKey = "return_" + selectedPeriod;
+
+  function getHeatmapReturn(item) {
+    if (customReturns) return customReturns[item.industry] || 0;
+    return item[retKey] || item.return_5d;
+  }
 
   let sorted;
   if (heatmapSort === "tv") {
     sorted = [...DATA.heatmap].sort((a, b) => b.trading_value_billion - a.trading_value_billion);
   } else {
-    sorted = [...DATA.heatmap].sort((a, b) => (b[retKey] || 0) - (a[retKey] || 0));
+    sorted = [...DATA.heatmap].sort((a, b) => getHeatmapReturn(b) - getHeatmapReturn(a));
   }
   const top9 = sorted.slice(0, 9);
 
   grid.innerHTML = top9.map(item => {
-    const ret = item[retKey] || item.return_5d;
+    const ret = getHeatmapReturn(item);
     const intensity = Math.min(Math.abs(ret) / 5, 1); // 5% = max intensity
     let bgColor;
     if (ret >= 0) {
@@ -213,21 +220,90 @@ function initStockSubTabs() {
   });
 }
 
+// ── 커스텀 기간 수익률 계산 ──
+function findClosestDate(dates, target) {
+  // target 이상인 가장 가까운 날짜 반환
+  for (let i = 0; i < dates.length; i++) {
+    if (dates[i] >= target) return dates[i];
+  }
+  return dates[dates.length - 1];
+}
+
+function calcCustomReturn(closeSeries, fromDate, toDate) {
+  if (!closeSeries) return 0;
+  const dates = Object.keys(closeSeries).sort();
+  const from = findClosestDate(dates, fromDate);
+  // toDate 이하인 가장 가까운 날짜
+  let to = dates[0];
+  for (let i = dates.length - 1; i >= 0; i--) {
+    if (dates[i] <= toDate) { to = dates[i]; break; }
+  }
+  const fromVal = closeSeries[from];
+  const toVal = closeSeries[to];
+  if (!fromVal || !toVal || fromVal === 0) return 0;
+  return Math.round((toVal - fromVal) / fromVal * 1000) / 10;
+}
+
+function getCustomIndustryReturns() {
+  if (!customPeriod || !DATA.industry_close_series) return {};
+  const result = {};
+  for (const ind of Object.keys(DATA.industry_close_series)) {
+    result[ind] = calcCustomReturn(DATA.industry_close_series[ind], customPeriod.from, customPeriod.to);
+  }
+  return result;
+}
+
+function getCustomStockReturn(ticker) {
+  if (!customPeriod || !DATA.stock_close_series || !DATA.stock_close_series[ticker]) return null;
+  return calcCustomReturn(DATA.stock_close_series[ticker], customPeriod.from, customPeriod.to);
+}
+
 // ── 기간 선택 ──
+function applyPeriodChange() {
+  renderHeatmap();
+  if (selectedIndustry) {
+    renderStocks(selectedIndustry);
+  }
+}
+
 function initPeriodSelector() {
   const selector = document.getElementById("period-selector");
+  const fromInput = document.getElementById("period-from");
+  const toInput = document.getElementById("period-to");
+
+  // 날짜 입력 범위 제한
+  if (DATA.available_dates && DATA.available_dates.length > 0) {
+    const minDate = DATA.available_dates[0];
+    const maxDate = DATA.available_dates[DATA.available_dates.length - 1];
+    fromInput.min = minDate;
+    fromInput.max = maxDate;
+    toInput.min = minDate;
+    toInput.max = maxDate;
+    toInput.value = maxDate;
+  }
+
+  // 프리셋 버튼 클릭
   selector.addEventListener("click", e => {
-    const btn = e.target.closest(".period-btn");
+    const btn = e.target.closest(".period-btn:not(#period-apply)");
     if (!btn) return;
     selectedPeriod = btn.dataset.period;
+    customPeriod = null;
     selector.querySelectorAll(".period-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
+    applyPeriodChange();
+  });
 
-    // 기간에 영향받는 패널 재렌더링
-    renderHeatmap();
-    if (selectedIndustry) {
-      renderStocks(selectedIndustry);
-    }
+  // 직접 지정 조회
+  document.getElementById("period-apply").addEventListener("click", () => {
+    const from = fromInput.value;
+    const to = toInput.value;
+    if (!from || !to) return;
+    if (from > to) { fromInput.value = to; toInput.value = from; }
+    customPeriod = { from: fromInput.value, to: toInput.value };
+    selectedPeriod = "custom";
+    selector.querySelectorAll(".period-btn").forEach(b => b.classList.remove("active"));
+    document.getElementById("period-apply").classList.add("active");
+    applyPeriodChange();
   });
 }
 
@@ -341,7 +417,10 @@ function renderStocks(industry) {
     }
 
     const retKey = "return_" + selectedPeriod;
-    const periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
+    let periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
+    if (selectedPeriod === "custom" && customPeriod) {
+      periodLabel = customPeriod.from.slice(5) + "~" + customPeriod.to.slice(5);
+    }
 
     list.innerHTML = `<div class="stock-row stock-header">
         <div class="stock-ticker">코드</div>
@@ -350,7 +429,13 @@ function renderStocks(industry) {
         <div class="mini-bars">거래량</div>
         <div class="stock-return">${periodLabel} 수익률</div>
       </div>` + items.map(s => {
-      const ret = s[retKey] != null ? s[retKey] : s.return_5d;
+      let ret;
+      if (selectedPeriod === "custom") {
+        const cr = getCustomStockReturn(s.ticker);
+        ret = cr != null ? cr : s.return_5d;
+      } else {
+        ret = s[retKey] != null ? s[retKey] : s.return_5d;
+      }
       const retColor = ret >= 0 ? "var(--red)" : "var(--blue)";
       const badges = [];
       if (hiddenTickers.has(s.ticker)) badges.push('<span class="hidden-badge">유망주</span>');
