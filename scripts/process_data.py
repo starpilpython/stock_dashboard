@@ -336,12 +336,14 @@ def compute_news_scores(news):
 
     sentiment_score = pos_norm * 0.6 + momentum_placeholder * 0.3 + neg_adjust * 0.1
 
-    # 헤드라인 추출 (산업별 최신 5개)
+    # 헤드라인 추출 (산업별 최신 5개 + 전체 뉴스)
     headlines = {}
+    all_news_data = {}
     for ind in TARGET_INDUSTRIES:
-        ind_news = news[news["industry"] == ind].head(5)
+        ind_news_df = news[news["industry"] == ind].sort_values("date", ascending=False)
+        # 최신 5개 (기본 표시용)
         h_list = []
-        for _, row in ind_news.iterrows():
+        for _, row in ind_news_df.head(5).iterrows():
             h_list.append({
                 "title": row["title"],
                 "sentiment": row["sentiment"],
@@ -349,8 +351,18 @@ def compute_news_scores(news):
                 "link": row.get("link", ""),
             })
         headlines[ind] = h_list
+        # 전체 뉴스 (기간 필터링용) — 날짜, 감성만
+        all_list = []
+        for _, row in ind_news_df.iterrows():
+            all_list.append({
+                "title": row["title"],
+                "sentiment": row["sentiment"],
+                "date": row["date"],
+                "link": row.get("link", ""),
+            })
+        all_news_data[ind] = all_list
 
-    return attention_score, sentiment_score, industry_news, headlines
+    return attention_score, sentiment_score, industry_news, headlines, all_news_data
 
 
 def compute_is_scores(flow_score, attention_score, sentiment_score):
@@ -672,7 +684,7 @@ def main():
     flow_score, raw_etf_data, recent_tv, period_returns, etf_prices_merged, etf_dates = compute_etf_flow_scores(etf_prices, etf_master)
 
     # 3. News Attention & Sentiment Score
-    attention_score, sentiment_score, industry_news_stats, headlines = compute_news_scores(news)
+    attention_score, sentiment_score, industry_news_stats, headlines, all_news_data = compute_news_scores(news)
 
     # 4. IS Score
     is_scores = compute_is_scores(flow_score, attention_score, sentiment_score)
@@ -761,6 +773,7 @@ def main():
         "rankings": rankings,
         "heatmap": heatmap_data,
         "headlines": headlines,
+        "all_news": all_news_data,
         "industry_stocks": industry_stocks,
         "hidden_opportunities": hidden_opps,
         "available_dates": available_dates,

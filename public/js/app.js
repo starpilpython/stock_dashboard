@@ -144,14 +144,28 @@ function renderRankings() {
     "운송/물류": "🚛", "농업": "🌾",
   };
 
+  // 기간별 수익률 조회
+  const customReturns = selectedPeriod === "custom" ? getCustomIndustryReturns() : null;
+  const retKey = "return_" + selectedPeriod;
+
+  function getRankReturn(industry) {
+    if (customReturns) return customReturns[industry] || 0;
+    const hm = DATA.heatmap.find(h => h.industry === industry);
+    if (hm && hm[retKey] != null) return hm[retKey];
+    const r = DATA.rankings.find(r => r.industry === industry);
+    return r ? r.return_5d : 0;
+  }
+
   list.innerHTML = top5.map(r => {
     const icon = industryIcons[r.industry] || "📊";
     const barWidth = Math.max(r.is_score, 5);
+    const ret = getRankReturn(r.industry);
+    const retColor = ret >= 0 ? "#ff4d6d" : "#4d8bff";
     return `<div class="rank-row" onclick="selectIndustry('${r.industry}')">
       <div class="rank-num">${r.rank}</div>
       <div class="rank-icon" style="background:${r.color}22">${icon}</div>
       <div class="rank-info">
-        <div class="rank-name">${r.industry}</div>
+        <div class="rank-name">${r.industry} <span class="rank-return" style="color:${retColor}">${fmtSign(ret)}%</span></div>
         <div class="rank-bar-wrap">
           <div class="rank-bar" style="width:${barWidth}%;background:${r.color}" data-width="${barWidth}"></div>
         </div>
@@ -259,11 +273,30 @@ function getCustomStockReturn(ticker) {
 }
 
 // ── 기간 선택 ──
+// 현재 기간의 날짜 범위 반환
+function getPeriodDateRange() {
+  if (selectedPeriod === "custom" && customPeriod) {
+    return { from: customPeriod.from, to: customPeriod.to };
+  }
+  const dates = DATA.available_dates || [];
+  if (dates.length === 0) return null;
+  const to = dates[dates.length - 1];
+  const periodDays = { "1w": 7, "1m": 30, "3m": 90, "1y": 365 };
+  const days = periodDays[selectedPeriod] || 7;
+  const fromDate = new Date(to);
+  fromDate.setDate(fromDate.getDate() - days);
+  const from = fromDate.toISOString().slice(0, 10);
+  return { from, to };
+}
+
 function applyPeriodChange() {
   renderHeatmap();
+  renderRankings();
   if (selectedIndustry) {
+    renderSentiment(selectedIndustry);
     renderStocks(selectedIndustry);
   }
+  renderHiddenOpportunities();
 }
 
 function initPeriodSelector() {
@@ -311,32 +344,49 @@ function initPeriodSelector() {
 function renderSentiment(industry) {
   const ranking = DATA.rankings.find(r => r.industry === industry);
   if (!ranking) return;
-  const stats = ranking.news_stats;
-  const headlines = DATA.headlines[industry] || [];
+
+  // 기간 필터링
+  const range = getPeriodDateRange();
+  const allNews = (DATA.all_news && DATA.all_news[industry]) || [];
+  let filtered;
+  if (range && allNews.length > 0) {
+    filtered = allNews.filter(n => n.date >= range.from && n.date <= range.to);
+  } else {
+    filtered = allNews.length > 0 ? allNews : (DATA.headlines[industry] || []);
+  }
+
+  // 기간별 감성 통계 계산
+  const total = filtered.length;
+  const pos = filtered.filter(n => n.sentiment === "긍정").length;
+  const neg = filtered.filter(n => n.sentiment === "부정").length;
+  const neu = total - pos - neg;
+  const posRatio = total > 0 ? round1(pos / total * 100) : 0;
+  const negRatio = total > 0 ? round1(neg / total * 100) : 0;
+  const neuRatio = total > 0 ? round1(neu / total * 100) : 0;
 
   // 게이지 그리기
-  drawGauge(stats.pos_ratio || 0);
+  drawGauge(posRatio);
 
   // 감성 카드
   const cards = document.getElementById("sentiment-cards");
   cards.innerHTML = `
     <div class="sent-card negative">
-      <div class="sent-value">${fmt(stats.neg_ratio)}%</div>
-      <div class="sent-label">부정 (${stats.negative || 0}건)</div>
+      <div class="sent-value">${fmt(negRatio)}%</div>
+      <div class="sent-label">부정 (${neg}건)</div>
     </div>
     <div class="sent-card neutral">
-      <div class="sent-value">${fmt(stats.neu_ratio)}%</div>
-      <div class="sent-label">중립 (${stats.neutral || 0}건)</div>
+      <div class="sent-value">${fmt(neuRatio)}%</div>
+      <div class="sent-label">중립 (${neu}건)</div>
     </div>
     <div class="sent-card positive">
-      <div class="sent-value">${fmt(stats.pos_ratio)}%</div>
-      <div class="sent-label">긍정 (${stats.positive || 0}건)</div>
+      <div class="sent-value">${fmt(posRatio)}%</div>
+      <div class="sent-label">긍정 (${pos}건)</div>
     </div>
   `;
 
-  // 헤드라인
+  // 헤드라인 (기간 내 최신 5개)
   const hlist = document.getElementById("headlines-list");
-  hlist.innerHTML = headlines.slice(0, 5).map(h => {
+  hlist.innerHTML = filtered.slice(0, 5).map(h => {
     let badgeCls = "neutral";
     let badgeText = "중립";
     if (h.sentiment === "긍정") { badgeCls = "positive"; badgeText = "긍정"; }
@@ -348,6 +398,8 @@ function renderSentiment(industry) {
     </div>`;
   }).join("");
 }
+
+function round1(n) { return Math.round(n * 10) / 10; }
 
 function escapeHtml(text) {
   const div = document.createElement("div");
@@ -641,9 +693,25 @@ function renderHiddenOpportunities() {
     return;
   }
   section.style.display = "block";
+
+  const retKey = "return_" + selectedPeriod;
+  const periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
+  const isCustom = selectedPeriod === "custom";
+
   const list = document.getElementById("hidden-list");
-  list.innerHTML = opps.map(o => `
-    <div class="hidden-card">
+  list.innerHTML = opps.map(o => {
+    let ret;
+    if (isCustom) {
+      const cr = getCustomStockReturn(o.ticker);
+      ret = cr != null ? cr : o.return_5d;
+    } else {
+      ret = o[retKey] != null ? o[retKey] : o.return_5d;
+    }
+    const retColor = ret >= 0 ? "var(--red)" : "var(--blue)";
+    const label = isCustom && customPeriod
+      ? customPeriod.from.slice(5) + "~" + customPeriod.to.slice(5)
+      : periodLabel;
+    return `<div class="hidden-card">
       <div class="hc-header">
         <div>
           <div class="hc-name">${escapeHtml(o.name)}</div>
@@ -653,11 +721,11 @@ function renderHiddenOpportunities() {
       </div>
       <div class="hc-detail">
         ETF 비중 합계: <span>${fmt(o.weight)}%</span><br>
-        최근 5일 수익률: <span style="color:${o.return_5d >= 0 ? 'var(--red)' : 'var(--blue)'}">${fmtSign(o.return_5d)}%</span><br>
+        ${label} 수익률: <span style="color:${retColor}">${fmtSign(ret)}%</span><br>
         IS Score: <span>${fmt(o.is_score, 0)}</span>
       </div>
-    </div>
-  `).join("");
+    </div>`;
+  }).join("");
 }
 
 // ── Disclaimer ──
