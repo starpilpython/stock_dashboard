@@ -222,6 +222,7 @@ function selectAll() {
 
   renderSentimentAll();
   renderStocksAll();
+  renderHiddenOpportunities();
 }
 
 function selectIndustry(industry) {
@@ -241,6 +242,7 @@ function selectIndustry(industry) {
   renderEtfFlow(industry);
   renderVolumeDaily(industry);
   renderVolumeWeekly(industry);
+  renderHiddenOpportunities();
 }
 
 // ── Panel D: 서브 탭 전환 ──
@@ -861,11 +863,23 @@ function renderHiddenOpportunities(searchQuery) {
   const q = (searchQuery || "").trim().toLowerCase();
   let opps;
 
+  // 탐색 대상 산업 결정
+  let targetIndustries;
+  if (selectedIndustry && selectedIndustry !== "__all__") {
+    // 특정 산업 선택 → 해당 산업만
+    targetIndustries = [selectedIndustry];
+  } else {
+    // 전체 또는 미선택 → IS Score TOP 5
+    const sortedRankings = [...DATA.rankings].sort((a, b) => (b[isScoreKey] || b.is_score) - (a[isScoreKey] || a.is_score));
+    targetIndustries = sortedRankings.slice(0, 5).map(r => r.industry);
+  }
+
   if (q) {
-    // 검색 모드: 전체 산업에서 종목 검색 → 잠재 기회 분석
+    // 검색 모드: 대상 산업 내에서 종목 검색
     const candidates = [];
     const seenTickers = new Set();
-    for (const ind of Object.keys(DATA.industry_stocks)) {
+    const searchScope = q.length >= 2 ? Object.keys(DATA.industry_stocks) : targetIndustries;
+    for (const ind of searchScope) {
       const stocks = DATA.industry_stocks[ind] || [];
       for (const s of stocks) {
         if (seenTickers.has(s.ticker)) continue;
@@ -883,13 +897,10 @@ function renderHiddenOpportunities(searchQuery) {
     candidates.sort((a, b) => b.weight - a.weight);
     opps = candidates.slice(0, 10);
   } else {
-    // 기본 모드: IS Score TOP 5 산업에서 저반응 종목 탐지
-    const sortedRankings = [...DATA.rankings].sort((a, b) => (b[isScoreKey] || b.is_score) - (a[isScoreKey] || a.is_score));
-    const topIndustries = sortedRankings.slice(0, 5).map(r => r.industry);
-
+    // 기본 모드: 대상 산업에서 저반응 종목 탐지
     const candidates = [];
     const seenTickers = new Set();
-    for (const ind of topIndustries) {
+    for (const ind of targetIndustries) {
       const stocks = DATA.industry_stocks[ind] || [];
       for (const s of stocks) {
         if (seenTickers.has(s.ticker)) continue;
