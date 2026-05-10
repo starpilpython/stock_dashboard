@@ -47,6 +47,7 @@ function render() {
   renderDisclaimer();
   initStockSubTabs();
   initPeriodSelector();
+  initHiddenSearch();
 
   // 기본 선택: IS Score 1위 산업
   if (DATA.rankings.length > 0) {
@@ -835,17 +836,13 @@ function renderVolumeWeekly(industry) {
 }
 
 // ── Hidden Opportunities ──
-function renderHiddenOpportunities() {
+function renderHiddenOpportunities(searchQuery) {
   const section = document.getElementById("hidden-section");
   const isScoreKey = selectedPeriod !== "custom" && selectedPeriod !== "1w"
     ? "is_score_" + selectedPeriod : "is_score";
   const retKey = "return_" + selectedPeriod;
   const isCustom = selectedPeriod === "custom";
   const periodLabel = PERIOD_LABELS[selectedPeriod] || "1주";
-
-  // 기간별 IS Score로 TOP 5 산업 선정
-  const sortedRankings = [...DATA.rankings].sort((a, b) => (b[isScoreKey] || b.is_score) - (a[isScoreKey] || a.is_score));
-  const topIndustries = sortedRankings.slice(0, 5).map(r => r.industry);
 
   // 각 종목의 기간별 수익률 계산
   function getStockReturn(stock) {
@@ -861,17 +858,20 @@ function renderHiddenOpportunities() {
     return r ? (r[isScoreKey] || r.is_score) : 0;
   }
 
-  // 조건: IS Score TOP 5 산업 + 비중 높음 + 해당 기간 수익률 저조
-  const candidates = [];
-  const seenTickers = new Set();
-  for (const ind of topIndustries) {
-    const stocks = DATA.industry_stocks[ind] || [];
-    for (const s of stocks) {
-      if (seenTickers.has(s.ticker)) continue;
-      const ret = getStockReturn(s);
-      // 기간별 수익률이 낮은 종목 (산업 평균 대비 미반영)
-      if (s.weight > 5 && ret > -5 && ret < 5) {
+  const q = (searchQuery || "").trim().toLowerCase();
+  let opps;
+
+  if (q) {
+    // 검색 모드: 전체 산업에서 종목 검색 → 잠재 기회 분석
+    const candidates = [];
+    const seenTickers = new Set();
+    for (const ind of Object.keys(DATA.industry_stocks)) {
+      const stocks = DATA.industry_stocks[ind] || [];
+      for (const s of stocks) {
+        if (seenTickers.has(s.ticker)) continue;
+        if (!s.name.toLowerCase().includes(q) && !s.ticker.includes(q)) continue;
         seenTickers.add(s.ticker);
+        const ret = getStockReturn(s);
         candidates.push({
           ...s,
           industry: ind,
@@ -880,17 +880,42 @@ function renderHiddenOpportunities() {
         });
       }
     }
+    candidates.sort((a, b) => b.weight - a.weight);
+    opps = candidates.slice(0, 10);
+  } else {
+    // 기본 모드: IS Score TOP 5 산업에서 저반응 종목 탐지
+    const sortedRankings = [...DATA.rankings].sort((a, b) => (b[isScoreKey] || b.is_score) - (a[isScoreKey] || a.is_score));
+    const topIndustries = sortedRankings.slice(0, 5).map(r => r.industry);
+
+    const candidates = [];
+    const seenTickers = new Set();
+    for (const ind of topIndustries) {
+      const stocks = DATA.industry_stocks[ind] || [];
+      for (const s of stocks) {
+        if (seenTickers.has(s.ticker)) continue;
+        const ret = getStockReturn(s);
+        if (s.weight > 5 && ret > -5 && ret < 5) {
+          seenTickers.add(s.ticker);
+          candidates.push({
+            ...s,
+            industry: ind,
+            period_return: ret,
+            is_score: getIsScore(ind),
+          });
+        }
+      }
+    }
+    candidates.sort((a, b) => b.weight - a.weight);
+    opps = candidates.slice(0, 5);
   }
 
-  // 비중 높은 순 정렬, 최대 5개
-  candidates.sort((a, b) => b.weight - a.weight);
-  const opps = candidates.slice(0, 5);
-
+  section.style.display = "block";
   if (opps.length === 0) {
-    section.style.display = "none";
+    document.getElementById("hidden-list").innerHTML = q
+      ? '<div style="color:var(--text-dim);text-align:center;padding:20px;">검색 결과가 없습니다.</div>'
+      : '<div style="color:var(--text-dim);text-align:center;padding:20px;">해당 기간에 조건에 맞는 종목이 없습니다.</div>';
     return;
   }
-  section.style.display = "block";
 
   const label = isCustom && customPeriod
     ? customPeriod.from.slice(5) + "~" + customPeriod.to.slice(5)
@@ -938,6 +963,14 @@ function renderHiddenOpportunities() {
       </div>
     </div>`;
   }).join("");
+}
+
+function initHiddenSearch() {
+  const input = document.getElementById("hidden-search-input");
+  if (!input) return;
+  input.oninput = () => {
+    renderHiddenOpportunities(input.value);
+  };
 }
 
 // ── Disclaimer ──

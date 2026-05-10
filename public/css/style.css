@@ -719,6 +719,26 @@ body {
   color: var(--text);
   font-weight: 500;
 }
+.hidden-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+.hidden-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 13px;
+  width: 100%;
+}
+.hidden-search input::placeholder { color: var(--text-muted); }
+
 .hc-sentiment {
   margin-top: 8px;
   padding-top: 8px;
