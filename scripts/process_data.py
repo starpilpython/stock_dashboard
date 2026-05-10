@@ -453,12 +453,75 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices, availa
     date_1w_ago = all_dates[-5] if len(all_dates) >= 5 else all_dates[0]
     date_2w_ago = all_dates[-10] if len(all_dates) >= 10 else all_dates[0]
 
+    # PDF에 데이터가 없는 산업의 대표 종목 (fallback)
+    FALLBACK_STOCKS = {
+        "에너지/석유": [
+            ("096770", "SK이노베이션"), ("010950", "S-Oil"), ("267250", "HD현대"),
+            ("078930", "GS"), ("017670", "SK가스"), ("006120", "SK디스커버리"),
+            ("024110", "기업은행"), ("011170", "롯데케미칼"), ("003490", "대한항공"),
+            ("036460", "한국가스공사"),
+        ],
+        "리츠/부동산": [
+            ("395400", "SK리츠"), ("365550", "ESR켄달스퀘어리츠"), ("330590", "롯데리츠"),
+            ("432320", "KB스타리츠"), ("293940", "신한알파리츠"), ("088980", "맥쿼리인프라"),
+            ("334890", "이지스밸류리츠"), ("417310", "코람코더원리츠"),
+            ("377190", "디앤디플랫폼리츠"), ("404990", "신한서부티엔디리츠"),
+        ],
+    }
+
     # 산업별 종목 비중 합산
     industry_stocks = {}
     for ind in TARGET_INDUSTRIES:
         ind_pdf = pdf_latest[pdf_latest["industry"] == ind]
         if len(ind_pdf) == 0:
-            industry_stocks[ind] = []
+            # Fallback: 하드코딩 대표 종목 사용
+            if ind in FALLBACK_STOCKS:
+                stocks_list = []
+                for ticker, name in FALLBACK_STOCKS[ind]:
+                    sp = stock_prices[stock_prices["ticker"] == ticker].sort_values("date")
+                    return_5d = 0
+                    recent_volumes = []
+                    if len(sp) >= 5:
+                        return_5d = round((sp["close"].iloc[-1] - sp["close"].iloc[-5]) / sp["close"].iloc[-5] * 100, 1)
+                        recent_volumes = sp["volume"].tail(5).tolist()
+                    elif len(sp) >= 2:
+                        return_5d = round((sp["close"].iloc[-1] - sp["close"].iloc[0]) / sp["close"].iloc[0] * 100, 1)
+                        recent_volumes = sp["volume"].tail(5).tolist()
+
+                    period_stock_returns = {}
+                    for plabel, pdays in [("1w", 5), ("1m", 20), ("3m", 60), ("1y", 250)]:
+                        if len(sp) >= pdays:
+                            r = round((sp["close"].iloc[-1] - sp["close"].iloc[-pdays]) / sp["close"].iloc[-pdays] * 100, 1)
+                        elif len(sp) >= 2:
+                            r = round((sp["close"].iloc[-1] - sp["close"].iloc[0]) / sp["close"].iloc[0] * 100, 1)
+                        else:
+                            r = 0
+                        period_stock_returns[plabel] = r
+
+                    stocks_list.append({
+                        "ticker": ticker,
+                        "name": name,
+                        "weight": round(10 - len(stocks_list) * 0.5, 2),
+                        "return_5d": return_5d,
+                        "return_1w": period_stock_returns["1w"],
+                        "return_1m": period_stock_returns["1m"],
+                        "return_3m": period_stock_returns["3m"],
+                        "return_1y": period_stock_returns["1y"],
+                        "recent_volumes": [int(v) for v in recent_volumes],
+                        "volume_daily": [],
+                        "volume_weekly": [],
+                        "etf_flow": [],
+                        "weight_now": 0,
+                        "weight_1w_ago": 0,
+                        "weight_change_1w": 0,
+                        "weight_change_2w": 0,
+                        "etf_count_now": 0,
+                        "etf_count_change": 0,
+                        "is_accumulating": False,
+                    })
+                industry_stocks[ind] = stocks_list
+            else:
+                industry_stocks[ind] = []
             continue
 
         # stock_ticker별 비중 합산 (여러 ETF에 걸쳐)
