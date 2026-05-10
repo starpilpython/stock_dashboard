@@ -65,8 +65,7 @@ function renderMarketInfo() {
       const cls = ms[idx].change >= 0 ? "positive" : "negative";
       html += `<div class="market-item">
         <span class="market-label">${idx}</span>
-        <span class="market-value ${cls}">${fmt(ms[idx].close, 2)}</span>
-        <span class="${cls}">${fmtSign(ms[idx].change, 2)}%</span>
+        <span class="market-values"><span class="market-value ${cls}">${fmt(ms[idx].close, 2)}</span> <span class="${cls}">${fmtSign(ms[idx].change, 2)}%</span></span>
       </div>`;
     }
   }

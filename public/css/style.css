@@ -60,11 +60,18 @@ body {
 }
 .market-info .market-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
 }
 .market-info .market-label {
   color: var(--text-dim);
+  font-size: 11px;
+}
+.market-info .market-values {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 .market-info .market-value {
   font-weight: 600;
