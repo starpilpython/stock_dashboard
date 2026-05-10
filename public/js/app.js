@@ -6,6 +6,7 @@
 let DATA = null;
 let selectedIndustry = null;
 let selectedStockView = "list";
+let heatmapSort = "return";
 
 // ── 유틸 ──
 function fmt(n, d = 1) {
@@ -73,8 +74,13 @@ function renderMarketInfo() {
 // ── Panel A: 히트맵 ──
 function renderHeatmap() {
   const grid = document.getElementById("heatmap-grid");
-  // 수익률 절대값 기준으로 상위 9개
-  const sorted = [...DATA.heatmap].sort((a, b) => Math.abs(b.return_5d) - Math.abs(a.return_5d));
+
+  let sorted;
+  if (heatmapSort === "tv") {
+    sorted = [...DATA.heatmap].sort((a, b) => b.trading_value_billion - a.trading_value_billion);
+  } else {
+    sorted = [...DATA.heatmap].sort((a, b) => Math.abs(b.return_5d) - Math.abs(a.return_5d));
+  }
   const top9 = sorted.slice(0, 9);
 
   grid.innerHTML = top9.map(item => {
@@ -94,6 +100,20 @@ function renderHeatmap() {
       <div class="hm-tv">${fmtBillion(tv)}</div>
     </div>`;
   }).join("");
+
+  // 정렬 버튼 이벤트 (한 번만 바인딩)
+  const sortGroup = document.querySelector(".heatmap-sort-group");
+  if (sortGroup && !sortGroup.dataset.bound) {
+    sortGroup.dataset.bound = "1";
+    sortGroup.addEventListener("click", e => {
+      const btn = e.target.closest(".heatmap-sort-btn");
+      if (!btn) return;
+      heatmapSort = btn.dataset.sort;
+      sortGroup.querySelectorAll(".heatmap-sort-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderHeatmap();
+    });
+  }
 }
 
 // ── Panel B: IS Score 랭킹 ──
