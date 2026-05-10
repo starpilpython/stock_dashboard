@@ -381,9 +381,14 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices):
     )
     pdf = pdf[pdf["industry"].isin(TARGET_INDUSTRIES)]
 
-    # 최신 날짜 기준
-    latest_date = pdf["base_date"].max()
+    # 날짜 목록 (ETF 매집 신호 계산용)
+    all_dates = sorted(pdf["base_date"].unique())
+    latest_date = all_dates[-1]
     pdf_latest = pdf[pdf["base_date"] == latest_date]
+
+    # 1주 전, 2주 전 기준일 (약 5영업일, 10영업일 전)
+    date_1w_ago = all_dates[-5] if len(all_dates) >= 5 else all_dates[0]
+    date_2w_ago = all_dates[-10] if len(all_dates) >= 10 else all_dates[0]
 
     # 산업별 종목 비중 합산
     industry_stocks = {}
@@ -480,6 +485,41 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices):
                         "change_pct": chg,
                     })
 
+            # ETF 매집 신호: 비중 변화 + 편입 ETF 수 변화
+            ind_pdf_all = pdf[(pdf["industry"] == ind) & (pdf["stock_ticker"] == ticker)]
+            etf_flow = []
+            weight_now = 0
+            weight_1w = 0
+            weight_2w = 0
+            etf_count_now = 0
+            etf_count_1w = 0
+            if len(ind_pdf_all) > 0:
+                # 날짜별 비중 합계 & ETF 수
+                daily_agg = ind_pdf_all.groupby("base_date").agg(
+                    total_weight=("weight", "sum"),
+                    etf_count=("etf_ticker", "nunique"),
+                ).sort_index()
+
+                weight_now = round(float(daily_agg.loc[latest_date, "total_weight"]), 2) if latest_date in daily_agg.index else 0
+                weight_1w = round(float(daily_agg.loc[date_1w_ago, "total_weight"]), 2) if date_1w_ago in daily_agg.index else 0
+                weight_2w = round(float(daily_agg.loc[date_2w_ago, "total_weight"]), 2) if date_2w_ago in daily_agg.index else 0
+                etf_count_now = int(daily_agg.loc[latest_date, "etf_count"]) if latest_date in daily_agg.index else 0
+                etf_count_1w = int(daily_agg.loc[date_1w_ago, "etf_count"]) if date_1w_ago in daily_agg.index else 0
+
+                # 최근 10일 추이 데이터
+                for d in all_dates[-10:]:
+                    if d in daily_agg.index:
+                        etf_flow.append({
+                            "date": str(d)[:10],
+                            "weight": round(float(daily_agg.loc[d, "total_weight"]), 2),
+                            "etf_count": int(daily_agg.loc[d, "etf_count"]),
+                        })
+
+            weight_change_1w = round(weight_now - weight_1w, 2)
+            weight_change_2w = round(weight_now - weight_2w, 2)
+            etf_count_change = etf_count_now - etf_count_1w
+            is_accumulating = weight_change_1w > 0 and etf_count_change >= 0
+
             stocks_list.append({
                 "ticker": ticker,
                 "name": name,
@@ -488,6 +528,14 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices):
                 "recent_volumes": [int(v) for v in recent_volumes],
                 "volume_daily": volume_daily,
                 "volume_weekly": volume_weekly,
+                "etf_flow": etf_flow,
+                "weight_now": weight_now,
+                "weight_1w_ago": weight_1w,
+                "weight_change_1w": weight_change_1w,
+                "weight_change_2w": weight_change_2w,
+                "etf_count_now": etf_count_now,
+                "etf_count_change": etf_count_change,
+                "is_accumulating": is_accumulating,
             })
 
         industry_stocks[ind] = stocks_list

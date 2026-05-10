@@ -164,6 +164,7 @@ function selectIndustry(industry) {
 
   renderSentiment(industry);
   renderStocks(industry);
+  renderEtfFlow(industry);
   renderVolumeDaily(industry);
   renderVolumeWeekly(industry);
 }
@@ -180,6 +181,7 @@ function initStockSubTabs() {
     btn.classList.add("active");
 
     document.getElementById("stock-view-list").style.display = view === "list" ? "" : "none";
+    document.getElementById("stock-view-etf-flow").style.display = view === "etf-flow" ? "" : "none";
     document.getElementById("stock-view-daily").style.display = view === "daily" ? "" : "none";
     document.getElementById("stock-view-weekly").style.display = view === "weekly" ? "" : "none";
   });
@@ -303,7 +305,10 @@ function renderStocks(industry) {
       </div>` + items.map(s => {
       const retClass = s.return_5d >= 0 ? "positive" : "negative";
       const retColor = s.return_5d >= 0 ? "var(--red)" : "var(--blue)";
-      const badge = hiddenTickers.has(s.ticker) ? '<span class="hidden-badge">유망주</span>' : '';
+      const badges = [];
+      if (hiddenTickers.has(s.ticker)) badges.push('<span class="hidden-badge">유망주</span>');
+      if (s.is_accumulating) badges.push('<span class="acc-badge">매집</span>');
+      const badge = badges.join("");
 
       // 미니바 차트
       const vols = s.recent_volumes || [];
@@ -342,6 +347,80 @@ function renderStocks(industry) {
     );
     renderList(filtered);
   };
+}
+
+// ── Panel D: ETF 매집 신호 ──
+function renderEtfFlow(industry) {
+  const stocks = DATA.industry_stocks[industry] || [];
+  const container = document.getElementById("etf-flow-table");
+
+  if (stocks.length === 0) {
+    container.innerHTML = '<div style="color:var(--text-dim);text-align:center;padding:30px;">데이터가 없습니다.</div>';
+    return;
+  }
+
+  // 종목별 카드 형태
+  let html = '<div class="etf-flow-list">';
+  stocks.forEach(s => {
+    const wChg1w = s.weight_change_1w || 0;
+    const wChg2w = s.weight_change_2w || 0;
+    const etfChg = s.etf_count_change || 0;
+    const isAcc = s.is_accumulating;
+
+    const chg1wColor = wChg1w > 0 ? "var(--red)" : wChg1w < 0 ? "var(--blue)" : "var(--text-dim)";
+    const chg2wColor = wChg2w > 0 ? "var(--red)" : wChg2w < 0 ? "var(--blue)" : "var(--text-dim)";
+    const etfChgColor = etfChg > 0 ? "var(--red)" : etfChg < 0 ? "var(--blue)" : "var(--text-dim)";
+    const badge = isAcc ? '<span class="acc-badge">매집 중</span>' : '';
+
+    // 미니 비중 추이 차트
+    const flow = s.etf_flow || [];
+    let sparkHtml = "";
+    if (flow.length >= 2) {
+      const weights = flow.map(f => f.weight);
+      const minW = Math.min(...weights);
+      const maxW = Math.max(...weights);
+      const range = maxW - minW || 1;
+      const w = 120, h = 32;
+      const points = weights.map((v, i) => {
+        const x = (i / (weights.length - 1)) * w;
+        const y = h - ((v - minW) / range) * (h - 4) - 2;
+        return `${x},${y}`;
+      }).join(" ");
+      const lineColor = weights[weights.length - 1] >= weights[0] ? "var(--red)" : "var(--blue)";
+      sparkHtml = `<svg width="${w}" height="${h}" class="etf-spark"><polyline points="${points}" fill="none" stroke="${lineColor}" stroke-width="1.5"/></svg>`;
+    }
+
+    html += `<div class="etf-flow-card${isAcc ? ' accumulating' : ''}">
+      <div class="efc-top">
+        <div>
+          <span class="efc-ticker">${s.ticker}</span>
+          <span class="efc-name">${escapeHtml(s.name)}</span>
+          ${badge}
+        </div>
+        ${sparkHtml}
+      </div>
+      <div class="efc-stats">
+        <div class="efc-stat">
+          <div class="efc-stat-label">현재 비중</div>
+          <div class="efc-stat-value">${fmt(s.weight_now || s.weight)}%</div>
+        </div>
+        <div class="efc-stat">
+          <div class="efc-stat-label">1주 변화</div>
+          <div class="efc-stat-value" style="color:${chg1wColor}">${wChg1w > 0 ? '▲' : wChg1w < 0 ? '▼' : ''}${Math.abs(wChg1w).toFixed(1)}%p</div>
+        </div>
+        <div class="efc-stat">
+          <div class="efc-stat-label">2주 변화</div>
+          <div class="efc-stat-value" style="color:${chg2wColor}">${wChg2w > 0 ? '▲' : wChg2w < 0 ? '▼' : ''}${Math.abs(wChg2w).toFixed(1)}%p</div>
+        </div>
+        <div class="efc-stat">
+          <div class="efc-stat-label">편입 ETF</div>
+          <div class="efc-stat-value">${s.etf_count_now || 0}개 <span style="color:${etfChgColor};font-size:11px">(${etfChg > 0 ? '+' : ''}${etfChg})</span></div>
+        </div>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  container.innerHTML = html;
 }
 
 // ── Panel D: 일별 수량 증감 ──

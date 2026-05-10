@@ -133,6 +133,7 @@
       </div>
       <div class="stock-sub-tabs">
         <button class="stock-sub-tab active" data-view="list">종목 목록</button>
+        <button class="stock-sub-tab" data-view="etf-flow">ETF 매집 신호</button>
         <button class="stock-sub-tab" data-view="daily">일별 수량 증감</button>
         <button class="stock-sub-tab" data-view="weekly">주별 수량 증감</button>
       </div>
@@ -144,6 +145,9 @@
           <input type="text" id="stock-search-input" placeholder="종목명 또는 종목코드 검색...">
         </div>
         <div class="stock-list" id="stock-list"></div>
+      </div>
+      <div id="stock-view-etf-flow" style="display:none;">
+        <div class="volume-table-wrap" id="etf-flow-table"></div>
       </div>
       <div id="stock-view-daily" style="display:none;">
         <div class="volume-table-wrap" id="volume-daily-table"></div>
