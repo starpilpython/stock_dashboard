@@ -1001,12 +1001,115 @@ body {
     align-items: flex-start;
     gap: 10px;
   }
+  .header-right {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .period-selector {
+    flex-wrap: wrap;
+  }
+  .efc-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hidden-list {
+    grid-template-columns: 1fr;
+  }
 }
+
 @media (max-width: 600px) {
-  body { padding: 12px; }
-  .heatmap-grid { grid-template-columns: repeat(2, 1fr); }
+  body { padding: 10px; }
+  .header-title { font-size: 17px; }
+  .header-subtitle { font-size: 11px; }
+  .market-info { gap: 10px; font-size: 11px; }
+  .panel { padding: 14px; border-radius: 10px; }
+  .panel-title { font-size: 13px; }
+  .panel-full { padding: 14px; }
+
+  /* 기간 선택 */
+  .period-selector {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .period-btn { padding: 4px 10px; font-size: 11px; }
+  .period-date-input { font-size: 11px; padding: 3px 6px; width: 110px; }
+  .period-label { font-size: 11px; }
+  .period-divider { display: none; }
+
+  /* 히트맵 */
+  .heatmap-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: 280px;
+    gap: 6px;
+  }
+  .heatmap-card { padding: 10px 8px; min-height: 70px; }
+  .hm-name { font-size: 11px; }
+  .hm-return { font-size: 15px; }
+  .hm-tv { font-size: 10px; }
+  .heatmap-sort-group { gap: 2px; }
+  .heatmap-sort-btn { font-size: 10px; padding: 2px 7px; }
+
+  /* 랭킹 */
+  .rank-row { padding: 8px; gap: 8px; }
+  .rank-icon { width: 28px; height: 28px; font-size: 14px; }
+  .rank-name { font-size: 12px; }
+  .rank-return { font-size: 10px; }
+  .rank-score { font-size: 16px; }
+  .score-formula { font-size: 10px; }
+
+  /* 산업 탭 */
+  .industry-tabs { gap: 4px; padding: 2px; }
+  .tab-btn { font-size: 11px; padding: 6px 10px; }
+
+  /* 감성 분석 */
+  .sentiment-gauge { max-width: 220px; margin: 0 auto; }
+  .sentiment-cards { gap: 6px; }
+  .sent-card { padding: 8px 6px; }
+  .sent-value { font-size: 16px; }
+  .sent-label { font-size: 10px; }
+  .headline-row { font-size: 12px; gap: 6px; }
+  .sent-badge { font-size: 9px; padding: 2px 5px; }
+
+  /* 종목 탐색 */
+  .stock-sub-tabs { gap: 2px; }
+  .stock-sub-tab { font-size: 11px; padding: 5px 8px; }
   .stock-row {
-    grid-template-columns: 50px 1fr 50px 60px;
+    grid-template-columns: 50px 1fr 50px 55px;
+    gap: 4px;
+    padding: 8px 8px;
+    font-size: 12px;
   }
   .stock-row .mini-bars { display: none; }
+  .stock-row.stock-header { font-size: 10px; padding: 4px 8px; }
+  .stock-search { padding: 6px 10px; }
+  .stock-search input { font-size: 12px; }
+  .stock-list { max-height: 320px; }
+
+  /* ETF 매집 신호 */
+  .etf-flow-list { max-height: 350px; }
+  .etf-flow-card { padding: 10px; }
+  .efc-stats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .efc-stat-label { font-size: 9px; }
+  .efc-stat-value { font-size: 11px; }
+  .efc-name { font-size: 12px; }
+
+  /* 수량 증감 테이블 */
+  .volume-table-wrap { max-height: 320px; }
+  .volume-table { font-size: 11px; }
+  .volume-table th, .volume-table td { padding: 6px 4px; }
+
+  /* 잠재 기회 */
+  .hidden-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .hidden-card { padding: 12px; }
+  .hidden-search { padding: 6px 10px; }
+  .hidden-search input { font-size: 12px; }
+  .hc-name { font-size: 13px; }
+  .hc-detail { font-size: 11px; }
+  .hc-sentiment { font-size: 10px; flex-wrap: wrap; gap: 4px; }
+
+  /* 모달 */
+  .modal { width: 95%; padding: 16px; }
 }
