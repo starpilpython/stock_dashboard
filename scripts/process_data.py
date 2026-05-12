@@ -447,7 +447,9 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices, availa
     # 날짜 목록 (ETF 매집 신호 계산용)
     all_dates = sorted(pdf["base_date"].unique())
     latest_date = all_dates[-1]
-    pdf_latest = pdf[pdf["base_date"] == latest_date]
+
+    # 산업별 최신 날짜 매핑 (전체 최신 날짜에 데이터 없는 산업 대응)
+    industry_latest_date = pdf.groupby("industry")["base_date"].max().to_dict()
 
     # 1주 전, 2주 전 기준일 (약 5영업일, 10영업일 전)
     date_1w_ago = all_dates[-5] if len(all_dates) >= 5 else all_dates[0]
@@ -467,12 +469,21 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices, availa
             ("334890", "이지스밸류리츠"), ("417310", "코람코더원리츠"),
             ("377190", "디앤디플랫폼리츠"), ("404990", "신한서부티엔디리츠"),
         ],
+        "화학/소재": [
+            ("051910", "LG화학"), ("006400", "삼성SDI"), ("011170", "롯데케미칼"),
+            ("004000", "롯데정밀화학"), ("298000", "효성화학"), ("009830", "한화솔루션"),
+            ("003670", "포스코퓨처엠"), ("005490", "POSCO홀딩스"),
+            ("120110", "코오롱인더"), ("018250", "애경산업"),
+        ],
     }
 
     # 산업별 종목 비중 합산
     industry_stocks = {}
     for ind in TARGET_INDUSTRIES:
-        ind_pdf = pdf_latest[pdf_latest["industry"] == ind]
+        # 산업별 최신 날짜 사용 (전체 최신 날짜에 데이터 없는 산업 대응)
+        ind_latest = industry_latest_date.get(ind, latest_date)
+        ind_pdf = pdf[pdf["base_date"] == ind_latest]
+        ind_pdf = ind_pdf[ind_pdf["industry"] == ind]
         if len(ind_pdf) == 0:
             # Fallback: 하드코딩 대표 종목 사용
             if ind in FALLBACK_STOCKS:
@@ -643,10 +654,10 @@ def get_industry_stocks(etf_pdf, etf_master, stocks_master, stock_prices, availa
                     etf_count=("etf_ticker", "nunique"),
                 ).sort_index()
 
-                weight_now = round(float(daily_agg.loc[latest_date, "total_weight"]), 2) if latest_date in daily_agg.index else 0
+                weight_now = round(float(daily_agg.loc[ind_latest, "total_weight"]), 2) if ind_latest in daily_agg.index else 0
                 weight_1w = round(float(daily_agg.loc[date_1w_ago, "total_weight"]), 2) if date_1w_ago in daily_agg.index else 0
                 weight_2w = round(float(daily_agg.loc[date_2w_ago, "total_weight"]), 2) if date_2w_ago in daily_agg.index else 0
-                etf_count_now = int(daily_agg.loc[latest_date, "etf_count"]) if latest_date in daily_agg.index else 0
+                etf_count_now = int(daily_agg.loc[ind_latest, "etf_count"]) if ind_latest in daily_agg.index else 0
                 etf_count_1w = int(daily_agg.loc[date_1w_ago, "etf_count"]) if date_1w_ago in daily_agg.index else 0
 
                 # 최근 10일 추이 데이터
