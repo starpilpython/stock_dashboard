@@ -1,6 +1,8 @@
 @echo off
-chcp 65001 >/dev/null
+chcp 65001 >nul
 cd /d "%~dp0"
+
+if exist krx_credentials.bat call krx_credentials.bat
 
 echo ============================================
 echo  SFNI Local Data Update + GitHub Deploy
@@ -8,7 +10,7 @@ echo ============================================
 echo.
 
 echo [1/4] Collecting data...
-py scripts/auto_update.py --mode closing
+py -3.12 scripts/auto_update.py --mode closing
 if %errorlevel% neq 0 (
     echo Data collection failed
     pause

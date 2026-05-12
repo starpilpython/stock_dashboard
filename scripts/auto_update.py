@@ -14,6 +14,7 @@ Windows 작업 스케줄러에 의해 하루 2회 실행됩니다.
 
 import os
 import sys
+import time
 import argparse
 from datetime import datetime
 
@@ -131,6 +132,24 @@ def main():
     print(f"{'='*50}")
 
     try:
+        # pykrx KRX login with retry (KRX blocks rapid attempts)
+        if args.mode != "morning":
+            for attempt in range(3):
+                try:
+                    from pykrx import stock
+                    print(f"[OK] KRX connected (attempt {attempt+1})")
+                    break
+                except Exception as e:
+                    print(f"[!] KRX login attempt {attempt+1}/3 failed")
+                    for mod in list(sys.modules.keys()):
+                        if 'pykrx' in mod:
+                            del sys.modules[mod]
+                    if attempt < 2:
+                        print(f"    waiting 30s before retry...")
+                        time.sleep(30)
+                    else:
+                        print("[!] KRX login failed after 3 attempts")
+
         # 데이터 수집
         if args.mode == "morning":
             run_morning()

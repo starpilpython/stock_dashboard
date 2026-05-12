@@ -390,7 +390,7 @@ def collect_stock_prices(dates):
             kosdaq = stock.get_market_ohlcv(date, market="KOSDAQ")
             full = pd.concat([kospi, kosdaq])
             full = full.reset_index()
-            full.columns = ["ticker", "open", "high", "low", "close", "volume", "trading_value", "change_rate"]
+            full.columns = ["ticker", "open", "high", "low", "close", "volume", "trading_value", "change_rate", "market_cap"][:len(full.columns)]
             full["date"] = f"{date[:4]}-{date[4:6]}-{date[6:]}"
             full["ticker"] = full["ticker"].astype(str)
             # 관심 종목만 필터
