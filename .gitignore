@@ -5,4 +5,6 @@ __pycache__/
 node_modules/
 logs/
 data/etf_pdf.csv
-krx_credentials.bat
+*.bat
+.claude/
+skill/
